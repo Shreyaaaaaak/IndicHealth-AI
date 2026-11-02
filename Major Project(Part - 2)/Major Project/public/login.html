@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Sign In — IndicHealth AI</title>
+  <link rel="stylesheet" href="/auth.css">
+</head>
+<body>
+
+  <!-- Top Bar with Brand & 4-Language Pills (including Odia) -->
+  <header class="auth-topbar">
+    <a href="/login.html" class="auth-brand-mini">
+      <div class="brand-logo-bars">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="brand-title-mini">IndicHealth AI</span>
+    </a>
+
+    <div class="lang-pill-group" role="group" aria-label="Language Selector">
+      <button type="button" class="lang-pill-btn active" data-lang="en" onclick="setAuthLanguage('en')">EN</button>
+      <button type="button" class="lang-pill-btn" data-lang="or" onclick="setAuthLanguage('or')">ଓଡ଼ିଆ</button>
+      <button type="button" class="lang-pill-btn" data-lang="hi" onclick="setAuthLanguage('hi')">हिन्दी</button>
+      <button type="button" class="lang-pill-btn" data-lang="bn" onclick="setAuthLanguage('bn')">বাংলা</button>
+    </div>
+  </header>
+
+  <!-- Split Editorial Card -->
+  <main class="auth-split-shell">
+    <!-- Left Column: Visual Care Highlights -->
+    <section class="auth-visual-side">
+      <div>
+        <div class="visual-badge">
+          <i></i>
+          <span data-i18n="badge_text">Multilingual Rural Healthcare Portal</span>
+        </div>
+        <h1 class="visual-heading" data-i18n="hero_heading">
+           compassionate primary care in your own language.
+        </h1>
+        <p class="visual-subtext" data-i18n="hero_sub">
+          Instant clinical symptom triage, handwritten prescription OCR, free PHC doctor booking, and 500+ essential medicines with voice read-aloud.
+        </p>
+
+        <div class="visual-bento-grid">
+          <div class="visual-bento-item mint">
+            <div class="bento-stat-num">500+</div>
+            <div class="bento-stat-label" data-i18n="stat_1">Verified Rural Medicines</div>
+          </div>
+          <div class="visual-bento-item amber">
+            <div class="bento-stat-num">₹0 OPD</div>
+            <div class="bento-stat-label" data-i18n="stat_2">8 Specialist PHC Doctors</div>
+          </div>
+          <div class="visual-bento-item lavender">
+            <div>
+              <div class="bento-stat-num" style="font-size:18px;" data-i18n="stat_3_title">Voice &amp; Text AI Triage</div>
+              <div class="bento-stat-label" data-i18n="stat_3_sub">English · ଓଡ଼ିଆ · हिन्दी · বাংলা</div>
+            </div>
+            <span style="background:#FFFFFF; width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; color:var(--ink-dark);">↗</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-helpline-strip">
+        <span data-i18n="helpline_label">24×7 Emergency Ambulance: <strong>108</strong></span>
+        <span data-i18n="phc_label">Rural Health Helpline: <strong>104</strong></span>
+      </div>
+    </section>
+
+    <!-- Right Column: Patient Sign-In Form -->
+    <section class="auth-form-side">
+      <div class="form-eyebrow" data-i18n="login_eyebrow">Patient Portal Access</div>
+      <h2 class="auth-heading" data-i18n="login_title">Welcome back</h2>
+      <p class="auth-subtext" data-i18n="login_sub">
+        Enter your 10-digit mobile number to open your health card, active reminders, and OPD appointments.
+      </p>
+
+      <form id="login-form" class="auth-form">
+        <div id="login-error" class="error-banner" style="display:none;"></div>
+
+        <div class="field-group">
+          <label class="field-label" for="login-phone" data-i18n="lbl_phone">Registered Mobile Number</label>
+          <div class="phone-input-wrap">
+            <span class="country-code">+91</span>
+            <input
+              id="login-phone"
+              class="auth-input"
+              type="tel"
+              placeholder="98765 43210"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="primary-button" type="submit" id="login-submit">
+          <span data-i18n="btn_login">Sign In to Dashboard</span>
+          <span>→</span>
+        </button>
+
+        <div class="demo-quick-row">
+          <span class="demo-quick-text" data-i18n="demo_hint">Evaluating the project?</span>
+          <button type="button" class="demo-fill-btn" onclick="fillDemoLogin()" data-i18n="btn_demo_fill">
+            Fill Demo Patient
+          </button>
+        </div>
+      </form>
+
+      <p class="auth-footer">
+        <span data-i18n="new_patient_q">New to IndicHealth AI?</span>
+        <a href="/signup.html" data-i18n="link_create_account">Create patient account</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="/auth.js"></script>
+</body>
+</html>

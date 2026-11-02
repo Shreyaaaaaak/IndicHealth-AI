@@ -1,0 +1,3502 @@
+[
+  {
+    "medicine_name": "Paracetamol 500mg",
+    "uses": "Relief of mild to moderate fever, headache, body ache, and toothache.",
+    "dosage": "Adults: 500-650mg every 4-6 hours (max 4000mg/day). Children: 10-15mg/kg.",
+    "side_effects": "Rare nausea, rash; high overdose causes severe liver toxicity.",
+    "precautions": "Avoid alcohol; do not exceed daily limits or combine with other paracetamol products."
+  },
+  {
+    "medicine_name": "Paracetamol 650mg",
+    "uses": "Relief of mild to moderate fever, headache, body ache, and toothache.",
+    "dosage": "Adults: 500-650mg every 4-6 hours (max 4000mg/day). Children: 10-15mg/kg.",
+    "side_effects": "Rare nausea, rash; high overdose causes severe liver toxicity.",
+    "precautions": "Avoid alcohol; do not exceed daily limits or combine with other paracetamol products."
+  },
+  {
+    "medicine_name": "Paracetamol 1000mg IV",
+    "uses": "Relief of mild to moderate fever, headache, body ache, and toothache.",
+    "dosage": "Adults: 500-650mg every 4-6 hours (max 4000mg/day). Children: 10-15mg/kg.",
+    "side_effects": "Rare nausea, rash; high overdose causes severe liver toxicity.",
+    "precautions": "Avoid alcohol; do not exceed daily limits or combine with other paracetamol products."
+  },
+  {
+    "medicine_name": "Paracetamol 120mg Suspension",
+    "uses": "Relief of mild to moderate fever, headache, body ache, and toothache.",
+    "dosage": "Adults: 500-650mg every 4-6 hours (max 4000mg/day). Children: 10-15mg/kg.",
+    "side_effects": "Rare nausea, rash; high overdose causes severe liver toxicity.",
+    "precautions": "Avoid alcohol; do not exceed daily limits or combine with other paracetamol products."
+  },
+  {
+    "medicine_name": "Paracetamol 250mg Syrup",
+    "uses": "Relief of mild to moderate fever, headache, body ache, and toothache.",
+    "dosage": "Adults: 500-650mg every 4-6 hours (max 4000mg/day). Children: 10-15mg/kg.",
+    "side_effects": "Rare nausea, rash; high overdose causes severe liver toxicity.",
+    "precautions": "Avoid alcohol; do not exceed daily limits or combine with other paracetamol products."
+  },
+  {
+    "medicine_name": "Ibuprofen 200mg",
+    "uses": "Anti-inflammatory for arthritis, joint sprains, dental pain, and dysmenorrhea.",
+    "dosage": "Adults: 200-400mg 3 times daily strictly after food.",
+    "side_effects": "Gastric irritation, acid reflux, stomach burning, nausea.",
+    "precautions": "Always take with food or milk; avoid in active peptic ulcer or asthma."
+  },
+  {
+    "medicine_name": "Ibuprofen 400mg",
+    "uses": "Anti-inflammatory for arthritis, joint sprains, dental pain, and dysmenorrhea.",
+    "dosage": "Adults: 200-400mg 3 times daily strictly after food.",
+    "side_effects": "Gastric irritation, acid reflux, stomach burning, nausea.",
+    "precautions": "Always take with food or milk; avoid in active peptic ulcer or asthma."
+  },
+  {
+    "medicine_name": "Ibuprofen 600mg",
+    "uses": "Anti-inflammatory for arthritis, joint sprains, dental pain, and dysmenorrhea.",
+    "dosage": "Adults: 200-400mg 3 times daily strictly after food.",
+    "side_effects": "Gastric irritation, acid reflux, stomach burning, nausea.",
+    "precautions": "Always take with food or milk; avoid in active peptic ulcer or asthma."
+  },
+  {
+    "medicine_name": "Ibuprofen 100mg Suspension",
+    "uses": "Anti-inflammatory for arthritis, joint sprains, dental pain, and dysmenorrhea.",
+    "dosage": "Adults: 200-400mg 3 times daily strictly after food.",
+    "side_effects": "Gastric irritation, acid reflux, stomach burning, nausea.",
+    "precautions": "Always take with food or milk; avoid in active peptic ulcer or asthma."
+  },
+  {
+    "medicine_name": "Diclofenac Sodium 50mg",
+    "uses": "Acute inflammatory joint pain, gout flare, renal colic, and sciatica.",
+    "dosage": "50mg 2-3 times daily post meals or 75mg IM for acute colic.",
+    "side_effects": "Heartburn, elevated blood pressure, stomach ache, fluid retention.",
+    "precautions": "Take with food; contraindicated in active gastric ulcer and severe heart failure."
+  },
+  {
+    "medicine_name": "Diclofenac Potassium 50mg",
+    "uses": "Acute inflammatory joint pain, gout flare, renal colic, and sciatica.",
+    "dosage": "50mg 2-3 times daily post meals or 75mg IM for acute colic.",
+    "side_effects": "Heartburn, elevated blood pressure, stomach ache, fluid retention.",
+    "precautions": "Take with food; contraindicated in active gastric ulcer and severe heart failure."
+  },
+  {
+    "medicine_name": "Diclofenac 75mg/ml Injection",
+    "uses": "Acute inflammatory joint pain, gout flare, renal colic, and sciatica.",
+    "dosage": "50mg 2-3 times daily post meals or 75mg IM for acute colic.",
+    "side_effects": "Heartburn, elevated blood pressure, stomach ache, fluid retention.",
+    "precautions": "Take with food; contraindicated in active gastric ulcer and severe heart failure."
+  },
+  {
+    "medicine_name": "Diclofenac 1% Gel",
+    "uses": "Acute inflammatory joint pain, gout flare, renal colic, and sciatica.",
+    "dosage": "50mg 2-3 times daily post meals or 75mg IM for acute colic.",
+    "side_effects": "Heartburn, elevated blood pressure, stomach ache, fluid retention.",
+    "precautions": "Take with food; contraindicated in active gastric ulcer and severe heart failure."
+  },
+  {
+    "medicine_name": "Diclofenac 100mg SR",
+    "uses": "Acute inflammatory joint pain, gout flare, renal colic, and sciatica.",
+    "dosage": "50mg 2-3 times daily post meals or 75mg IM for acute colic.",
+    "side_effects": "Heartburn, elevated blood pressure, stomach ache, fluid retention.",
+    "precautions": "Take with food; contraindicated in active gastric ulcer and severe heart failure."
+  },
+  {
+    "medicine_name": "Aceclofenac 100mg",
+    "uses": "Osteoarthritis, rheumatoid arthritis, ankylosing spondylitis pain.",
+    "dosage": "100mg twice daily with meals.",
+    "side_effects": "Abdominal pain, dizziness, elevated liver enzymes.",
+    "precautions": "Use lowest effective dose; take with gastroprotective antacid in elderly."
+  },
+  {
+    "medicine_name": "Aceclofenac 200mg SR",
+    "uses": "Osteoarthritis, rheumatoid arthritis, ankylosing spondylitis pain.",
+    "dosage": "100mg twice daily with meals.",
+    "side_effects": "Abdominal pain, dizziness, elevated liver enzymes.",
+    "precautions": "Use lowest effective dose; take with gastroprotective antacid in elderly."
+  },
+  {
+    "medicine_name": "Naproxen 250mg",
+    "uses": "Migraine attacks, acute gout, juvenile arthritis, menstrual cramps.",
+    "dosage": "250-500mg twice daily with meals.",
+    "side_effects": "Dyspepsia, drowsiness, tinnitus, fluid retention.",
+    "precautions": "Take with full glass of water; monitor renal function if used beyond 7 days."
+  },
+  {
+    "medicine_name": "Naproxen 500mg",
+    "uses": "Migraine attacks, acute gout, juvenile arthritis, menstrual cramps.",
+    "dosage": "250-500mg twice daily with meals.",
+    "side_effects": "Dyspepsia, drowsiness, tinnitus, fluid retention.",
+    "precautions": "Take with full glass of water; monitor renal function if used beyond 7 days."
+  },
+  {
+    "medicine_name": "Naproxen 750mg SR",
+    "uses": "Migraine attacks, acute gout, juvenile arthritis, menstrual cramps.",
+    "dosage": "250-500mg twice daily with meals.",
+    "side_effects": "Dyspepsia, drowsiness, tinnitus, fluid retention.",
+    "precautions": "Take with full glass of water; monitor renal function if used beyond 7 days."
+  },
+  {
+    "medicine_name": "Mefenamic Acid 250mg",
+    "uses": "Menstrual cramps (dysmenorrhea), heavy periods, dental pain.",
+    "dosage": "250-500mg 3 times daily during painful cycle.",
+    "side_effects": "Stomach upset, diarrhea, headache.",
+    "precautions": "Do not use continuously for more than 5-7 days."
+  },
+  {
+    "medicine_name": "Mefenamic Acid 500mg",
+    "uses": "Menstrual cramps (dysmenorrhea), heavy periods, dental pain.",
+    "dosage": "250-500mg 3 times daily during painful cycle.",
+    "side_effects": "Stomach upset, diarrhea, headache.",
+    "precautions": "Do not use continuously for more than 5-7 days."
+  },
+  {
+    "medicine_name": "Mefenamic Acid 50mg Suspension",
+    "uses": "Menstrual cramps (dysmenorrhea), heavy periods, dental pain.",
+    "dosage": "250-500mg 3 times daily during painful cycle.",
+    "side_effects": "Stomach upset, diarrhea, headache.",
+    "precautions": "Do not use continuously for more than 5-7 days."
+  },
+  {
+    "medicine_name": "Mefenamic Acid 100mg Dispersible",
+    "uses": "Menstrual cramps (dysmenorrhea), heavy periods, dental pain.",
+    "dosage": "250-500mg 3 times daily during painful cycle.",
+    "side_effects": "Stomach upset, diarrhea, headache.",
+    "precautions": "Do not use continuously for more than 5-7 days."
+  },
+  {
+    "medicine_name": "Etoricoxib 60mg",
+    "uses": "Acute gouty arthritis flares, chronic osteoarthritis, post-operative dental pain.",
+    "dosage": "60-90mg once daily; 120mg once daily for acute gout (max 8 days).",
+    "side_effects": "Peripheral edema, headache, palpitations, hypertension.",
+    "precautions": "Regularly check blood pressure; contraindicated in ischemic heart disease."
+  },
+  {
+    "medicine_name": "Etoricoxib 90mg",
+    "uses": "Acute gouty arthritis flares, chronic osteoarthritis, post-operative dental pain.",
+    "dosage": "60-90mg once daily; 120mg once daily for acute gout (max 8 days).",
+    "side_effects": "Peripheral edema, headache, palpitations, hypertension.",
+    "precautions": "Regularly check blood pressure; contraindicated in ischemic heart disease."
+  },
+  {
+    "medicine_name": "Etoricoxib 120mg",
+    "uses": "Acute gouty arthritis flares, chronic osteoarthritis, post-operative dental pain.",
+    "dosage": "60-90mg once daily; 120mg once daily for acute gout (max 8 days).",
+    "side_effects": "Peripheral edema, headache, palpitations, hypertension.",
+    "precautions": "Regularly check blood pressure; contraindicated in ischemic heart disease."
+  },
+  {
+    "medicine_name": "Piroxicam 10mg",
+    "uses": "Chronic rheumatoid arthritis, ankylosing spondylitis, severe joint swelling.",
+    "dosage": "20mg once daily after meals.",
+    "side_effects": "Gastric ulcer risk, fluid retention, nausea.",
+    "precautions": "High gastric toxicity risk in elderly; always co-prescribe with PPI."
+  },
+  {
+    "medicine_name": "Piroxicam 20mg",
+    "uses": "Chronic rheumatoid arthritis, ankylosing spondylitis, severe joint swelling.",
+    "dosage": "20mg once daily after meals.",
+    "side_effects": "Gastric ulcer risk, fluid retention, nausea.",
+    "precautions": "High gastric toxicity risk in elderly; always co-prescribe with PPI."
+  },
+  {
+    "medicine_name": "Piroxicam 20mg Dispersible",
+    "uses": "Chronic rheumatoid arthritis, ankylosing spondylitis, severe joint swelling.",
+    "dosage": "20mg once daily after meals.",
+    "side_effects": "Gastric ulcer risk, fluid retention, nausea.",
+    "precautions": "High gastric toxicity risk in elderly; always co-prescribe with PPI."
+  },
+  {
+    "medicine_name": "Ketorolac 10mg",
+    "uses": "Short-term acute severe postoperative or ocular pain.",
+    "dosage": "10mg every 4-6 hours as needed (maximum 5 days).",
+    "side_effects": "Gastric ulceration, renal impairment, nausea.",
+    "precautions": "Never exceed 5 days of total therapy due to bleeding and renal risk."
+  },
+  {
+    "medicine_name": "Ketorolac 30mg/ml Injection",
+    "uses": "Short-term acute severe postoperative or ocular pain.",
+    "dosage": "10mg every 4-6 hours as needed (maximum 5 days).",
+    "side_effects": "Gastric ulceration, renal impairment, nausea.",
+    "precautions": "Never exceed 5 days of total therapy due to bleeding and renal risk."
+  },
+  {
+    "medicine_name": "Ketorolac 0.5% Eye Drops",
+    "uses": "Short-term acute severe postoperative or ocular pain.",
+    "dosage": "10mg every 4-6 hours as needed (maximum 5 days).",
+    "side_effects": "Gastric ulceration, renal impairment, nausea.",
+    "precautions": "Never exceed 5 days of total therapy due to bleeding and renal risk."
+  },
+  {
+    "medicine_name": "Tramadol 50mg",
+    "uses": "Moderate to severe chronic pain, post-fracture pain, oncological pain.",
+    "dosage": "50-100mg every 6 hours as needed (max 400mg/day).",
+    "side_effects": "Nausea, dizziness, constipation, sedation, habit formation.",
+    "precautions": "Prescription only; avoid alcohol and central sedatives. Do not stop abruptly."
+  },
+  {
+    "medicine_name": "Tramadol 100mg SR",
+    "uses": "Moderate to severe chronic pain, post-fracture pain, oncological pain.",
+    "dosage": "50-100mg every 6 hours as needed (max 400mg/day).",
+    "side_effects": "Nausea, dizziness, constipation, sedation, habit formation.",
+    "precautions": "Prescription only; avoid alcohol and central sedatives. Do not stop abruptly."
+  },
+  {
+    "medicine_name": "Tramadol 50mg/ml Injection",
+    "uses": "Moderate to severe chronic pain, post-fracture pain, oncological pain.",
+    "dosage": "50-100mg every 6 hours as needed (max 400mg/day).",
+    "side_effects": "Nausea, dizziness, constipation, sedation, habit formation.",
+    "precautions": "Prescription only; avoid alcohol and central sedatives. Do not stop abruptly."
+  },
+  {
+    "medicine_name": "Thiocolchicoside 4mg",
+    "uses": "Acute muscular contractures, painful cervical stiffness, lumbago.",
+    "dosage": "4-8mg twice daily after meals for up to 5-7 days.",
+    "side_effects": "Somnolence, mild diarrhea, nausea.",
+    "precautions": "Strictly contraindicated during pregnancy and breastfeeding."
+  },
+  {
+    "medicine_name": "Thiocolchicoside 8mg",
+    "uses": "Acute muscular contractures, painful cervical stiffness, lumbago.",
+    "dosage": "4-8mg twice daily after meals for up to 5-7 days.",
+    "side_effects": "Somnolence, mild diarrhea, nausea.",
+    "precautions": "Strictly contraindicated during pregnancy and breastfeeding."
+  },
+  {
+    "medicine_name": "Thiocolchicoside 4mg/2ml Injection",
+    "uses": "Acute muscular contractures, painful cervical stiffness, lumbago.",
+    "dosage": "4-8mg twice daily after meals for up to 5-7 days.",
+    "side_effects": "Somnolence, mild diarrhea, nausea.",
+    "precautions": "Strictly contraindicated during pregnancy and breastfeeding."
+  },
+  {
+    "medicine_name": "Chlorzoxazone 250mg",
+    "uses": "Severe muscle spasms associated with acute lumbar strain.",
+    "dosage": "250-500mg 3-4 times daily with food.",
+    "side_effects": "Urine discoloration (orange/purple), dizziness, drowsiness.",
+    "precautions": "May harmlessly discolor urine; avoid driving if drowsy."
+  },
+  {
+    "medicine_name": "Chlorzoxazone 500mg",
+    "uses": "Severe muscle spasms associated with acute lumbar strain.",
+    "dosage": "250-500mg 3-4 times daily with food.",
+    "side_effects": "Urine discoloration (orange/purple), dizziness, drowsiness.",
+    "precautions": "May harmlessly discolor urine; avoid driving if drowsy."
+  },
+  {
+    "medicine_name": "Baclofen 10mg",
+    "uses": "Muscle spasticity in spinal injury, multiple sclerosis, cerebral palsy.",
+    "dosage": "5-10mg 3 times daily after food; titrate upward slowly.",
+    "side_effects": "Drowsiness, muscular hypotonia, confusion.",
+    "precautions": "Never withdraw abruptly; taper dose gradually under medical care."
+  },
+  {
+    "medicine_name": "Baclofen 20mg",
+    "uses": "Muscle spasticity in spinal injury, multiple sclerosis, cerebral palsy.",
+    "dosage": "5-10mg 3 times daily after food; titrate upward slowly.",
+    "side_effects": "Drowsiness, muscular hypotonia, confusion.",
+    "precautions": "Never withdraw abruptly; taper dose gradually under medical care."
+  },
+  {
+    "medicine_name": "Tizanidine 2mg",
+    "uses": "Painful muscle spasms associated with spinal disorders.",
+    "dosage": "2-4mg three times daily.",
+    "side_effects": "Dry mouth, hypotension, daytime somnolence.",
+    "precautions": "Check liver function in chronic use; monitor blood pressure."
+  },
+  {
+    "medicine_name": "Tizanidine 4mg",
+    "uses": "Painful muscle spasms associated with spinal disorders.",
+    "dosage": "2-4mg three times daily.",
+    "side_effects": "Dry mouth, hypotension, daytime somnolence.",
+    "precautions": "Check liver function in chronic use; monitor blood pressure."
+  },
+  {
+    "medicine_name": "Aspirin 75mg",
+    "uses": "Cardiac prophylaxis, arterial clot prevention, fever/headache emergency.",
+    "dosage": "75-150mg daily after meals for cardiac; 350-500mg dissolved in water for pain.",
+    "side_effects": "Gastric irritation, bruising, bleeding tendency.",
+    "precautions": "Contraindicated in children under 16 (Reye syndrome); take after food."
+  },
+  {
+    "medicine_name": "Aspirin 150mg",
+    "uses": "Cardiac prophylaxis, arterial clot prevention, fever/headache emergency.",
+    "dosage": "75-150mg daily after meals for cardiac; 350-500mg dissolved in water for pain.",
+    "side_effects": "Gastric irritation, bruising, bleeding tendency.",
+    "precautions": "Contraindicated in children under 16 (Reye syndrome); take after food."
+  },
+  {
+    "medicine_name": "Aspirin 350mg Soluble",
+    "uses": "Cardiac prophylaxis, arterial clot prevention, fever/headache emergency.",
+    "dosage": "75-150mg daily after meals for cardiac; 350-500mg dissolved in water for pain.",
+    "side_effects": "Gastric irritation, bruising, bleeding tendency.",
+    "precautions": "Contraindicated in children under 16 (Reye syndrome); take after food."
+  },
+  {
+    "medicine_name": "Aspirin 500mg",
+    "uses": "Cardiac prophylaxis, arterial clot prevention, fever/headache emergency.",
+    "dosage": "75-150mg daily after meals for cardiac; 350-500mg dissolved in water for pain.",
+    "side_effects": "Gastric irritation, bruising, bleeding tendency.",
+    "precautions": "Contraindicated in children under 16 (Reye syndrome); take after food."
+  },
+  {
+    "medicine_name": "Lornoxicam 4mg",
+    "uses": "Short-term mild to moderate acute pain and arthritis inflammation.",
+    "dosage": "4-8mg twice daily before meals.",
+    "side_effects": "Headache, dizziness, nausea, abdominal pain.",
+    "precautions": "Avoid in active peptic ulcer disease and severe renal impairment."
+  },
+  {
+    "medicine_name": "Lornoxicam 8mg",
+    "uses": "Short-term mild to moderate acute pain and arthritis inflammation.",
+    "dosage": "4-8mg twice daily before meals.",
+    "side_effects": "Headache, dizziness, nausea, abdominal pain.",
+    "precautions": "Avoid in active peptic ulcer disease and severe renal impairment."
+  },
+  {
+    "medicine_name": "Tolperisone 50mg",
+    "uses": "Centrally acting muscle relaxant for post-stroke spasticity and back pain.",
+    "dosage": "50-150mg three times daily after food.",
+    "side_effects": "Muscle weakness, headache, nausea, mild hypotension.",
+    "precautions": "Does not cause significant sedation compared to other relaxants."
+  },
+  {
+    "medicine_name": "Tolperisone 150mg",
+    "uses": "Centrally acting muscle relaxant for post-stroke spasticity and back pain.",
+    "dosage": "50-150mg three times daily after food.",
+    "side_effects": "Muscle weakness, headache, nausea, mild hypotension.",
+    "precautions": "Does not cause significant sedation compared to other relaxants."
+  },
+  {
+    "medicine_name": "Pregabalin 75mg",
+    "uses": "Diabetic peripheral neuropathy, post-herpetic neuralgia, fibromyalgia.",
+    "dosage": "75mg once or twice daily at bedtime; titrate up to 150mg twice daily.",
+    "side_effects": "Drowsiness, weight gain, peripheral edema, dry mouth.",
+    "precautions": "Taper gradually when discontinuing; take at bedtime to reduce dizziness."
+  },
+  {
+    "medicine_name": "Pregabalin 150mg",
+    "uses": "Diabetic peripheral neuropathy, post-herpetic neuralgia, fibromyalgia.",
+    "dosage": "75mg once or twice daily at bedtime; titrate up to 150mg twice daily.",
+    "side_effects": "Drowsiness, weight gain, peripheral edema, dry mouth.",
+    "precautions": "Taper gradually when discontinuing; take at bedtime to reduce dizziness."
+  },
+  {
+    "medicine_name": "Pregabalin 300mg",
+    "uses": "Diabetic peripheral neuropathy, post-herpetic neuralgia, fibromyalgia.",
+    "dosage": "75mg once or twice daily at bedtime; titrate up to 150mg twice daily.",
+    "side_effects": "Drowsiness, weight gain, peripheral edema, dry mouth.",
+    "precautions": "Taper gradually when discontinuing; take at bedtime to reduce dizziness."
+  },
+  {
+    "medicine_name": "Gabapentin 100mg",
+    "uses": "Neuropathic shooting nerve pain, partial seizures.",
+    "dosage": "300mg on day 1, 300mg twice on day 2, 300mg thrice on day 3 with food.",
+    "side_effects": "Dizziness, somnolence, fatigue, ataxia.",
+    "precautions": "Avoid abrupt cessation; take with meals to reduce gastric upset."
+  },
+  {
+    "medicine_name": "Gabapentin 300mg",
+    "uses": "Neuropathic shooting nerve pain, partial seizures.",
+    "dosage": "300mg on day 1, 300mg twice on day 2, 300mg thrice on day 3 with food.",
+    "side_effects": "Dizziness, somnolence, fatigue, ataxia.",
+    "precautions": "Avoid abrupt cessation; take with meals to reduce gastric upset."
+  },
+  {
+    "medicine_name": "Gabapentin 400mg",
+    "uses": "Neuropathic shooting nerve pain, partial seizures.",
+    "dosage": "300mg on day 1, 300mg twice on day 2, 300mg thrice on day 3 with food.",
+    "side_effects": "Dizziness, somnolence, fatigue, ataxia.",
+    "precautions": "Avoid abrupt cessation; take with meals to reduce gastric upset."
+  },
+  {
+    "medicine_name": "Tapentadol 50mg",
+    "uses": "Severe acute musculoskeletal and diabetic neuropathic pain.",
+    "dosage": "50-100mg every 4-6 hours post food.",
+    "side_effects": "Nausea, constipation, dizziness, somnolence.",
+    "precautions": "Controlled drug; lower GI side effects than traditional opioids."
+  },
+  {
+    "medicine_name": "Tapentadol 100mg",
+    "uses": "Severe acute musculoskeletal and diabetic neuropathic pain.",
+    "dosage": "50-100mg every 4-6 hours post food.",
+    "side_effects": "Nausea, constipation, dizziness, somnolence.",
+    "precautions": "Controlled drug; lower GI side effects than traditional opioids."
+  },
+  {
+    "medicine_name": "Tapentadol 50mg ER",
+    "uses": "Severe acute musculoskeletal and diabetic neuropathic pain.",
+    "dosage": "50-100mg every 4-6 hours post food.",
+    "side_effects": "Nausea, constipation, dizziness, somnolence.",
+    "precautions": "Controlled drug; lower GI side effects than traditional opioids."
+  },
+  {
+    "medicine_name": "Amoxicillin 125mg DT",
+    "uses": "Bacterial infections of ear, throat, chest, urinary tract, and dental abscess.",
+    "dosage": "Adults: 250-500mg every 8 hours for 5-7 days. Children: 25-45mg/kg/day.",
+    "side_effects": "Nausea, diarrhea, allergic skin rashes.",
+    "precautions": "Complete the full course; inform doctor if allergic to penicillin family."
+  },
+  {
+    "medicine_name": "Amoxicillin 250mg",
+    "uses": "Bacterial infections of ear, throat, chest, urinary tract, and dental abscess.",
+    "dosage": "Adults: 250-500mg every 8 hours for 5-7 days. Children: 25-45mg/kg/day.",
+    "side_effects": "Nausea, diarrhea, allergic skin rashes.",
+    "precautions": "Complete the full course; inform doctor if allergic to penicillin family."
+  },
+  {
+    "medicine_name": "Amoxicillin 500mg",
+    "uses": "Bacterial infections of ear, throat, chest, urinary tract, and dental abscess.",
+    "dosage": "Adults: 250-500mg every 8 hours for 5-7 days. Children: 25-45mg/kg/day.",
+    "side_effects": "Nausea, diarrhea, allergic skin rashes.",
+    "precautions": "Complete the full course; inform doctor if allergic to penicillin family."
+  },
+  {
+    "medicine_name": "Amoxicillin 125mg/5ml Syrup",
+    "uses": "Bacterial infections of ear, throat, chest, urinary tract, and dental abscess.",
+    "dosage": "Adults: 250-500mg every 8 hours for 5-7 days. Children: 25-45mg/kg/day.",
+    "side_effects": "Nausea, diarrhea, allergic skin rashes.",
+    "precautions": "Complete the full course; inform doctor if allergic to penicillin family."
+  },
+  {
+    "medicine_name": "Amoxicillin + Clavulanic Acid 375mg",
+    "uses": "Resistant bacterial infections, ENT sinusitis, animal bites, skin abscesses.",
+    "dosage": "1 tablet (625mg) twice daily after meals for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal cramps, fungal candidiasis.",
+    "precautions": "Take at the start of a meal to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Amoxicillin + Clavulanic Acid 625mg",
+    "uses": "Resistant bacterial infections, ENT sinusitis, animal bites, skin abscesses.",
+    "dosage": "1 tablet (625mg) twice daily after meals for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal cramps, fungal candidiasis.",
+    "precautions": "Take at the start of a meal to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Amoxicillin + Clavulanic Acid 1000mg",
+    "uses": "Resistant bacterial infections, ENT sinusitis, animal bites, skin abscesses.",
+    "dosage": "1 tablet (625mg) twice daily after meals for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal cramps, fungal candidiasis.",
+    "precautions": "Take at the start of a meal to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Amoxicillin + Clavulanic Acid 228.5mg Syrup",
+    "uses": "Resistant bacterial infections, ENT sinusitis, animal bites, skin abscesses.",
+    "dosage": "1 tablet (625mg) twice daily after meals for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal cramps, fungal candidiasis.",
+    "precautions": "Take at the start of a meal to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Amoxicillin + Clavulanic Acid 457mg Syrup",
+    "uses": "Resistant bacterial infections, ENT sinusitis, animal bites, skin abscesses.",
+    "dosage": "1 tablet (625mg) twice daily after meals for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal cramps, fungal candidiasis.",
+    "precautions": "Take at the start of a meal to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Amoxicillin + Clavulanic Acid 1.2g Injection",
+    "uses": "Resistant bacterial infections, ENT sinusitis, animal bites, skin abscesses.",
+    "dosage": "1 tablet (625mg) twice daily after meals for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal cramps, fungal candidiasis.",
+    "precautions": "Take at the start of a meal to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Ampicillin 250mg",
+    "uses": "Bacterial endocarditis, listeria meningitis, urinary infections.",
+    "dosage": "500mg every 6 hours on empty stomach.",
+    "side_effects": "Diarrhea, skin rash, nausea.",
+    "precautions": "Take 1 hour before or 2 hours after meals with water."
+  },
+  {
+    "medicine_name": "Ampicillin 500mg",
+    "uses": "Bacterial endocarditis, listeria meningitis, urinary infections.",
+    "dosage": "500mg every 6 hours on empty stomach.",
+    "side_effects": "Diarrhea, skin rash, nausea.",
+    "precautions": "Take 1 hour before or 2 hours after meals with water."
+  },
+  {
+    "medicine_name": "Ampicillin 500mg Injection",
+    "uses": "Bacterial endocarditis, listeria meningitis, urinary infections.",
+    "dosage": "500mg every 6 hours on empty stomach.",
+    "side_effects": "Diarrhea, skin rash, nausea.",
+    "precautions": "Take 1 hour before or 2 hours after meals with water."
+  },
+  {
+    "medicine_name": "Cloxacillin 250mg",
+    "uses": "Penicillinase-producing staphylococcal skin, bone, and soft tissue infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach.",
+    "side_effects": "Allergic rash, nausea, diarrhea.",
+    "precautions": "Must be taken on completely empty stomach 1 hour before food."
+  },
+  {
+    "medicine_name": "Cloxacillin 500mg",
+    "uses": "Penicillinase-producing staphylococcal skin, bone, and soft tissue infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach.",
+    "side_effects": "Allergic rash, nausea, diarrhea.",
+    "precautions": "Must be taken on completely empty stomach 1 hour before food."
+  },
+  {
+    "medicine_name": "Cefixime 50mg DT",
+    "uses": "Typhoid enteric fever, acute bronchitis, gonorrhea, otitis media.",
+    "dosage": "200mg twice daily or 400mg once daily for 5-7 days.",
+    "side_effects": "Loose stools, flatulence, nausea, headache.",
+    "precautions": "Safe in penicillin allergy unless cephalosporin sensitivity exists."
+  },
+  {
+    "medicine_name": "Cefixime 100mg DT",
+    "uses": "Typhoid enteric fever, acute bronchitis, gonorrhea, otitis media.",
+    "dosage": "200mg twice daily or 400mg once daily for 5-7 days.",
+    "side_effects": "Loose stools, flatulence, nausea, headache.",
+    "precautions": "Safe in penicillin allergy unless cephalosporin sensitivity exists."
+  },
+  {
+    "medicine_name": "Cefixime 200mg",
+    "uses": "Typhoid enteric fever, acute bronchitis, gonorrhea, otitis media.",
+    "dosage": "200mg twice daily or 400mg once daily for 5-7 days.",
+    "side_effects": "Loose stools, flatulence, nausea, headache.",
+    "precautions": "Safe in penicillin allergy unless cephalosporin sensitivity exists."
+  },
+  {
+    "medicine_name": "Cefixime 400mg",
+    "uses": "Typhoid enteric fever, acute bronchitis, gonorrhea, otitis media.",
+    "dosage": "200mg twice daily or 400mg once daily for 5-7 days.",
+    "side_effects": "Loose stools, flatulence, nausea, headache.",
+    "precautions": "Safe in penicillin allergy unless cephalosporin sensitivity exists."
+  },
+  {
+    "medicine_name": "Cefixime 50mg/5ml Syrup",
+    "uses": "Typhoid enteric fever, acute bronchitis, gonorrhea, otitis media.",
+    "dosage": "200mg twice daily or 400mg once daily for 5-7 days.",
+    "side_effects": "Loose stools, flatulence, nausea, headache.",
+    "precautions": "Safe in penicillin allergy unless cephalosporin sensitivity exists."
+  },
+  {
+    "medicine_name": "Cefpodoxime 50mg DT",
+    "uses": "Skin and soft tissue infections, maxillary sinusitis, pneumonia, pharyngitis.",
+    "dosage": "100-200mg twice daily with meals for 5-10 days.",
+    "side_effects": "Diarrhea, nausea, stomach pain, vaginal thrush.",
+    "precautions": "Take with food to significantly improve absorption."
+  },
+  {
+    "medicine_name": "Cefpodoxime 100mg",
+    "uses": "Skin and soft tissue infections, maxillary sinusitis, pneumonia, pharyngitis.",
+    "dosage": "100-200mg twice daily with meals for 5-10 days.",
+    "side_effects": "Diarrhea, nausea, stomach pain, vaginal thrush.",
+    "precautions": "Take with food to significantly improve absorption."
+  },
+  {
+    "medicine_name": "Cefpodoxime 200mg",
+    "uses": "Skin and soft tissue infections, maxillary sinusitis, pneumonia, pharyngitis.",
+    "dosage": "100-200mg twice daily with meals for 5-10 days.",
+    "side_effects": "Diarrhea, nausea, stomach pain, vaginal thrush.",
+    "precautions": "Take with food to significantly improve absorption."
+  },
+  {
+    "medicine_name": "Cefpodoxime 50mg/5ml Dry Syrup",
+    "uses": "Skin and soft tissue infections, maxillary sinusitis, pneumonia, pharyngitis.",
+    "dosage": "100-200mg twice daily with meals for 5-10 days.",
+    "side_effects": "Diarrhea, nausea, stomach pain, vaginal thrush.",
+    "precautions": "Take with food to significantly improve absorption."
+  },
+  {
+    "medicine_name": "Cefuroxime Axetil 125mg",
+    "uses": "Bronchitis, acute pyelonephritis, Lyme disease, wound infections.",
+    "dosage": "250-500mg twice daily after meals for 7-10 days.",
+    "side_effects": "Nausea, diarrhea, mild headache, candida overgrowth.",
+    "precautions": "Swallow whole with food; bitter taste if tablet is crushed."
+  },
+  {
+    "medicine_name": "Cefuroxime Axetil 250mg",
+    "uses": "Bronchitis, acute pyelonephritis, Lyme disease, wound infections.",
+    "dosage": "250-500mg twice daily after meals for 7-10 days.",
+    "side_effects": "Nausea, diarrhea, mild headache, candida overgrowth.",
+    "precautions": "Swallow whole with food; bitter taste if tablet is crushed."
+  },
+  {
+    "medicine_name": "Cefuroxime Axetil 500mg",
+    "uses": "Bronchitis, acute pyelonephritis, Lyme disease, wound infections.",
+    "dosage": "250-500mg twice daily after meals for 7-10 days.",
+    "side_effects": "Nausea, diarrhea, mild headache, candida overgrowth.",
+    "precautions": "Swallow whole with food; bitter taste if tablet is crushed."
+  },
+  {
+    "medicine_name": "Cefuroxime Axetil 125mg/5ml Suspension",
+    "uses": "Bronchitis, acute pyelonephritis, Lyme disease, wound infections.",
+    "dosage": "250-500mg twice daily after meals for 7-10 days.",
+    "side_effects": "Nausea, diarrhea, mild headache, candida overgrowth.",
+    "precautions": "Swallow whole with food; bitter taste if tablet is crushed."
+  },
+  {
+    "medicine_name": "Cefuroxime Axetil 750mg Injection",
+    "uses": "Bronchitis, acute pyelonephritis, Lyme disease, wound infections.",
+    "dosage": "250-500mg twice daily after meals for 7-10 days.",
+    "side_effects": "Nausea, diarrhea, mild headache, candida overgrowth.",
+    "precautions": "Swallow whole with food; bitter taste if tablet is crushed."
+  },
+  {
+    "medicine_name": "Ceftriaxone 250mg Injection",
+    "uses": "Bacterial meningitis, enteric fever, pelvic sepsis, surgical prophylaxis.",
+    "dosage": "1g to 2g once daily IV/IM for 5-10 days.",
+    "side_effects": "Local pain at injection site, loose stools, thrombophlebitis.",
+    "precautions": "Requires skin sensitivity test prior to administration; hospital use."
+  },
+  {
+    "medicine_name": "Ceftriaxone 500mg Injection",
+    "uses": "Bacterial meningitis, enteric fever, pelvic sepsis, surgical prophylaxis.",
+    "dosage": "1g to 2g once daily IV/IM for 5-10 days.",
+    "side_effects": "Local pain at injection site, loose stools, thrombophlebitis.",
+    "precautions": "Requires skin sensitivity test prior to administration; hospital use."
+  },
+  {
+    "medicine_name": "Ceftriaxone 1g Injection",
+    "uses": "Bacterial meningitis, enteric fever, pelvic sepsis, surgical prophylaxis.",
+    "dosage": "1g to 2g once daily IV/IM for 5-10 days.",
+    "side_effects": "Local pain at injection site, loose stools, thrombophlebitis.",
+    "precautions": "Requires skin sensitivity test prior to administration; hospital use."
+  },
+  {
+    "medicine_name": "Ceftriaxone 2g Injection",
+    "uses": "Bacterial meningitis, enteric fever, pelvic sepsis, surgical prophylaxis.",
+    "dosage": "1g to 2g once daily IV/IM for 5-10 days.",
+    "side_effects": "Local pain at injection site, loose stools, thrombophlebitis.",
+    "precautions": "Requires skin sensitivity test prior to administration; hospital use."
+  },
+  {
+    "medicine_name": "Cefadroxil 250mg",
+    "uses": "Streptococcal pharyngitis, tonsillitis, urinary tract infections, impetigo.",
+    "dosage": "500mg to 1000mg twice daily.",
+    "side_effects": "Dyspepsia, nausea, diarrhea, skin rash.",
+    "precautions": "Ensure adequate daily water intake; report severe watery diarrhea."
+  },
+  {
+    "medicine_name": "Cefadroxil 500mg",
+    "uses": "Streptococcal pharyngitis, tonsillitis, urinary tract infections, impetigo.",
+    "dosage": "500mg to 1000mg twice daily.",
+    "side_effects": "Dyspepsia, nausea, diarrhea, skin rash.",
+    "precautions": "Ensure adequate daily water intake; report severe watery diarrhea."
+  },
+  {
+    "medicine_name": "Cefadroxil 125mg Syrup",
+    "uses": "Streptococcal pharyngitis, tonsillitis, urinary tract infections, impetigo.",
+    "dosage": "500mg to 1000mg twice daily.",
+    "side_effects": "Dyspepsia, nausea, diarrhea, skin rash.",
+    "precautions": "Ensure adequate daily water intake; report severe watery diarrhea."
+  },
+  {
+    "medicine_name": "Cephalexin 250mg",
+    "uses": "Cellulitis, impetigo, mastitis, osteomyelitis, dental infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach for 7-10 days.",
+    "side_effects": "Diarrhea, nausea, abdominal discomfort.",
+    "precautions": "Take with plenty of water 1 hour prior to eating."
+  },
+  {
+    "medicine_name": "Cephalexin 500mg",
+    "uses": "Cellulitis, impetigo, mastitis, osteomyelitis, dental infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach for 7-10 days.",
+    "side_effects": "Diarrhea, nausea, abdominal discomfort.",
+    "precautions": "Take with plenty of water 1 hour prior to eating."
+  },
+  {
+    "medicine_name": "Cephalexin 125mg/5ml Syrup",
+    "uses": "Cellulitis, impetigo, mastitis, osteomyelitis, dental infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach for 7-10 days.",
+    "side_effects": "Diarrhea, nausea, abdominal discomfort.",
+    "precautions": "Take with plenty of water 1 hour prior to eating."
+  },
+  {
+    "medicine_name": "Cefotaxime 500mg Injection",
+    "uses": "Serious neonatal sepsis, intra-abdominal infections, pneumonia.",
+    "dosage": "1g every 8-12 hours IV/IM under clinical care.",
+    "side_effects": "Local tenderness, diarrhea, elevated transaminases.",
+    "precautions": "Administer in clinical setting; adjust dose in renal failure."
+  },
+  {
+    "medicine_name": "Cefotaxime 1g Injection",
+    "uses": "Serious neonatal sepsis, intra-abdominal infections, pneumonia.",
+    "dosage": "1g every 8-12 hours IV/IM under clinical care.",
+    "side_effects": "Local tenderness, diarrhea, elevated transaminases.",
+    "precautions": "Administer in clinical setting; adjust dose in renal failure."
+  },
+  {
+    "medicine_name": "Cefepime 500mg Injection",
+    "uses": "Hospital-acquired pneumonia, febrile neutropenia, pseudomonal sepsis.",
+    "dosage": "1g to 2g every 8-12 hours IV infusion.",
+    "side_effects": "Positive Coombs test, rash, diarrhea, encephalopathy in renal failure.",
+    "precautions": "Monitor kidney function closely during hospital therapy."
+  },
+  {
+    "medicine_name": "Cefepime 1g Injection",
+    "uses": "Hospital-acquired pneumonia, febrile neutropenia, pseudomonal sepsis.",
+    "dosage": "1g to 2g every 8-12 hours IV infusion.",
+    "side_effects": "Positive Coombs test, rash, diarrhea, encephalopathy in renal failure.",
+    "precautions": "Monitor kidney function closely during hospital therapy."
+  },
+  {
+    "medicine_name": "Cefepime 2g Injection",
+    "uses": "Hospital-acquired pneumonia, febrile neutropenia, pseudomonal sepsis.",
+    "dosage": "1g to 2g every 8-12 hours IV infusion.",
+    "side_effects": "Positive Coombs test, rash, diarrhea, encephalopathy in renal failure.",
+    "precautions": "Monitor kidney function closely during hospital therapy."
+  },
+  {
+    "medicine_name": "Azithromycin 100mg DT",
+    "uses": "Atypical pneumonia, bronchitis, typhoid fever, tonsillitis, chlamydia.",
+    "dosage": "500mg once daily for 3-5 days. Take 1 hour before or 2 hours after meals.",
+    "side_effects": "Mild diarrhea, nausea, abdominal cramps, altered taste.",
+    "precautions": "Do not skip doses; maintain 2-hour gap from antacids."
+  },
+  {
+    "medicine_name": "Azithromycin 250mg",
+    "uses": "Atypical pneumonia, bronchitis, typhoid fever, tonsillitis, chlamydia.",
+    "dosage": "500mg once daily for 3-5 days. Take 1 hour before or 2 hours after meals.",
+    "side_effects": "Mild diarrhea, nausea, abdominal cramps, altered taste.",
+    "precautions": "Do not skip doses; maintain 2-hour gap from antacids."
+  },
+  {
+    "medicine_name": "Azithromycin 500mg",
+    "uses": "Atypical pneumonia, bronchitis, typhoid fever, tonsillitis, chlamydia.",
+    "dosage": "500mg once daily for 3-5 days. Take 1 hour before or 2 hours after meals.",
+    "side_effects": "Mild diarrhea, nausea, abdominal cramps, altered taste.",
+    "precautions": "Do not skip doses; maintain 2-hour gap from antacids."
+  },
+  {
+    "medicine_name": "Azithromycin 100mg/5ml Syrup",
+    "uses": "Atypical pneumonia, bronchitis, typhoid fever, tonsillitis, chlamydia.",
+    "dosage": "500mg once daily for 3-5 days. Take 1 hour before or 2 hours after meals.",
+    "side_effects": "Mild diarrhea, nausea, abdominal cramps, altered taste.",
+    "precautions": "Do not skip doses; maintain 2-hour gap from antacids."
+  },
+  {
+    "medicine_name": "Azithromycin 200mg/5ml Syrup",
+    "uses": "Atypical pneumonia, bronchitis, typhoid fever, tonsillitis, chlamydia.",
+    "dosage": "500mg once daily for 3-5 days. Take 1 hour before or 2 hours after meals.",
+    "side_effects": "Mild diarrhea, nausea, abdominal cramps, altered taste.",
+    "precautions": "Do not skip doses; maintain 2-hour gap from antacids."
+  },
+  {
+    "medicine_name": "Azithromycin 500mg Injection",
+    "uses": "Atypical pneumonia, bronchitis, typhoid fever, tonsillitis, chlamydia.",
+    "dosage": "500mg once daily for 3-5 days. Take 1 hour before or 2 hours after meals.",
+    "side_effects": "Mild diarrhea, nausea, abdominal cramps, altered taste.",
+    "precautions": "Do not skip doses; maintain 2-hour gap from antacids."
+  },
+  {
+    "medicine_name": "Clarithromycin 250mg",
+    "uses": "H. pylori gastric ulcer eradication, community pneumonia, skin infections.",
+    "dosage": "250-500mg twice daily with meals for 7-14 days.",
+    "side_effects": "Metallic taste in mouth, nausea, diarrhea, headache.",
+    "precautions": "Avoid in patients with cardiac conduction disorders or severe liver disease."
+  },
+  {
+    "medicine_name": "Clarithromycin 500mg",
+    "uses": "H. pylori gastric ulcer eradication, community pneumonia, skin infections.",
+    "dosage": "250-500mg twice daily with meals for 7-14 days.",
+    "side_effects": "Metallic taste in mouth, nausea, diarrhea, headache.",
+    "precautions": "Avoid in patients with cardiac conduction disorders or severe liver disease."
+  },
+  {
+    "medicine_name": "Clarithromycin 125mg/5ml Syrup",
+    "uses": "H. pylori gastric ulcer eradication, community pneumonia, skin infections.",
+    "dosage": "250-500mg twice daily with meals for 7-14 days.",
+    "side_effects": "Metallic taste in mouth, nausea, diarrhea, headache.",
+    "precautions": "Avoid in patients with cardiac conduction disorders or severe liver disease."
+  },
+  {
+    "medicine_name": "Roxithromycin 50mg",
+    "uses": "Upper and lower respiratory tract infections, tonsillitis, dental infections.",
+    "dosage": "150mg twice daily 15 minutes before meals.",
+    "side_effects": "Nausea, stomach ache, allergic rash, dizziness.",
+    "precautions": "Take before food; avoid concomitant ergotamine medications."
+  },
+  {
+    "medicine_name": "Roxithromycin 150mg",
+    "uses": "Upper and lower respiratory tract infections, tonsillitis, dental infections.",
+    "dosage": "150mg twice daily 15 minutes before meals.",
+    "side_effects": "Nausea, stomach ache, allergic rash, dizziness.",
+    "precautions": "Take before food; avoid concomitant ergotamine medications."
+  },
+  {
+    "medicine_name": "Roxithromycin 300mg",
+    "uses": "Upper and lower respiratory tract infections, tonsillitis, dental infections.",
+    "dosage": "150mg twice daily 15 minutes before meals.",
+    "side_effects": "Nausea, stomach ache, allergic rash, dizziness.",
+    "precautions": "Take before food; avoid concomitant ergotamine medications."
+  },
+  {
+    "medicine_name": "Erythromycin 250mg",
+    "uses": "Alternative for penicillin-allergic patients in ENT, chest, and skin infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach.",
+    "side_effects": "Nausea, severe vomiting, abdominal cramps, diarrhea.",
+    "precautions": "High rate of gastrointestinal side effects; take with water."
+  },
+  {
+    "medicine_name": "Erythromycin 500mg",
+    "uses": "Alternative for penicillin-allergic patients in ENT, chest, and skin infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach.",
+    "side_effects": "Nausea, severe vomiting, abdominal cramps, diarrhea.",
+    "precautions": "High rate of gastrointestinal side effects; take with water."
+  },
+  {
+    "medicine_name": "Erythromycin 125mg/5ml Syrup",
+    "uses": "Alternative for penicillin-allergic patients in ENT, chest, and skin infections.",
+    "dosage": "250-500mg every 6 hours on empty stomach.",
+    "side_effects": "Nausea, severe vomiting, abdominal cramps, diarrhea.",
+    "precautions": "High rate of gastrointestinal side effects; take with water."
+  },
+  {
+    "medicine_name": "Ciprofloxacin 250mg",
+    "uses": "Bacterial gastroenteritis, typhoid fever, complicated UTI, bone infections.",
+    "dosage": "250-500mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, dizziness, tendon pain, insomnia.",
+    "precautions": "Avoid dairy products, calcium, and antacids within 2 hours of dose. Stay hydrated."
+  },
+  {
+    "medicine_name": "Ciprofloxacin 500mg",
+    "uses": "Bacterial gastroenteritis, typhoid fever, complicated UTI, bone infections.",
+    "dosage": "250-500mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, dizziness, tendon pain, insomnia.",
+    "precautions": "Avoid dairy products, calcium, and antacids within 2 hours of dose. Stay hydrated."
+  },
+  {
+    "medicine_name": "Ciprofloxacin 750mg",
+    "uses": "Bacterial gastroenteritis, typhoid fever, complicated UTI, bone infections.",
+    "dosage": "250-500mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, dizziness, tendon pain, insomnia.",
+    "precautions": "Avoid dairy products, calcium, and antacids within 2 hours of dose. Stay hydrated."
+  },
+  {
+    "medicine_name": "Ciprofloxacin 200mg/100ml IV",
+    "uses": "Bacterial gastroenteritis, typhoid fever, complicated UTI, bone infections.",
+    "dosage": "250-500mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, dizziness, tendon pain, insomnia.",
+    "precautions": "Avoid dairy products, calcium, and antacids within 2 hours of dose. Stay hydrated."
+  },
+  {
+    "medicine_name": "Ciprofloxacin 0.3% Eye/Ear Drops",
+    "uses": "Bacterial gastroenteritis, typhoid fever, complicated UTI, bone infections.",
+    "dosage": "250-500mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, dizziness, tendon pain, insomnia.",
+    "precautions": "Avoid dairy products, calcium, and antacids within 2 hours of dose. Stay hydrated."
+  },
+  {
+    "medicine_name": "Ofloxacin 100mg",
+    "uses": "Chronic bronchitis flare, pelvic inflammatory disease, uncomplicated UTI.",
+    "dosage": "200-400mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, insomnia, mild agitation, photosensitivity.",
+    "precautions": "Drink 2-3 liters of water daily to prevent crystalluria; avoid harsh sun."
+  },
+  {
+    "medicine_name": "Ofloxacin 200mg",
+    "uses": "Chronic bronchitis flare, pelvic inflammatory disease, uncomplicated UTI.",
+    "dosage": "200-400mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, insomnia, mild agitation, photosensitivity.",
+    "precautions": "Drink 2-3 liters of water daily to prevent crystalluria; avoid harsh sun."
+  },
+  {
+    "medicine_name": "Ofloxacin 400mg",
+    "uses": "Chronic bronchitis flare, pelvic inflammatory disease, uncomplicated UTI.",
+    "dosage": "200-400mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, insomnia, mild agitation, photosensitivity.",
+    "precautions": "Drink 2-3 liters of water daily to prevent crystalluria; avoid harsh sun."
+  },
+  {
+    "medicine_name": "Ofloxacin 200mg/100ml IV",
+    "uses": "Chronic bronchitis flare, pelvic inflammatory disease, uncomplicated UTI.",
+    "dosage": "200-400mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, insomnia, mild agitation, photosensitivity.",
+    "precautions": "Drink 2-3 liters of water daily to prevent crystalluria; avoid harsh sun."
+  },
+  {
+    "medicine_name": "Ofloxacin 0.3% Eye Drops",
+    "uses": "Chronic bronchitis flare, pelvic inflammatory disease, uncomplicated UTI.",
+    "dosage": "200-400mg twice daily for 5-7 days.",
+    "side_effects": "Nausea, insomnia, mild agitation, photosensitivity.",
+    "precautions": "Drink 2-3 liters of water daily to prevent crystalluria; avoid harsh sun."
+  },
+  {
+    "medicine_name": "Levofloxacin 250mg",
+    "uses": "Community acquired pneumonia, acute sinusitis, pyelonephritis, skin infections.",
+    "dosage": "500mg once daily for 7-10 days with abundant fluids.",
+    "side_effects": "Headache, nausea, insomnia, rare tendon rupture.",
+    "precautions": "Stop and report immediately if Achilles tendon pain occurs."
+  },
+  {
+    "medicine_name": "Levofloxacin 500mg",
+    "uses": "Community acquired pneumonia, acute sinusitis, pyelonephritis, skin infections.",
+    "dosage": "500mg once daily for 7-10 days with abundant fluids.",
+    "side_effects": "Headache, nausea, insomnia, rare tendon rupture.",
+    "precautions": "Stop and report immediately if Achilles tendon pain occurs."
+  },
+  {
+    "medicine_name": "Levofloxacin 750mg",
+    "uses": "Community acquired pneumonia, acute sinusitis, pyelonephritis, skin infections.",
+    "dosage": "500mg once daily for 7-10 days with abundant fluids.",
+    "side_effects": "Headache, nausea, insomnia, rare tendon rupture.",
+    "precautions": "Stop and report immediately if Achilles tendon pain occurs."
+  },
+  {
+    "medicine_name": "Levofloxacin 500mg/100ml IV",
+    "uses": "Community acquired pneumonia, acute sinusitis, pyelonephritis, skin infections.",
+    "dosage": "500mg once daily for 7-10 days with abundant fluids.",
+    "side_effects": "Headache, nausea, insomnia, rare tendon rupture.",
+    "precautions": "Stop and report immediately if Achilles tendon pain occurs."
+  },
+  {
+    "medicine_name": "Norfloxacin 400mg",
+    "uses": "Acute bacterial gastroenteritis, traveler diarrhea, urinary cystitis.",
+    "dosage": "400mg twice daily 1 hour before or 2 hours after meals for 3-5 days.",
+    "side_effects": "Nausea, headache, dizziness, abdominal cramps.",
+    "precautions": "Maintain high fluid intake; avoid taking with antacids."
+  },
+  {
+    "medicine_name": "Moxifloxacin 400mg",
+    "uses": "Complicated intra-abdominal infections, resistant pneumonia, bacterial conjunctivitis.",
+    "dosage": "400mg once daily orally or 1 drop in eye 3 times daily.",
+    "side_effects": "Nausea, diarrhea, prolonged QT interval.",
+    "precautions": "Avoid in patients taking antiarrhythmic drugs; do not exceed dose."
+  },
+  {
+    "medicine_name": "Moxifloxacin 400mg/250ml IV",
+    "uses": "Complicated intra-abdominal infections, resistant pneumonia, bacterial conjunctivitis.",
+    "dosage": "400mg once daily orally or 1 drop in eye 3 times daily.",
+    "side_effects": "Nausea, diarrhea, prolonged QT interval.",
+    "precautions": "Avoid in patients taking antiarrhythmic drugs; do not exceed dose."
+  },
+  {
+    "medicine_name": "Moxifloxacin 0.5% Eye Drops",
+    "uses": "Complicated intra-abdominal infections, resistant pneumonia, bacterial conjunctivitis.",
+    "dosage": "400mg once daily orally or 1 drop in eye 3 times daily.",
+    "side_effects": "Nausea, diarrhea, prolonged QT interval.",
+    "precautions": "Avoid in patients taking antiarrhythmic drugs; do not exceed dose."
+  },
+  {
+    "medicine_name": "Doxycycline 100mg",
+    "uses": "Acne vulgaris, cholera, malaria prophylaxis, rickettsial scrub typhus, chlamydia.",
+    "dosage": "100mg twice daily after meals on day 1, then 100mg once or twice daily.",
+    "side_effects": "Severe esophageal ulceration if taken dry, photosensitivity, nausea.",
+    "precautions": "Always take with a full glass of water while sitting upright; never lie down for 30 min."
+  },
+  {
+    "medicine_name": "Doxycycline 50mg",
+    "uses": "Acne vulgaris, cholera, malaria prophylaxis, rickettsial scrub typhus, chlamydia.",
+    "dosage": "100mg twice daily after meals on day 1, then 100mg once or twice daily.",
+    "side_effects": "Severe esophageal ulceration if taken dry, photosensitivity, nausea.",
+    "precautions": "Always take with a full glass of water while sitting upright; never lie down for 30 min."
+  },
+  {
+    "medicine_name": "Minocycline 50mg",
+    "uses": "Moderate to severe cystic acne, resistant staphylococcal infections.",
+    "dosage": "50-100mg once or twice daily after meals.",
+    "side_effects": "Dizziness, vestibulocochlear vertigo, hyperpigmentation.",
+    "precautions": "Contraindicated in pregnancy and children under 8 years."
+  },
+  {
+    "medicine_name": "Minocycline 100mg",
+    "uses": "Moderate to severe cystic acne, resistant staphylococcal infections.",
+    "dosage": "50-100mg once or twice daily after meals.",
+    "side_effects": "Dizziness, vestibulocochlear vertigo, hyperpigmentation.",
+    "precautions": "Contraindicated in pregnancy and children under 8 years."
+  },
+  {
+    "medicine_name": "Tetracycline 250mg",
+    "uses": "Chlamydial infections, acne, rickettsia, brucellosis.",
+    "dosage": "250-500mg 4 times daily on empty stomach.",
+    "side_effects": "Tooth discoloration in children, GI upset, phototoxicity.",
+    "precautions": "Avoid milk, iron, and antacids; contraindicated under 8 years of age."
+  },
+  {
+    "medicine_name": "Tetracycline 500mg",
+    "uses": "Chlamydial infections, acne, rickettsia, brucellosis.",
+    "dosage": "250-500mg 4 times daily on empty stomach.",
+    "side_effects": "Tooth discoloration in children, GI upset, phototoxicity.",
+    "precautions": "Avoid milk, iron, and antacids; contraindicated under 8 years of age."
+  },
+  {
+    "medicine_name": "Metronidazole 200mg",
+    "uses": "Amoebic dysentery, giardiasis, trichomoniasis, anaerobic surgical sepsis.",
+    "dosage": "400mg three times daily after food for 5-7 days.",
+    "side_effects": "Strong metallic taste, dry mouth, dark reddish urine, nausea.",
+    "precautions": "Absolute alcohol contraindication (disulfiram reaction). Complete full course."
+  },
+  {
+    "medicine_name": "Metronidazole 400mg",
+    "uses": "Amoebic dysentery, giardiasis, trichomoniasis, anaerobic surgical sepsis.",
+    "dosage": "400mg three times daily after food for 5-7 days.",
+    "side_effects": "Strong metallic taste, dry mouth, dark reddish urine, nausea.",
+    "precautions": "Absolute alcohol contraindication (disulfiram reaction). Complete full course."
+  },
+  {
+    "medicine_name": "Metronidazole 500mg/100ml IV",
+    "uses": "Amoebic dysentery, giardiasis, trichomoniasis, anaerobic surgical sepsis.",
+    "dosage": "400mg three times daily after food for 5-7 days.",
+    "side_effects": "Strong metallic taste, dry mouth, dark reddish urine, nausea.",
+    "precautions": "Absolute alcohol contraindication (disulfiram reaction). Complete full course."
+  },
+  {
+    "medicine_name": "Metronidazole 200mg/5ml Syrup",
+    "uses": "Amoebic dysentery, giardiasis, trichomoniasis, anaerobic surgical sepsis.",
+    "dosage": "400mg three times daily after food for 5-7 days.",
+    "side_effects": "Strong metallic taste, dry mouth, dark reddish urine, nausea.",
+    "precautions": "Absolute alcohol contraindication (disulfiram reaction). Complete full course."
+  },
+  {
+    "medicine_name": "Tinidazole 300mg",
+    "uses": "Acute amoebiasis, giardiasis, trichomoniasis, anaerobic infections.",
+    "dosage": "2g single dose or 500mg twice daily for 3 days with food.",
+    "side_effects": "Bitter taste, fatigue, dizziness, nausea.",
+    "precautions": "Avoid all alcoholic beverages during and for 3 days after course."
+  },
+  {
+    "medicine_name": "Tinidazole 500mg",
+    "uses": "Acute amoebiasis, giardiasis, trichomoniasis, anaerobic infections.",
+    "dosage": "2g single dose or 500mg twice daily for 3 days with food.",
+    "side_effects": "Bitter taste, fatigue, dizziness, nausea.",
+    "precautions": "Avoid all alcoholic beverages during and for 3 days after course."
+  },
+  {
+    "medicine_name": "Tinidazole 1000mg",
+    "uses": "Acute amoebiasis, giardiasis, trichomoniasis, anaerobic infections.",
+    "dosage": "2g single dose or 500mg twice daily for 3 days with food.",
+    "side_effects": "Bitter taste, fatigue, dizziness, nausea.",
+    "precautions": "Avoid all alcoholic beverages during and for 3 days after course."
+  },
+  {
+    "medicine_name": "Ornidazole 500mg",
+    "uses": "Amoebic liver abscess, intestinal protozoal dysentery, dental infections.",
+    "dosage": "500mg twice daily after meals for 5-7 days.",
+    "side_effects": "Somnolence, nausea, metallic taste, headache.",
+    "precautions": "Avoid alcohol; complete full course to prevent recurrence."
+  },
+  {
+    "medicine_name": "Ornidazole 500mg/100ml IV",
+    "uses": "Amoebic liver abscess, intestinal protozoal dysentery, dental infections.",
+    "dosage": "500mg twice daily after meals for 5-7 days.",
+    "side_effects": "Somnolence, nausea, metallic taste, headache.",
+    "precautions": "Avoid alcohol; complete full course to prevent recurrence."
+  },
+  {
+    "medicine_name": "Rifaximin 200mg",
+    "uses": "Irritable bowel syndrome with diarrhea (IBS-D), hepatic encephalopathy.",
+    "dosage": "400-550mg 2 to 3 times daily with water.",
+    "side_effects": "Peripheral edema, nausea, abdominal distension.",
+    "precautions": "Non-systemic antibiotic acting locally within gut lumen."
+  },
+  {
+    "medicine_name": "Rifaximin 400mg",
+    "uses": "Irritable bowel syndrome with diarrhea (IBS-D), hepatic encephalopathy.",
+    "dosage": "400-550mg 2 to 3 times daily with water.",
+    "side_effects": "Peripheral edema, nausea, abdominal distension.",
+    "precautions": "Non-systemic antibiotic acting locally within gut lumen."
+  },
+  {
+    "medicine_name": "Rifaximin 550mg",
+    "uses": "Irritable bowel syndrome with diarrhea (IBS-D), hepatic encephalopathy.",
+    "dosage": "400-550mg 2 to 3 times daily with water.",
+    "side_effects": "Peripheral edema, nausea, abdominal distension.",
+    "precautions": "Non-systemic antibiotic acting locally within gut lumen."
+  },
+  {
+    "medicine_name": "Nitrofurantoin 100mg",
+    "uses": "Acute uncomplicated urinary tract infection (cystitis).",
+    "dosage": "100mg twice daily with food or milk for 5-7 days.",
+    "side_effects": "Brown colored urine (harmless), nausea, loss of appetite.",
+    "precautions": "Take with meals to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Nitrofurantoin 100mg SR",
+    "uses": "Acute uncomplicated urinary tract infection (cystitis).",
+    "dosage": "100mg twice daily with food or milk for 5-7 days.",
+    "side_effects": "Brown colored urine (harmless), nausea, loss of appetite.",
+    "precautions": "Take with meals to enhance absorption and reduce nausea."
+  },
+  {
+    "medicine_name": "Trimethoprim + Sulfamethoxazole Single Strength",
+    "uses": "Urinary tract infections, pneumocystis pneumonia, otitis media, shigellosis.",
+    "dosage": "1 DS tablet twice daily after meals.",
+    "side_effects": "Allergic skin rash, nausea, photosensitivity, hyperkalemia.",
+    "precautions": "Drink plenty of water; contraindicated in severe sulfa allergy."
+  },
+  {
+    "medicine_name": "Trimethoprim + Sulfamethoxazole Double Strength",
+    "uses": "Urinary tract infections, pneumocystis pneumonia, otitis media, shigellosis.",
+    "dosage": "1 DS tablet twice daily after meals.",
+    "side_effects": "Allergic skin rash, nausea, photosensitivity, hyperkalemia.",
+    "precautions": "Drink plenty of water; contraindicated in severe sulfa allergy."
+  },
+  {
+    "medicine_name": "Trimethoprim + Sulfamethoxazole Pediatric Syrup",
+    "uses": "Urinary tract infections, pneumocystis pneumonia, otitis media, shigellosis.",
+    "dosage": "1 DS tablet twice daily after meals.",
+    "side_effects": "Allergic skin rash, nausea, photosensitivity, hyperkalemia.",
+    "precautions": "Drink plenty of water; contraindicated in severe sulfa allergy."
+  },
+  {
+    "medicine_name": "Linezolid 600mg",
+    "uses": "Resistant MRSA skin cellulitis, VRE bacteremia, nosocomial pneumonia.",
+    "dosage": "600mg twice daily orally or IV infusion.",
+    "side_effects": "Thrombocytopenia (low platelets), anemia, peripheral neuropathy, headache.",
+    "precautions": "Monitor weekly complete blood count if used beyond 10-14 days."
+  },
+  {
+    "medicine_name": "Linezolid 600mg/300ml IV",
+    "uses": "Resistant MRSA skin cellulitis, VRE bacteremia, nosocomial pneumonia.",
+    "dosage": "600mg twice daily orally or IV infusion.",
+    "side_effects": "Thrombocytopenia (low platelets), anemia, peripheral neuropathy, headache.",
+    "precautions": "Monitor weekly complete blood count if used beyond 10-14 days."
+  },
+  {
+    "medicine_name": "Linezolid 100mg/5ml Syrup",
+    "uses": "Resistant MRSA skin cellulitis, VRE bacteremia, nosocomial pneumonia.",
+    "dosage": "600mg twice daily orally or IV infusion.",
+    "side_effects": "Thrombocytopenia (low platelets), anemia, peripheral neuropathy, headache.",
+    "precautions": "Monitor weekly complete blood count if used beyond 10-14 days."
+  },
+  {
+    "medicine_name": "Clindamycin 150mg",
+    "uses": "Severe dental bone infection, anaerobic pelvic sepsis, MRSA cellulitis, acne.",
+    "dosage": "150-300mg every 6 hours with a full glass of water.",
+    "side_effects": "Severe pseudomembranous colitis, watery diarrhea, skin rash.",
+    "precautions": "Stop immediately and consult doctor if severe watery diarrhea occurs."
+  },
+  {
+    "medicine_name": "Clindamycin 300mg",
+    "uses": "Severe dental bone infection, anaerobic pelvic sepsis, MRSA cellulitis, acne.",
+    "dosage": "150-300mg every 6 hours with a full glass of water.",
+    "side_effects": "Severe pseudomembranous colitis, watery diarrhea, skin rash.",
+    "precautions": "Stop immediately and consult doctor if severe watery diarrhea occurs."
+  },
+  {
+    "medicine_name": "Clindamycin 600mg/4ml Injection",
+    "uses": "Severe dental bone infection, anaerobic pelvic sepsis, MRSA cellulitis, acne.",
+    "dosage": "150-300mg every 6 hours with a full glass of water.",
+    "side_effects": "Severe pseudomembranous colitis, watery diarrhea, skin rash.",
+    "precautions": "Stop immediately and consult doctor if severe watery diarrhea occurs."
+  },
+  {
+    "medicine_name": "Clindamycin 1% Topical Gel",
+    "uses": "Severe dental bone infection, anaerobic pelvic sepsis, MRSA cellulitis, acne.",
+    "dosage": "150-300mg every 6 hours with a full glass of water.",
+    "side_effects": "Severe pseudomembranous colitis, watery diarrhea, skin rash.",
+    "precautions": "Stop immediately and consult doctor if severe watery diarrhea occurs."
+  },
+  {
+    "medicine_name": "Vancomycin 500mg Injection",
+    "uses": "Severe MRSA hospital sepsis, Clostridioides difficile enterocolitis.",
+    "dosage": "15-20mg/kg every 8-12 hours IV slow infusion over 60+ min.",
+    "side_effects": "Red man syndrome (facial flushing if infused fast), nephrotoxicity, ototoxicity.",
+    "precautions": "Slow infusion rate prevents Red Man syndrome; monitor trough levels."
+  },
+  {
+    "medicine_name": "Vancomycin 1g Injection",
+    "uses": "Severe MRSA hospital sepsis, Clostridioides difficile enterocolitis.",
+    "dosage": "15-20mg/kg every 8-12 hours IV slow infusion over 60+ min.",
+    "side_effects": "Red man syndrome (facial flushing if infused fast), nephrotoxicity, ototoxicity.",
+    "precautions": "Slow infusion rate prevents Red Man syndrome; monitor trough levels."
+  },
+  {
+    "medicine_name": "Vancomycin 125mg Capsule",
+    "uses": "Severe MRSA hospital sepsis, Clostridioides difficile enterocolitis.",
+    "dosage": "15-20mg/kg every 8-12 hours IV slow infusion over 60+ min.",
+    "side_effects": "Red man syndrome (facial flushing if infused fast), nephrotoxicity, ototoxicity.",
+    "precautions": "Slow infusion rate prevents Red Man syndrome; monitor trough levels."
+  },
+  {
+    "medicine_name": "Meropenem 500mg Injection",
+    "uses": "Severe intra-abdominal infections, meningitis, multidrug-resistant sepsis.",
+    "dosage": "500mg to 1g every 8 hours IV infusion over 30 min.",
+    "side_effects": "Diarrhea, nausea, headache, rare seizures at high doses.",
+    "precautions": "Hospital reserved carbapenem; adjust dose in renal impairment."
+  },
+  {
+    "medicine_name": "Meropenem 1g Injection",
+    "uses": "Severe intra-abdominal infections, meningitis, multidrug-resistant sepsis.",
+    "dosage": "500mg to 1g every 8 hours IV infusion over 30 min.",
+    "side_effects": "Diarrhea, nausea, headache, rare seizures at high doses.",
+    "precautions": "Hospital reserved carbapenem; adjust dose in renal impairment."
+  },
+  {
+    "medicine_name": "Piperacillin + Tazobactam 2.25g Injection",
+    "uses": "Hospital acquired pneumonia, severe polymicrobial sepsis, diabetic foot.",
+    "dosage": "4.5g every 6-8 hours IV infusion over 30 min.",
+    "side_effects": "Diarrhea, skin rash, hypokalemia, phlebitis.",
+    "precautions": "Administer in clinical setting; monitor electrolytes."
+  },
+  {
+    "medicine_name": "Piperacillin + Tazobactam 4.5g Injection",
+    "uses": "Hospital acquired pneumonia, severe polymicrobial sepsis, diabetic foot.",
+    "dosage": "4.5g every 6-8 hours IV infusion over 30 min.",
+    "side_effects": "Diarrhea, skin rash, hypokalemia, phlebitis.",
+    "precautions": "Administer in clinical setting; monitor electrolytes."
+  },
+  {
+    "medicine_name": "Fluconazole 50mg",
+    "uses": "Vaginal yeast candidiasis, oral thrush, systemic fungal infections, fungal nail.",
+    "dosage": "150mg single oral dose for vaginal thrush; 200mg daily for systemic.",
+    "side_effects": "Mild headache, abdominal pain, nausea.",
+    "precautions": "Interacts with oral blood thinners and statins; consult doctor."
+  },
+  {
+    "medicine_name": "Fluconazole 150mg",
+    "uses": "Vaginal yeast candidiasis, oral thrush, systemic fungal infections, fungal nail.",
+    "dosage": "150mg single oral dose for vaginal thrush; 200mg daily for systemic.",
+    "side_effects": "Mild headache, abdominal pain, nausea.",
+    "precautions": "Interacts with oral blood thinners and statins; consult doctor."
+  },
+  {
+    "medicine_name": "Fluconazole 200mg",
+    "uses": "Vaginal yeast candidiasis, oral thrush, systemic fungal infections, fungal nail.",
+    "dosage": "150mg single oral dose for vaginal thrush; 200mg daily for systemic.",
+    "side_effects": "Mild headache, abdominal pain, nausea.",
+    "precautions": "Interacts with oral blood thinners and statins; consult doctor."
+  },
+  {
+    "medicine_name": "Fluconazole 200mg/100ml IV",
+    "uses": "Vaginal yeast candidiasis, oral thrush, systemic fungal infections, fungal nail.",
+    "dosage": "150mg single oral dose for vaginal thrush; 200mg daily for systemic.",
+    "side_effects": "Mild headache, abdominal pain, nausea.",
+    "precautions": "Interacts with oral blood thinners and statins; consult doctor."
+  },
+  {
+    "medicine_name": "Itraconazole 100mg",
+    "uses": "Refractory tinea ringworm, onychomycosis (nail fungus), systemic aspergillosis.",
+    "dosage": "100-200mg once or twice daily immediately after a heavy meal.",
+    "side_effects": "Indigestion, transient headache, ankle edema, elevated liver enzymes.",
+    "precautions": "Must be taken with an acidic meal or cola; avoid antacids within 2 hours."
+  },
+  {
+    "medicine_name": "Itraconazole 200mg",
+    "uses": "Refractory tinea ringworm, onychomycosis (nail fungus), systemic aspergillosis.",
+    "dosage": "100-200mg once or twice daily immediately after a heavy meal.",
+    "side_effects": "Indigestion, transient headache, ankle edema, elevated liver enzymes.",
+    "precautions": "Must be taken with an acidic meal or cola; avoid antacids within 2 hours."
+  },
+  {
+    "medicine_name": "Itraconazole 100mg SB Capsule",
+    "uses": "Refractory tinea ringworm, onychomycosis (nail fungus), systemic aspergillosis.",
+    "dosage": "100-200mg once or twice daily immediately after a heavy meal.",
+    "side_effects": "Indigestion, transient headache, ankle edema, elevated liver enzymes.",
+    "precautions": "Must be taken with an acidic meal or cola; avoid antacids within 2 hours."
+  },
+  {
+    "medicine_name": "Terbinafine 250mg",
+    "uses": "Dermatophyte fungal nail infections (onychomycosis), stubborn body ringworm.",
+    "dosage": "250mg once daily after food for 6 to 12 weeks.",
+    "side_effects": "Altered taste, mild diarrhea, skin rash, liver enzyme elevation.",
+    "precautions": "Report signs of dark urine, jaundice, or pale stools promptly."
+  },
+  {
+    "medicine_name": "Terbinafine 500mg",
+    "uses": "Dermatophyte fungal nail infections (onychomycosis), stubborn body ringworm.",
+    "dosage": "250mg once daily after food for 6 to 12 weeks.",
+    "side_effects": "Altered taste, mild diarrhea, skin rash, liver enzyme elevation.",
+    "precautions": "Report signs of dark urine, jaundice, or pale stools promptly."
+  },
+  {
+    "medicine_name": "Terbinafine 1% Cream",
+    "uses": "Dermatophyte fungal nail infections (onychomycosis), stubborn body ringworm.",
+    "dosage": "250mg once daily after food for 6 to 12 weeks.",
+    "side_effects": "Altered taste, mild diarrhea, skin rash, liver enzyme elevation.",
+    "precautions": "Report signs of dark urine, jaundice, or pale stools promptly."
+  },
+  {
+    "medicine_name": "Griseofulvin 250mg",
+    "uses": "Tinea capitis (scalp ringworm), extensive ringworm in children and adults.",
+    "dosage": "250-500mg twice daily with fatty food or milk.",
+    "side_effects": "Headache, photosensitivity, nausea, fatigue.",
+    "precautions": "Enhance absorption by taking with milk, butter, or cheese."
+  },
+  {
+    "medicine_name": "Griseofulvin 500mg",
+    "uses": "Tinea capitis (scalp ringworm), extensive ringworm in children and adults.",
+    "dosage": "250-500mg twice daily with fatty food or milk.",
+    "side_effects": "Headache, photosensitivity, nausea, fatigue.",
+    "precautions": "Enhance absorption by taking with milk, butter, or cheese."
+  },
+  {
+    "medicine_name": "Voriconazole 200mg",
+    "uses": "Invasive pulmonary aspergillosis, severe candidal infections.",
+    "dosage": "200mg twice daily 1 hour before or 1 hour after meals.",
+    "side_effects": "Visual disturbances (blurring, photophobia), skin rash, elevated liver enzymes.",
+    "precautions": "Avoid night driving; avoid direct sunlight exposure."
+  },
+  {
+    "medicine_name": "Voriconazole 200mg Injection",
+    "uses": "Invasive pulmonary aspergillosis, severe candidal infections.",
+    "dosage": "200mg twice daily 1 hour before or 1 hour after meals.",
+    "side_effects": "Visual disturbances (blurring, photophobia), skin rash, elevated liver enzymes.",
+    "precautions": "Avoid night driving; avoid direct sunlight exposure."
+  },
+  {
+    "medicine_name": "Ketoconazole 200mg",
+    "uses": "Dandruff, seborrheic dermatitis, fungal body ringworm, pityriasis.",
+    "dosage": "Apply cream/shampoo twice weekly; oral strictly restricted to specialist use.",
+    "side_effects": "Local skin irritation, burning, dry scalp.",
+    "precautions": "Oral use has liver toxicity risk; topical formulations are safe and preferred."
+  },
+  {
+    "medicine_name": "Ketoconazole 2% Cream",
+    "uses": "Dandruff, seborrheic dermatitis, fungal body ringworm, pityriasis.",
+    "dosage": "Apply cream/shampoo twice weekly; oral strictly restricted to specialist use.",
+    "side_effects": "Local skin irritation, burning, dry scalp.",
+    "precautions": "Oral use has liver toxicity risk; topical formulations are safe and preferred."
+  },
+  {
+    "medicine_name": "Ketoconazole 2% Shampoo",
+    "uses": "Dandruff, seborrheic dermatitis, fungal body ringworm, pityriasis.",
+    "dosage": "Apply cream/shampoo twice weekly; oral strictly restricted to specialist use.",
+    "side_effects": "Local skin irritation, burning, dry scalp.",
+    "precautions": "Oral use has liver toxicity risk; topical formulations are safe and preferred."
+  },
+  {
+    "medicine_name": "Ketoconazole 2% Soap",
+    "uses": "Dandruff, seborrheic dermatitis, fungal body ringworm, pityriasis.",
+    "dosage": "Apply cream/shampoo twice weekly; oral strictly restricted to specialist use.",
+    "side_effects": "Local skin irritation, burning, dry scalp.",
+    "precautions": "Oral use has liver toxicity risk; topical formulations are safe and preferred."
+  },
+  {
+    "medicine_name": "Clotrimazole 1% Cream",
+    "uses": "Fungal ringworm, athlete foot, jock itch, prickly heat, vaginal thrush.",
+    "dosage": "Apply cream/powder twice daily; insert 1 pessary at bedtime for 6 nights.",
+    "side_effects": "Local stinging, redness, mild irritation.",
+    "precautions": "Continue topical cream for 1 week after lesions disappear."
+  },
+  {
+    "medicine_name": "Clotrimazole 1% Powder",
+    "uses": "Fungal ringworm, athlete foot, jock itch, prickly heat, vaginal thrush.",
+    "dosage": "Apply cream/powder twice daily; insert 1 pessary at bedtime for 6 nights.",
+    "side_effects": "Local stinging, redness, mild irritation.",
+    "precautions": "Continue topical cream for 1 week after lesions disappear."
+  },
+  {
+    "medicine_name": "Clotrimazole 100mg Vaginal Pessary",
+    "uses": "Fungal ringworm, athlete foot, jock itch, prickly heat, vaginal thrush.",
+    "dosage": "Apply cream/powder twice daily; insert 1 pessary at bedtime for 6 nights.",
+    "side_effects": "Local stinging, redness, mild irritation.",
+    "precautions": "Continue topical cream for 1 week after lesions disappear."
+  },
+  {
+    "medicine_name": "Miconazole 2% Cream",
+    "uses": "Oral thrush, fungal diaper rash, candidal intertrigo.",
+    "dosage": "Apply thin layer 2-3 times daily; keep gel in mouth before swallowing.",
+    "side_effects": "Local irritation, nausea with oral gel.",
+    "precautions": "Safe for pediatric fungal diaper rash and infant oral thrush."
+  },
+  {
+    "medicine_name": "Miconazole 2% Oral Gel",
+    "uses": "Oral thrush, fungal diaper rash, candidal intertrigo.",
+    "dosage": "Apply thin layer 2-3 times daily; keep gel in mouth before swallowing.",
+    "side_effects": "Local irritation, nausea with oral gel.",
+    "precautions": "Safe for pediatric fungal diaper rash and infant oral thrush."
+  },
+  {
+    "medicine_name": "Luliconazole 1% Cream",
+    "uses": "Fast-acting topical antifungal for stubborn tinea cruris and corporis.",
+    "dosage": "Apply once daily extending 1 inch beyond margin of lesion for 1-2 weeks.",
+    "side_effects": "Mild local burning sensation, dry skin.",
+    "precautions": "Requires only once-daily application; highly potent."
+  },
+  {
+    "medicine_name": "Luliconazole 1% Lotion",
+    "uses": "Fast-acting topical antifungal for stubborn tinea cruris and corporis.",
+    "dosage": "Apply once daily extending 1 inch beyond margin of lesion for 1-2 weeks.",
+    "side_effects": "Mild local burning sensation, dry skin.",
+    "precautions": "Requires only once-daily application; highly potent."
+  },
+  {
+    "medicine_name": "Amphotericin B 50mg Liposomal Injection",
+    "uses": "Life-threatening systemic fungal infections, mucormycosis (black fungus).",
+    "dosage": "3-5mg/kg/day slow IV infusion over 2 hours.",
+    "side_effects": "Fever, chills, shivering, nephrotoxicity, hypokalemia.",
+    "precautions": "Hospital ICU monitoring; premedicate with paracetamol and antihistamine."
+  },
+  {
+    "medicine_name": "Albendazole 400mg Chewable",
+    "uses": "Deworming for roundworm, hookworm, pinworm, tapeworm, hydatid cysts.",
+    "dosage": "400mg single chewable tablet with fatty food; repeat in 14 days if needed.",
+    "side_effects": "Mild abdominal cramping, transient headache, nausea.",
+    "precautions": "Contraindicated during first trimester of pregnancy; chew thoroughly."
+  },
+  {
+    "medicine_name": "Albendazole 200mg/5ml Syrup",
+    "uses": "Deworming for roundworm, hookworm, pinworm, tapeworm, hydatid cysts.",
+    "dosage": "400mg single chewable tablet with fatty food; repeat in 14 days if needed.",
+    "side_effects": "Mild abdominal cramping, transient headache, nausea.",
+    "precautions": "Contraindicated during first trimester of pregnancy; chew thoroughly."
+  },
+  {
+    "medicine_name": "Mebendazole 100mg",
+    "uses": "Whipworm, pinworm, mixed intestinal nematode infestations.",
+    "dosage": "100mg twice daily for 3 consecutive days.",
+    "side_effects": "Mild stomach discomfort, diarrhea.",
+    "precautions": "Chew tablets before swallowing; treat whole family if pinworms."
+  },
+  {
+    "medicine_name": "Mebendazole 100mg/5ml Syrup",
+    "uses": "Whipworm, pinworm, mixed intestinal nematode infestations.",
+    "dosage": "100mg twice daily for 3 consecutive days.",
+    "side_effects": "Mild stomach discomfort, diarrhea.",
+    "precautions": "Chew tablets before swallowing; treat whole family if pinworms."
+  },
+  {
+    "medicine_name": "Ivermectin 6mg",
+    "uses": "Scabies mite infestation, strongyloidiasis, filariasis, rosacea.",
+    "dosage": "Single dose (12-15mg) taken on empty stomach with water at night.",
+    "side_effects": "Dizziness, itching as parasites die, nausea, fatigue.",
+    "precautions": "Take on empty stomach with plain water at bedtime."
+  },
+  {
+    "medicine_name": "Ivermectin 12mg",
+    "uses": "Scabies mite infestation, strongyloidiasis, filariasis, rosacea.",
+    "dosage": "Single dose (12-15mg) taken on empty stomach with water at night.",
+    "side_effects": "Dizziness, itching as parasites die, nausea, fatigue.",
+    "precautions": "Take on empty stomach with plain water at bedtime."
+  },
+  {
+    "medicine_name": "Ivermectin 1% Cream",
+    "uses": "Scabies mite infestation, strongyloidiasis, filariasis, rosacea.",
+    "dosage": "Single dose (12-15mg) taken on empty stomach with water at night.",
+    "side_effects": "Dizziness, itching as parasites die, nausea, fatigue.",
+    "precautions": "Take on empty stomach with plain water at bedtime."
+  },
+  {
+    "medicine_name": "Acyclovir 200mg",
+    "uses": "Herpes zoster (shingles), herpes simplex cold sores, chickenpox.",
+    "dosage": "400-800mg 5 times daily (every 4 hours while awake) for 7 days.",
+    "side_effects": "Headache, nausea, vomiting, renal tubular stress.",
+    "precautions": "Drink plenty of water to prevent crystalluria; initiate within 72h of rash."
+  },
+  {
+    "medicine_name": "Acyclovir 400mg",
+    "uses": "Herpes zoster (shingles), herpes simplex cold sores, chickenpox.",
+    "dosage": "400-800mg 5 times daily (every 4 hours while awake) for 7 days.",
+    "side_effects": "Headache, nausea, vomiting, renal tubular stress.",
+    "precautions": "Drink plenty of water to prevent crystalluria; initiate within 72h of rash."
+  },
+  {
+    "medicine_name": "Acyclovir 800mg",
+    "uses": "Herpes zoster (shingles), herpes simplex cold sores, chickenpox.",
+    "dosage": "400-800mg 5 times daily (every 4 hours while awake) for 7 days.",
+    "side_effects": "Headache, nausea, vomiting, renal tubular stress.",
+    "precautions": "Drink plenty of water to prevent crystalluria; initiate within 72h of rash."
+  },
+  {
+    "medicine_name": "Acyclovir 3% Eye Ointment",
+    "uses": "Herpes zoster (shingles), herpes simplex cold sores, chickenpox.",
+    "dosage": "400-800mg 5 times daily (every 4 hours while awake) for 7 days.",
+    "side_effects": "Headache, nausea, vomiting, renal tubular stress.",
+    "precautions": "Drink plenty of water to prevent crystalluria; initiate within 72h of rash."
+  },
+  {
+    "medicine_name": "Acyclovir 5% Cream",
+    "uses": "Herpes zoster (shingles), herpes simplex cold sores, chickenpox.",
+    "dosage": "400-800mg 5 times daily (every 4 hours while awake) for 7 days.",
+    "side_effects": "Headache, nausea, vomiting, renal tubular stress.",
+    "precautions": "Drink plenty of water to prevent crystalluria; initiate within 72h of rash."
+  },
+  {
+    "medicine_name": "Acyclovir 500mg Injection",
+    "uses": "Herpes zoster (shingles), herpes simplex cold sores, chickenpox.",
+    "dosage": "400-800mg 5 times daily (every 4 hours while awake) for 7 days.",
+    "side_effects": "Headache, nausea, vomiting, renal tubular stress.",
+    "precautions": "Drink plenty of water to prevent crystalluria; initiate within 72h of rash."
+  },
+  {
+    "medicine_name": "Valacyclovir 500mg",
+    "uses": "Herpes zoster shingles acute relief, recurrent genital herpes.",
+    "dosage": "1000mg three times daily for 7 days.",
+    "side_effects": "Headache, nausea, abdominal discomfort.",
+    "precautions": "Superior bioavailability than acyclovir; maintain abundant hydration."
+  },
+  {
+    "medicine_name": "Valacyclovir 1000mg",
+    "uses": "Herpes zoster shingles acute relief, recurrent genital herpes.",
+    "dosage": "1000mg three times daily for 7 days.",
+    "side_effects": "Headache, nausea, abdominal discomfort.",
+    "precautions": "Superior bioavailability than acyclovir; maintain abundant hydration."
+  },
+  {
+    "medicine_name": "Oseltamivir 75mg",
+    "uses": "Influenza A and B treatment and prophylaxis in high risk patients.",
+    "dosage": "75mg twice daily for 5 days within 48 hours of flu onset.",
+    "side_effects": "Nausea, vomiting, headache, insomnia.",
+    "precautions": "Take with food to minimize nausea; start within 48 hours of flu onset."
+  },
+  {
+    "medicine_name": "Oseltamivir 12mg/ml Suspension",
+    "uses": "Influenza A and B treatment and prophylaxis in high risk patients.",
+    "dosage": "75mg twice daily for 5 days within 48 hours of flu onset.",
+    "side_effects": "Nausea, vomiting, headache, insomnia.",
+    "precautions": "Take with food to minimize nausea; start within 48 hours of flu onset."
+  },
+  {
+    "medicine_name": "Remdesivir 100mg Injection",
+    "uses": "Severe viral pneumonia with hypoxia requiring supplemental oxygen.",
+    "dosage": "200mg loading dose on day 1, then 100mg daily for total 5 days IV.",
+    "side_effects": "Elevated liver enzymes, nausea, hypersensitivity reaction.",
+    "precautions": "Hospital administration only; monitor renal and liver functions."
+  },
+  {
+    "medicine_name": "Chloroquine 250mg",
+    "uses": "Plasmodium vivax malaria, autoimmune rheumatoid arthritis, lupus.",
+    "dosage": "Initial 1g then 500mg at 6h, then 500mg on days 2 and 3.",
+    "side_effects": "Bitter taste, pruritus (itching in dark skin), nausea, visual blur.",
+    "precautions": "Caution in G6PD deficiency; periodic retinal examination in chronic use."
+  },
+  {
+    "medicine_name": "Chloroquine 500mg",
+    "uses": "Plasmodium vivax malaria, autoimmune rheumatoid arthritis, lupus.",
+    "dosage": "Initial 1g then 500mg at 6h, then 500mg on days 2 and 3.",
+    "side_effects": "Bitter taste, pruritus (itching in dark skin), nausea, visual blur.",
+    "precautions": "Caution in G6PD deficiency; periodic retinal examination in chronic use."
+  },
+  {
+    "medicine_name": "Artemether + Lumefantrine 20/120mg Tablet",
+    "uses": "Uncomplicated Plasmodium falciparum malaria treatment.",
+    "dosage": "4 tablets initially, then 4 at 8h, then twice daily for 2 days with fatty food.",
+    "side_effects": "Palpitations, headache, dizziness, nausea.",
+    "precautions": "Always consume with fatty food or whole milk for adequate absorption."
+  },
+  {
+    "medicine_name": "Artemether + Lumefantrine 80/480mg DS Tablet",
+    "uses": "Uncomplicated Plasmodium falciparum malaria treatment.",
+    "dosage": "4 tablets initially, then 4 at 8h, then twice daily for 2 days with fatty food.",
+    "side_effects": "Palpitations, headache, dizziness, nausea.",
+    "precautions": "Always consume with fatty food or whole milk for adequate absorption."
+  },
+  {
+    "medicine_name": "Primaquine 7.5mg",
+    "uses": "Radical cure of relapsing Plasmodium vivax and ovale malaria.",
+    "dosage": "15mg once daily for 14 days after chloroquine course.",
+    "side_effects": "Hemolytic anemia, dark urine, abdominal cramps, methemoglobinemia.",
+    "precautions": "Test for G6PD deficiency before starting to avoid severe hemolysis."
+  },
+  {
+    "medicine_name": "Primaquine 15mg",
+    "uses": "Radical cure of relapsing Plasmodium vivax and ovale malaria.",
+    "dosage": "15mg once daily for 14 days after chloroquine course.",
+    "side_effects": "Hemolytic anemia, dark urine, abdominal cramps, methemoglobinemia.",
+    "precautions": "Test for G6PD deficiency before starting to avoid severe hemolysis."
+  },
+  {
+    "medicine_name": "Pantoprazole 20mg",
+    "uses": "Hyperacidity, gastroesophageal reflux disease (GERD), peptic ulcer healing.",
+    "dosage": "40mg once daily early morning 30 minutes before breakfast.",
+    "side_effects": "Headache, flatulence, mild diarrhea, vitamin B12 deficiency long term.",
+    "precautions": "Swallow whole; do not crush or chew. Take on empty stomach."
+  },
+  {
+    "medicine_name": "Pantoprazole 40mg",
+    "uses": "Hyperacidity, gastroesophageal reflux disease (GERD), peptic ulcer healing.",
+    "dosage": "40mg once daily early morning 30 minutes before breakfast.",
+    "side_effects": "Headache, flatulence, mild diarrhea, vitamin B12 deficiency long term.",
+    "precautions": "Swallow whole; do not crush or chew. Take on empty stomach."
+  },
+  {
+    "medicine_name": "Pantoprazole 40mg Injection",
+    "uses": "Hyperacidity, gastroesophageal reflux disease (GERD), peptic ulcer healing.",
+    "dosage": "40mg once daily early morning 30 minutes before breakfast.",
+    "side_effects": "Headache, flatulence, mild diarrhea, vitamin B12 deficiency long term.",
+    "precautions": "Swallow whole; do not crush or chew. Take on empty stomach."
+  },
+  {
+    "medicine_name": "Omeprazole 10mg",
+    "uses": "Heartburn, dyspepsia, NSAID ulcer prophylaxis, Zollinger-Ellison syndrome.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Abdominal pain, dizziness, nausea, flatulence.",
+    "precautions": "Prolonged use (>1 year) may lower magnesium and bone density."
+  },
+  {
+    "medicine_name": "Omeprazole 20mg",
+    "uses": "Heartburn, dyspepsia, NSAID ulcer prophylaxis, Zollinger-Ellison syndrome.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Abdominal pain, dizziness, nausea, flatulence.",
+    "precautions": "Prolonged use (>1 year) may lower magnesium and bone density."
+  },
+  {
+    "medicine_name": "Omeprazole 40mg",
+    "uses": "Heartburn, dyspepsia, NSAID ulcer prophylaxis, Zollinger-Ellison syndrome.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Abdominal pain, dizziness, nausea, flatulence.",
+    "precautions": "Prolonged use (>1 year) may lower magnesium and bone density."
+  },
+  {
+    "medicine_name": "Omeprazole 40mg Injection",
+    "uses": "Heartburn, dyspepsia, NSAID ulcer prophylaxis, Zollinger-Ellison syndrome.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Abdominal pain, dizziness, nausea, flatulence.",
+    "precautions": "Prolonged use (>1 year) may lower magnesium and bone density."
+  },
+  {
+    "medicine_name": "Rabeprazole 10mg",
+    "uses": "Fast acting relief from severe gastric hyperacidity, duodenal ulcers.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Dry mouth, headache, peripheral edema, diarrhea.",
+    "precautions": "Rapid onset of acid suppression; swallow whole."
+  },
+  {
+    "medicine_name": "Rabeprazole 20mg",
+    "uses": "Fast acting relief from severe gastric hyperacidity, duodenal ulcers.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Dry mouth, headache, peripheral edema, diarrhea.",
+    "precautions": "Rapid onset of acid suppression; swallow whole."
+  },
+  {
+    "medicine_name": "Rabeprazole 20mg Injection",
+    "uses": "Fast acting relief from severe gastric hyperacidity, duodenal ulcers.",
+    "dosage": "20mg once daily before breakfast.",
+    "side_effects": "Dry mouth, headache, peripheral edema, diarrhea.",
+    "precautions": "Rapid onset of acid suppression; swallow whole."
+  },
+  {
+    "medicine_name": "Esomeprazole 20mg",
+    "uses": "Severe erosive esophagitis, triple therapy for H. pylori eradication.",
+    "dosage": "40mg once daily on empty stomach.",
+    "side_effects": "Headache, constipation, nausea, flatulence.",
+    "precautions": "Active S-isomer of omeprazole with potent acid control."
+  },
+  {
+    "medicine_name": "Esomeprazole 40mg",
+    "uses": "Severe erosive esophagitis, triple therapy for H. pylori eradication.",
+    "dosage": "40mg once daily on empty stomach.",
+    "side_effects": "Headache, constipation, nausea, flatulence.",
+    "precautions": "Active S-isomer of omeprazole with potent acid control."
+  },
+  {
+    "medicine_name": "Esomeprazole 40mg Injection",
+    "uses": "Severe erosive esophagitis, triple therapy for H. pylori eradication.",
+    "dosage": "40mg once daily on empty stomach.",
+    "side_effects": "Headache, constipation, nausea, flatulence.",
+    "precautions": "Active S-isomer of omeprazole with potent acid control."
+  },
+  {
+    "medicine_name": "Lansoprazole 15mg",
+    "uses": "Gastric and duodenal ulcers, reflux esophagitis.",
+    "dosage": "30mg once daily in morning before food.",
+    "side_effects": "Diarrhea, abdominal pain, nausea, dizziness.",
+    "precautions": "Take 30 minutes prior to eating; dissolves on tongue if ODT."
+  },
+  {
+    "medicine_name": "Lansoprazole 30mg",
+    "uses": "Gastric and duodenal ulcers, reflux esophagitis.",
+    "dosage": "30mg once daily in morning before food.",
+    "side_effects": "Diarrhea, abdominal pain, nausea, dizziness.",
+    "precautions": "Take 30 minutes prior to eating; dissolves on tongue if ODT."
+  },
+  {
+    "medicine_name": "Lansoprazole 30mg Orally Disintegrating",
+    "uses": "Gastric and duodenal ulcers, reflux esophagitis.",
+    "dosage": "30mg once daily in morning before food.",
+    "side_effects": "Diarrhea, abdominal pain, nausea, dizziness.",
+    "precautions": "Take 30 minutes prior to eating; dissolves on tongue if ODT."
+  },
+  {
+    "medicine_name": "Dexrabeprazole 10mg",
+    "uses": "Enantiopure rabeprazole for erosive reflux and heartburn.",
+    "dosage": "10mg once daily before breakfast.",
+    "side_effects": "Mild dry mouth, headache.",
+    "precautions": "Requires lower dose with equal acid control efficacy."
+  },
+  {
+    "medicine_name": "Dexrabeprazole 20mg",
+    "uses": "Enantiopure rabeprazole for erosive reflux and heartburn.",
+    "dosage": "10mg once daily before breakfast.",
+    "side_effects": "Mild dry mouth, headache.",
+    "precautions": "Requires lower dose with equal acid control efficacy."
+  },
+  {
+    "medicine_name": "Ranitidine 150mg",
+    "uses": "Fast relief from acidity, heartburn, and sour burping.",
+    "dosage": "150mg twice daily (morning and bedtime) or as needed.",
+    "side_effects": "Headache, constipation, tiredness, dizziness.",
+    "precautions": "Take 30 minutes before meals or at bedtime."
+  },
+  {
+    "medicine_name": "Ranitidine 300mg",
+    "uses": "Fast relief from acidity, heartburn, and sour burping.",
+    "dosage": "150mg twice daily (morning and bedtime) or as needed.",
+    "side_effects": "Headache, constipation, tiredness, dizziness.",
+    "precautions": "Take 30 minutes before meals or at bedtime."
+  },
+  {
+    "medicine_name": "Ranitidine 50mg/2ml Injection",
+    "uses": "Fast relief from acidity, heartburn, and sour burping.",
+    "dosage": "150mg twice daily (morning and bedtime) or as needed.",
+    "side_effects": "Headache, constipation, tiredness, dizziness.",
+    "precautions": "Take 30 minutes before meals or at bedtime."
+  },
+  {
+    "medicine_name": "Famotidine 20mg",
+    "uses": "Mild heartburn, stress-induced gastritis, acid indigestion.",
+    "dosage": "20-40mg once daily at bedtime or 20mg twice daily.",
+    "side_effects": "Headache, dizziness, constipation, dry mouth.",
+    "precautions": "Safer H2 blocker profile; adjust dose in elderly."
+  },
+  {
+    "medicine_name": "Famotidine 40mg",
+    "uses": "Mild heartburn, stress-induced gastritis, acid indigestion.",
+    "dosage": "20-40mg once daily at bedtime or 20mg twice daily.",
+    "side_effects": "Headache, dizziness, constipation, dry mouth.",
+    "precautions": "Safer H2 blocker profile; adjust dose in elderly."
+  },
+  {
+    "medicine_name": "Famotidine 20mg Injection",
+    "uses": "Mild heartburn, stress-induced gastritis, acid indigestion.",
+    "dosage": "20-40mg once daily at bedtime or 20mg twice daily.",
+    "side_effects": "Headache, dizziness, constipation, dry mouth.",
+    "precautions": "Safer H2 blocker profile; adjust dose in elderly."
+  },
+  {
+    "medicine_name": "Sucralfate 500mg",
+    "uses": "Protective mucosal coating for active peptic ulcers and reflux ulcers.",
+    "dosage": "1g (10ml) 4 times daily: 1 hour before each meal and at bedtime.",
+    "side_effects": "Constipation, bezoar formation, dry mouth.",
+    "precautions": "Take on empty stomach; separate other oral drugs by 2 hours."
+  },
+  {
+    "medicine_name": "Sucralfate 1000mg",
+    "uses": "Protective mucosal coating for active peptic ulcers and reflux ulcers.",
+    "dosage": "1g (10ml) 4 times daily: 1 hour before each meal and at bedtime.",
+    "side_effects": "Constipation, bezoar formation, dry mouth.",
+    "precautions": "Take on empty stomach; separate other oral drugs by 2 hours."
+  },
+  {
+    "medicine_name": "Sucralfate 1000mg/5ml Suspension",
+    "uses": "Protective mucosal coating for active peptic ulcers and reflux ulcers.",
+    "dosage": "1g (10ml) 4 times daily: 1 hour before each meal and at bedtime.",
+    "side_effects": "Constipation, bezoar formation, dry mouth.",
+    "precautions": "Take on empty stomach; separate other oral drugs by 2 hours."
+  },
+  {
+    "medicine_name": "Ondansetron 4mg",
+    "uses": "Nausea and vomiting from gastroenteritis, chemotherapy, or surgery.",
+    "dosage": "4-8mg dissolved on tongue or swallowed 30 min before meals.",
+    "side_effects": "Headache, constipation, flushing, lightheadedness.",
+    "precautions": "Safe and highly effective for acute pediatric and adult vomiting."
+  },
+  {
+    "medicine_name": "Ondansetron 8mg",
+    "uses": "Nausea and vomiting from gastroenteritis, chemotherapy, or surgery.",
+    "dosage": "4-8mg dissolved on tongue or swallowed 30 min before meals.",
+    "side_effects": "Headache, constipation, flushing, lightheadedness.",
+    "precautions": "Safe and highly effective for acute pediatric and adult vomiting."
+  },
+  {
+    "medicine_name": "Ondansetron 4mg/2ml Injection",
+    "uses": "Nausea and vomiting from gastroenteritis, chemotherapy, or surgery.",
+    "dosage": "4-8mg dissolved on tongue or swallowed 30 min before meals.",
+    "side_effects": "Headache, constipation, flushing, lightheadedness.",
+    "precautions": "Safe and highly effective for acute pediatric and adult vomiting."
+  },
+  {
+    "medicine_name": "Ondansetron 4mg/5ml Syrup",
+    "uses": "Nausea and vomiting from gastroenteritis, chemotherapy, or surgery.",
+    "dosage": "4-8mg dissolved on tongue or swallowed 30 min before meals.",
+    "side_effects": "Headache, constipation, flushing, lightheadedness.",
+    "precautions": "Safe and highly effective for acute pediatric and adult vomiting."
+  },
+  {
+    "medicine_name": "Ondansetron 4mg MD (Mouth Dissolving)",
+    "uses": "Nausea and vomiting from gastroenteritis, chemotherapy, or surgery.",
+    "dosage": "4-8mg dissolved on tongue or swallowed 30 min before meals.",
+    "side_effects": "Headache, constipation, flushing, lightheadedness.",
+    "precautions": "Safe and highly effective for acute pediatric and adult vomiting."
+  },
+  {
+    "medicine_name": "Domperidone 10mg",
+    "uses": "Gastric motility delay, diabetic gastroparesis, nausea with bloating.",
+    "dosage": "10mg three times daily 15-30 minutes before meals.",
+    "side_effects": "Dry mouth, headache, elevated prolactin (breast tenderness).",
+    "precautions": "Avoid in patients with cardiac conduction issues or prolonged QT."
+  },
+  {
+    "medicine_name": "Domperidone 10mg DT",
+    "uses": "Gastric motility delay, diabetic gastroparesis, nausea with bloating.",
+    "dosage": "10mg three times daily 15-30 minutes before meals.",
+    "side_effects": "Dry mouth, headache, elevated prolactin (breast tenderness).",
+    "precautions": "Avoid in patients with cardiac conduction issues or prolonged QT."
+  },
+  {
+    "medicine_name": "Domperidone 1mg/ml Drops",
+    "uses": "Gastric motility delay, diabetic gastroparesis, nausea with bloating.",
+    "dosage": "10mg three times daily 15-30 minutes before meals.",
+    "side_effects": "Dry mouth, headache, elevated prolactin (breast tenderness).",
+    "precautions": "Avoid in patients with cardiac conduction issues or prolonged QT."
+  },
+  {
+    "medicine_name": "Domperidone 30mg SR",
+    "uses": "Gastric motility delay, diabetic gastroparesis, nausea with bloating.",
+    "dosage": "10mg three times daily 15-30 minutes before meals.",
+    "side_effects": "Dry mouth, headache, elevated prolactin (breast tenderness).",
+    "precautions": "Avoid in patients with cardiac conduction issues or prolonged QT."
+  },
+  {
+    "medicine_name": "Metoclopramide 10mg",
+    "uses": "Severe persistent vomiting, GERD, post-chemotherapy emesis.",
+    "dosage": "10mg up to 3 times daily 30 minutes before food.",
+    "side_effects": "Drowsiness, restlessness, extrapyramidal tremors (facial twitching).",
+    "precautions": "Do not use in bowel obstruction or epilepsy; limit to 5 days."
+  },
+  {
+    "medicine_name": "Metoclopramide 10mg/2ml Injection",
+    "uses": "Severe persistent vomiting, GERD, post-chemotherapy emesis.",
+    "dosage": "10mg up to 3 times daily 30 minutes before food.",
+    "side_effects": "Drowsiness, restlessness, extrapyramidal tremors (facial twitching).",
+    "precautions": "Do not use in bowel obstruction or epilepsy; limit to 5 days."
+  },
+  {
+    "medicine_name": "Metoclopramide 5mg/5ml Syrup",
+    "uses": "Severe persistent vomiting, GERD, post-chemotherapy emesis.",
+    "dosage": "10mg up to 3 times daily 30 minutes before food.",
+    "side_effects": "Drowsiness, restlessness, extrapyramidal tremors (facial twitching).",
+    "precautions": "Do not use in bowel obstruction or epilepsy; limit to 5 days."
+  },
+  {
+    "medicine_name": "Dicyclomine 10mg",
+    "uses": "Intestinal colic, spasmodic irritable bowel syndrome, kidney stone pain.",
+    "dosage": "10-20mg up to 3 times daily before or after meals.",
+    "side_effects": "Dry mouth, blurred vision, dizziness, urinary hesitancy.",
+    "precautions": "Contraindicated in glaucoma and severe prostate enlargement."
+  },
+  {
+    "medicine_name": "Dicyclomine 20mg",
+    "uses": "Intestinal colic, spasmodic irritable bowel syndrome, kidney stone pain.",
+    "dosage": "10-20mg up to 3 times daily before or after meals.",
+    "side_effects": "Dry mouth, blurred vision, dizziness, urinary hesitancy.",
+    "precautions": "Contraindicated in glaucoma and severe prostate enlargement."
+  },
+  {
+    "medicine_name": "Dicyclomine 10mg/5ml Syrup",
+    "uses": "Intestinal colic, spasmodic irritable bowel syndrome, kidney stone pain.",
+    "dosage": "10-20mg up to 3 times daily before or after meals.",
+    "side_effects": "Dry mouth, blurred vision, dizziness, urinary hesitancy.",
+    "precautions": "Contraindicated in glaucoma and severe prostate enlargement."
+  },
+  {
+    "medicine_name": "Dicyclomine 10mg/ml Injection",
+    "uses": "Intestinal colic, spasmodic irritable bowel syndrome, kidney stone pain.",
+    "dosage": "10-20mg up to 3 times daily before or after meals.",
+    "side_effects": "Dry mouth, blurred vision, dizziness, urinary hesitancy.",
+    "precautions": "Contraindicated in glaucoma and severe prostate enlargement."
+  },
+  {
+    "medicine_name": "Drotaverine 40mg",
+    "uses": "Smooth muscle colic, biliary colic, uterine menstrual cramps, renal colic.",
+    "dosage": "40-80mg three times daily.",
+    "side_effects": "Vertigo, nausea, palpitations, dry mouth.",
+    "precautions": "Non-anticholinergic antispasmodic; does not cause dry mouth or glaucoma issues."
+  },
+  {
+    "medicine_name": "Drotaverine 80mg",
+    "uses": "Smooth muscle colic, biliary colic, uterine menstrual cramps, renal colic.",
+    "dosage": "40-80mg three times daily.",
+    "side_effects": "Vertigo, nausea, palpitations, dry mouth.",
+    "precautions": "Non-anticholinergic antispasmodic; does not cause dry mouth or glaucoma issues."
+  },
+  {
+    "medicine_name": "Drotaverine 40mg/2ml Injection",
+    "uses": "Smooth muscle colic, biliary colic, uterine menstrual cramps, renal colic.",
+    "dosage": "40-80mg three times daily.",
+    "side_effects": "Vertigo, nausea, palpitations, dry mouth.",
+    "precautions": "Non-anticholinergic antispasmodic; does not cause dry mouth or glaucoma issues."
+  },
+  {
+    "medicine_name": "Hyoscine Butylbromide 10mg",
+    "uses": "Acute abdominal spasms, irritable bowel colic, biliary spasm.",
+    "dosage": "10-20mg 3 to 4 times daily.",
+    "side_effects": "Dry mouth, blurred vision, constipation, fast pulse.",
+    "precautions": "Avoid in intestinal obstruction, myasthenia gravis, or glaucoma."
+  },
+  {
+    "medicine_name": "Hyoscine Butylbromide 20mg/ml Injection",
+    "uses": "Acute abdominal spasms, irritable bowel colic, biliary spasm.",
+    "dosage": "10-20mg 3 to 4 times daily.",
+    "side_effects": "Dry mouth, blurred vision, constipation, fast pulse.",
+    "precautions": "Avoid in intestinal obstruction, myasthenia gravis, or glaucoma."
+  },
+  {
+    "medicine_name": "Loperamide 2mg",
+    "uses": "Acute non-infectious diarrhea, traveler diarrhea control.",
+    "dosage": "Initially 4mg (2 capsules), then 2mg after each unformed loose stool (max 16mg/day).",
+    "side_effects": "Constipation, abdominal cramps, bloating, nausea.",
+    "precautions": "Never use in bloody dysentery or bacterial diarrhea with high fever."
+  },
+  {
+    "medicine_name": "Racecadotril 10mg Sachet",
+    "uses": "Secretory diarrhea, acute watery diarrhea in adults and children.",
+    "dosage": "100mg three times daily before meals until stool normalizes.",
+    "side_effects": "Headache, mild tonsillitis, rash.",
+    "precautions": "Reduces watery secretion without stopping natural bowel transit."
+  },
+  {
+    "medicine_name": "Racecadotril 30mg Sachet",
+    "uses": "Secretory diarrhea, acute watery diarrhea in adults and children.",
+    "dosage": "100mg three times daily before meals until stool normalizes.",
+    "side_effects": "Headache, mild tonsillitis, rash.",
+    "precautions": "Reduces watery secretion without stopping natural bowel transit."
+  },
+  {
+    "medicine_name": "Racecadotril 100mg Capsule",
+    "uses": "Secretory diarrhea, acute watery diarrhea in adults and children.",
+    "dosage": "100mg three times daily before meals until stool normalizes.",
+    "side_effects": "Headache, mild tonsillitis, rash.",
+    "precautions": "Reduces watery secretion without stopping natural bowel transit."
+  },
+  {
+    "medicine_name": "Lactulose 10g/15ml Solution",
+    "uses": "Chronic constipation, portal systemic hepatic encephalopathy.",
+    "dosage": "15-30ml daily as single dose after breakfast with water.",
+    "side_effects": "Flatulence, abdominal cramps, diarrhea if overdosed.",
+    "precautions": "Drink adequate water; takes 24-48 hours to produce gentle bowel movement."
+  },
+  {
+    "medicine_name": "Bisacodyl 5mg",
+    "uses": "Short term constipation relief, pre-procedure bowel evacuation.",
+    "dosage": "5-10mg at bedtime with a glass of water.",
+    "side_effects": "Abdominal cramps, rectal burning, diarrhea, nausea.",
+    "precautions": "Swallow tablet whole with water; do not take with milk or antacids."
+  },
+  {
+    "medicine_name": "Bisacodyl 10mg Suppository",
+    "uses": "Short term constipation relief, pre-procedure bowel evacuation.",
+    "dosage": "5-10mg at bedtime with a glass of water.",
+    "side_effects": "Abdominal cramps, rectal burning, diarrhea, nausea.",
+    "precautions": "Swallow tablet whole with water; do not take with milk or antacids."
+  },
+  {
+    "medicine_name": "Senna Extract 7.5mg",
+    "uses": "Stimulant laxative for episodic constipation.",
+    "dosage": "1-2 tablets at bedtime with warm water.",
+    "side_effects": "Abdominal cramping, yellowish-brown urine discoloration.",
+    "precautions": "Short-term use only; chronic use leads to laxative dependence."
+  },
+  {
+    "medicine_name": "Senna Extract 15mg",
+    "uses": "Stimulant laxative for episodic constipation.",
+    "dosage": "1-2 tablets at bedtime with warm water.",
+    "side_effects": "Abdominal cramping, yellowish-brown urine discoloration.",
+    "precautions": "Short-term use only; chronic use leads to laxative dependence."
+  },
+  {
+    "medicine_name": "Sodium Picosulfate 5mg",
+    "uses": "Constipation relief, bowel clearance before colonoscopy.",
+    "dosage": "5-10mg at bedtime with a glass of water.",
+    "side_effects": "Abdominal cramps, mild loose stools, nausea.",
+    "precautions": "Drink extra fluids to prevent dehydration."
+  },
+  {
+    "medicine_name": "Sodium Picosulfate 10mg",
+    "uses": "Constipation relief, bowel clearance before colonoscopy.",
+    "dosage": "5-10mg at bedtime with a glass of water.",
+    "side_effects": "Abdominal cramps, mild loose stools, nausea.",
+    "precautions": "Drink extra fluids to prevent dehydration."
+  },
+  {
+    "medicine_name": "Sodium Picosulfate 10mg/ml Drops",
+    "uses": "Constipation relief, bowel clearance before colonoscopy.",
+    "dosage": "5-10mg at bedtime with a glass of water.",
+    "side_effects": "Abdominal cramps, mild loose stools, nausea.",
+    "precautions": "Drink extra fluids to prevent dehydration."
+  },
+  {
+    "medicine_name": "Liquid Paraffin 100ml",
+    "uses": "Stool lubricant for painful piles, anal fissures, hernia patients.",
+    "dosage": "15-30ml at bedtime.",
+    "side_effects": "Anal seepage of oil, reduced absorption of fat-soluble vitamins.",
+    "precautions": "Do not lie down immediately after swallowing to avoid aspiration risk."
+  },
+  {
+    "medicine_name": "Liquid Paraffin 200ml Emulsion",
+    "uses": "Stool lubricant for painful piles, anal fissures, hernia patients.",
+    "dosage": "15-30ml at bedtime.",
+    "side_effects": "Anal seepage of oil, reduced absorption of fat-soluble vitamins.",
+    "precautions": "Do not lie down immediately after swallowing to avoid aspiration risk."
+  },
+  {
+    "medicine_name": "Psyllium Husk (Isabgol) 100g Powder",
+    "uses": "Natural bulk-forming laxative for constipation, irritable bowel, hemorrhoids.",
+    "dosage": "5-10g (1-2 spoons) mixed in full glass of water or milk at bedtime.",
+    "side_effects": "Mild bloating initially if not consumed with sufficient fluids.",
+    "precautions": "Must drink immediately before gel thickens; follow with another glass of water."
+  },
+  {
+    "medicine_name": "Ursodeoxycholic Acid 150mg",
+    "uses": "Dissolution of radiolucent gallstones, primary biliary cholangitis, fatty liver.",
+    "dosage": "300mg twice daily with meals or milk.",
+    "side_effects": "Paste-like loose stools, pruritus, nausea.",
+    "precautions": "Take regularly for 6-12 months as monitored by ultrasound."
+  },
+  {
+    "medicine_name": "Ursodeoxycholic Acid 300mg",
+    "uses": "Dissolution of radiolucent gallstones, primary biliary cholangitis, fatty liver.",
+    "dosage": "300mg twice daily with meals or milk.",
+    "side_effects": "Paste-like loose stools, pruritus, nausea.",
+    "precautions": "Take regularly for 6-12 months as monitored by ultrasound."
+  },
+  {
+    "medicine_name": "Ursodeoxycholic Acid 600mg",
+    "uses": "Dissolution of radiolucent gallstones, primary biliary cholangitis, fatty liver.",
+    "dosage": "300mg twice daily with meals or milk.",
+    "side_effects": "Paste-like loose stools, pruritus, nausea.",
+    "precautions": "Take regularly for 6-12 months as monitored by ultrasound."
+  },
+  {
+    "medicine_name": "Silymarin 70mg",
+    "uses": "Adjunct hepatoprotective agent in liver cirrhosis, alcoholic liver disease.",
+    "dosage": "140mg three times daily after meals.",
+    "side_effects": "Mild laxative effect, bloating, headache.",
+    "precautions": "Supportive herbal hepatoprotectant; not a substitute for alcohol cessation."
+  },
+  {
+    "medicine_name": "Silymarin 140mg",
+    "uses": "Adjunct hepatoprotective agent in liver cirrhosis, alcoholic liver disease.",
+    "dosage": "140mg three times daily after meals.",
+    "side_effects": "Mild laxative effect, bloating, headache.",
+    "precautions": "Supportive herbal hepatoprotectant; not a substitute for alcohol cessation."
+  },
+  {
+    "medicine_name": "L-Ornithine L-Aspartate 150mg",
+    "uses": "Hepatic encephalopathy, fatty liver, acute and chronic liver cirrhosis.",
+    "dosage": "1 sachet dissolved in glass of water 2-3 times daily after food.",
+    "side_effects": "Nausea, vomiting, stomach ache.",
+    "precautions": "Promotes hepatic ammonia clearance in damaged liver tissue."
+  },
+  {
+    "medicine_name": "L-Ornithine L-Aspartate 5g Sachet",
+    "uses": "Hepatic encephalopathy, fatty liver, acute and chronic liver cirrhosis.",
+    "dosage": "1 sachet dissolved in glass of water 2-3 times daily after food.",
+    "side_effects": "Nausea, vomiting, stomach ache.",
+    "precautions": "Promotes hepatic ammonia clearance in damaged liver tissue."
+  },
+  {
+    "medicine_name": "L-Ornithine L-Aspartate 5g/10ml Injection",
+    "uses": "Hepatic encephalopathy, fatty liver, acute and chronic liver cirrhosis.",
+    "dosage": "1 sachet dissolved in glass of water 2-3 times daily after food.",
+    "side_effects": "Nausea, vomiting, stomach ache.",
+    "precautions": "Promotes hepatic ammonia clearance in damaged liver tissue."
+  },
+  {
+    "medicine_name": "Simethicone 40mg",
+    "uses": "Excessive abdominal gas, bloating, flatulence, infant colic.",
+    "dosage": "40-80mg after meals and at bedtime.",
+    "side_effects": "None significant; passes unabsorbed through gut.",
+    "precautions": "Chew thoroughly; infant drops can be mixed directly with milk."
+  },
+  {
+    "medicine_name": "Simethicone 80mg",
+    "uses": "Excessive abdominal gas, bloating, flatulence, infant colic.",
+    "dosage": "40-80mg after meals and at bedtime.",
+    "side_effects": "None significant; passes unabsorbed through gut.",
+    "precautions": "Chew thoroughly; infant drops can be mixed directly with milk."
+  },
+  {
+    "medicine_name": "Simethicone 40mg/ml Drops",
+    "uses": "Excessive abdominal gas, bloating, flatulence, infant colic.",
+    "dosage": "40-80mg after meals and at bedtime.",
+    "side_effects": "None significant; passes unabsorbed through gut.",
+    "precautions": "Chew thoroughly; infant drops can be mixed directly with milk."
+  },
+  {
+    "medicine_name": "Activated Charcoal 250mg",
+    "uses": "Acute oral poisonings, drug overdoses, severe flatulence.",
+    "dosage": "50-100g in poisoning; 2 capsules for flatulence with water.",
+    "side_effects": "Black stools, constipation, vomiting.",
+    "precautions": "Must be given promptly within 1 hour of toxin ingestion."
+  },
+  {
+    "medicine_name": "Activated Charcoal 500mg",
+    "uses": "Acute oral poisonings, drug overdoses, severe flatulence.",
+    "dosage": "50-100g in poisoning; 2 capsules for flatulence with water.",
+    "side_effects": "Black stools, constipation, vomiting.",
+    "precautions": "Must be given promptly within 1 hour of toxin ingestion."
+  },
+  {
+    "medicine_name": "Oral Rehydration Salts 4.2g Sachet",
+    "uses": "Dehydration prevention in acute diarrhea, vomiting, heat exhaustion.",
+    "dosage": "Dissolve 21.8g packet in 1 liter clean drinking water; sip continuously.",
+    "side_effects": "None when reconstituted with correct water volume.",
+    "precautions": "Do not boil prepared solution; discard leftover solution after 24 hours."
+  },
+  {
+    "medicine_name": "Oral Rehydration Salts 21.8g Sachet",
+    "uses": "Dehydration prevention in acute diarrhea, vomiting, heat exhaustion.",
+    "dosage": "Dissolve 21.8g packet in 1 liter clean drinking water; sip continuously.",
+    "side_effects": "None when reconstituted with correct water volume.",
+    "precautions": "Do not boil prepared solution; discard leftover solution after 24 hours."
+  },
+  {
+    "medicine_name": "Oral Rehydration Salts 200ml Tetrapack",
+    "uses": "Dehydration prevention in acute diarrhea, vomiting, heat exhaustion.",
+    "dosage": "Dissolve 21.8g packet in 1 liter clean drinking water; sip continuously.",
+    "side_effects": "None when reconstituted with correct water volume.",
+    "precautions": "Do not boil prepared solution; discard leftover solution after 24 hours."
+  },
+  {
+    "medicine_name": "Zinc Gluconate 20mg DT",
+    "uses": "Pediatric diarrhea management, wound healing, growth support.",
+    "dosage": "20mg once daily for 14 days during acute childhood diarrhea.",
+    "side_effects": "Metallic taste, stomach upset, nausea.",
+    "precautions": "WHO recommends 14-day zinc course to prevent future diarrhea episodes."
+  },
+  {
+    "medicine_name": "Zinc Gluconate 10mg/5ml Syrup",
+    "uses": "Pediatric diarrhea management, wound healing, growth support.",
+    "dosage": "20mg once daily for 14 days during acute childhood diarrhea.",
+    "side_effects": "Metallic taste, stomach upset, nausea.",
+    "precautions": "WHO recommends 14-day zinc course to prevent future diarrhea episodes."
+  },
+  {
+    "medicine_name": "Telmisartan 20mg",
+    "uses": "First-line ARB for essential hypertension and kidney protection.",
+    "dosage": "40-80mg once daily in morning with or without food.",
+    "side_effects": "Dizziness on standing, backache, sinus congestion.",
+    "precautions": "Avoid potassium supplements; strictly contraindicated in pregnancy."
+  },
+  {
+    "medicine_name": "Telmisartan 40mg",
+    "uses": "First-line ARB for essential hypertension and kidney protection.",
+    "dosage": "40-80mg once daily in morning with or without food.",
+    "side_effects": "Dizziness on standing, backache, sinus congestion.",
+    "precautions": "Avoid potassium supplements; strictly contraindicated in pregnancy."
+  },
+  {
+    "medicine_name": "Telmisartan 80mg",
+    "uses": "First-line ARB for essential hypertension and kidney protection.",
+    "dosage": "40-80mg once daily in morning with or without food.",
+    "side_effects": "Dizziness on standing, backache, sinus congestion.",
+    "precautions": "Avoid potassium supplements; strictly contraindicated in pregnancy."
+  },
+  {
+    "medicine_name": "Losartan 25mg",
+    "uses": "Hypertension with diabetic nephropathy, stroke prevention in LVH.",
+    "dosage": "50-100mg once daily with water.",
+    "side_effects": "Dizziness, hyperkalemia, nasal congestion.",
+    "precautions": "Contraindicated during pregnancy; monitor serum potassium."
+  },
+  {
+    "medicine_name": "Losartan 50mg",
+    "uses": "Hypertension with diabetic nephropathy, stroke prevention in LVH.",
+    "dosage": "50-100mg once daily with water.",
+    "side_effects": "Dizziness, hyperkalemia, nasal congestion.",
+    "precautions": "Contraindicated during pregnancy; monitor serum potassium."
+  },
+  {
+    "medicine_name": "Losartan 100mg",
+    "uses": "Hypertension with diabetic nephropathy, stroke prevention in LVH.",
+    "dosage": "50-100mg once daily with water.",
+    "side_effects": "Dizziness, hyperkalemia, nasal congestion.",
+    "precautions": "Contraindicated during pregnancy; monitor serum potassium."
+  },
+  {
+    "medicine_name": "Olmesartan 10mg",
+    "uses": "Potent ARB for 24-hour smooth blood pressure control.",
+    "dosage": "20-40mg once daily with or without food.",
+    "side_effects": "Dizziness, bronchitis symptoms, chronic diarrhea.",
+    "precautions": "Report severe chronic watery diarrhea (sprue-like enteropathy)."
+  },
+  {
+    "medicine_name": "Olmesartan 20mg",
+    "uses": "Potent ARB for 24-hour smooth blood pressure control.",
+    "dosage": "20-40mg once daily with or without food.",
+    "side_effects": "Dizziness, bronchitis symptoms, chronic diarrhea.",
+    "precautions": "Report severe chronic watery diarrhea (sprue-like enteropathy)."
+  },
+  {
+    "medicine_name": "Olmesartan 40mg",
+    "uses": "Potent ARB for 24-hour smooth blood pressure control.",
+    "dosage": "20-40mg once daily with or without food.",
+    "side_effects": "Dizziness, bronchitis symptoms, chronic diarrhea.",
+    "precautions": "Report severe chronic watery diarrhea (sprue-like enteropathy)."
+  },
+  {
+    "medicine_name": "Valsartan 40mg",
+    "uses": "Hypertension, post-MI left ventricular dysfunction, heart failure.",
+    "dosage": "80-160mg once daily.",
+    "side_effects": "Dizziness, hypotension, hyperkalemia.",
+    "precautions": "Check baseline serum creatinine and potassium."
+  },
+  {
+    "medicine_name": "Valsartan 80mg",
+    "uses": "Hypertension, post-MI left ventricular dysfunction, heart failure.",
+    "dosage": "80-160mg once daily.",
+    "side_effects": "Dizziness, hypotension, hyperkalemia.",
+    "precautions": "Check baseline serum creatinine and potassium."
+  },
+  {
+    "medicine_name": "Valsartan 160mg",
+    "uses": "Hypertension, post-MI left ventricular dysfunction, heart failure.",
+    "dosage": "80-160mg once daily.",
+    "side_effects": "Dizziness, hypotension, hyperkalemia.",
+    "precautions": "Check baseline serum creatinine and potassium."
+  },
+  {
+    "medicine_name": "Enalapril 2.5mg",
+    "uses": "ACE inhibitor for hypertension and congestive heart failure.",
+    "dosage": "5-10mg once or twice daily.",
+    "side_effects": "Dry persistent tickling cough, dizziness, hyperkalemia.",
+    "precautions": "Dry cough is a class effect; switch to ARB if persistent."
+  },
+  {
+    "medicine_name": "Enalapril 5mg",
+    "uses": "ACE inhibitor for hypertension and congestive heart failure.",
+    "dosage": "5-10mg once or twice daily.",
+    "side_effects": "Dry persistent tickling cough, dizziness, hyperkalemia.",
+    "precautions": "Dry cough is a class effect; switch to ARB if persistent."
+  },
+  {
+    "medicine_name": "Enalapril 10mg",
+    "uses": "ACE inhibitor for hypertension and congestive heart failure.",
+    "dosage": "5-10mg once or twice daily.",
+    "side_effects": "Dry persistent tickling cough, dizziness, hyperkalemia.",
+    "precautions": "Dry cough is a class effect; switch to ARB if persistent."
+  },
+  {
+    "medicine_name": "Ramipril 1.25mg",
+    "uses": "Cardiovascular risk reduction in diabetic and hypertensive patients.",
+    "dosage": "2.5-5mg once daily at bedtime.",
+    "side_effects": "Dry persistent cough, orthostatic hypotension, fatigue.",
+    "precautions": "Take at bedtime initially to prevent first-dose dizziness."
+  },
+  {
+    "medicine_name": "Ramipril 2.5mg",
+    "uses": "Cardiovascular risk reduction in diabetic and hypertensive patients.",
+    "dosage": "2.5-5mg once daily at bedtime.",
+    "side_effects": "Dry persistent cough, orthostatic hypotension, fatigue.",
+    "precautions": "Take at bedtime initially to prevent first-dose dizziness."
+  },
+  {
+    "medicine_name": "Ramipril 5mg",
+    "uses": "Cardiovascular risk reduction in diabetic and hypertensive patients.",
+    "dosage": "2.5-5mg once daily at bedtime.",
+    "side_effects": "Dry persistent cough, orthostatic hypotension, fatigue.",
+    "precautions": "Take at bedtime initially to prevent first-dose dizziness."
+  },
+  {
+    "medicine_name": "Ramipril 10mg",
+    "uses": "Cardiovascular risk reduction in diabetic and hypertensive patients.",
+    "dosage": "2.5-5mg once daily at bedtime.",
+    "side_effects": "Dry persistent cough, orthostatic hypotension, fatigue.",
+    "precautions": "Take at bedtime initially to prevent first-dose dizziness."
+  },
+  {
+    "medicine_name": "Perindopril 2mg",
+    "uses": "Stable coronary artery disease, hypertension, heart failure.",
+    "dosage": "4-8mg once daily in morning before food.",
+    "side_effects": "Dry cough, dizziness, headache.",
+    "precautions": "Take before breakfast with water."
+  },
+  {
+    "medicine_name": "Perindopril 4mg",
+    "uses": "Stable coronary artery disease, hypertension, heart failure.",
+    "dosage": "4-8mg once daily in morning before food.",
+    "side_effects": "Dry cough, dizziness, headache.",
+    "precautions": "Take before breakfast with water."
+  },
+  {
+    "medicine_name": "Perindopril 8mg",
+    "uses": "Stable coronary artery disease, hypertension, heart failure.",
+    "dosage": "4-8mg once daily in morning before food.",
+    "side_effects": "Dry cough, dizziness, headache.",
+    "precautions": "Take before breakfast with water."
+  },
+  {
+    "medicine_name": "Amlodipine 2.5mg",
+    "uses": "Calcium channel blocker for hypertension and chronic stable angina.",
+    "dosage": "5-10mg once daily with water.",
+    "side_effects": "Ankle edema, facial flushing, headache, palpitations.",
+    "precautions": "Avoid grapefruit juice; do not discontinue abruptly."
+  },
+  {
+    "medicine_name": "Amlodipine 5mg",
+    "uses": "Calcium channel blocker for hypertension and chronic stable angina.",
+    "dosage": "5-10mg once daily with water.",
+    "side_effects": "Ankle edema, facial flushing, headache, palpitations.",
+    "precautions": "Avoid grapefruit juice; do not discontinue abruptly."
+  },
+  {
+    "medicine_name": "Amlodipine 10mg",
+    "uses": "Calcium channel blocker for hypertension and chronic stable angina.",
+    "dosage": "5-10mg once daily with water.",
+    "side_effects": "Ankle edema, facial flushing, headache, palpitations.",
+    "precautions": "Avoid grapefruit juice; do not discontinue abruptly."
+  },
+  {
+    "medicine_name": "Cilnidipine 5mg",
+    "uses": "Dual L/N-type calcium channel blocker with low ankle edema risk.",
+    "dosage": "10mg once daily after breakfast.",
+    "side_effects": "Mild headache, flushing, palpitations.",
+    "precautions": "Preferred in patients troubled by amlodipine ankle swelling."
+  },
+  {
+    "medicine_name": "Cilnidipine 10mg",
+    "uses": "Dual L/N-type calcium channel blocker with low ankle edema risk.",
+    "dosage": "10mg once daily after breakfast.",
+    "side_effects": "Mild headache, flushing, palpitations.",
+    "precautions": "Preferred in patients troubled by amlodipine ankle swelling."
+  },
+  {
+    "medicine_name": "Cilnidipine 20mg",
+    "uses": "Dual L/N-type calcium channel blocker with low ankle edema risk.",
+    "dosage": "10mg once daily after breakfast.",
+    "side_effects": "Mild headache, flushing, palpitations.",
+    "precautions": "Preferred in patients troubled by amlodipine ankle swelling."
+  },
+  {
+    "medicine_name": "Nifedipine 10mg",
+    "uses": "Severe hypertension, Raynaud phenomenon, preterm labor tocolysis.",
+    "dosage": "20-30mg once or twice daily swallowed whole.",
+    "side_effects": "Flushing, headache, dizziness, pedal edema.",
+    "precautions": "Never bite or crush extended release tablets."
+  },
+  {
+    "medicine_name": "Nifedipine 20mg SR",
+    "uses": "Severe hypertension, Raynaud phenomenon, preterm labor tocolysis.",
+    "dosage": "20-30mg once or twice daily swallowed whole.",
+    "side_effects": "Flushing, headache, dizziness, pedal edema.",
+    "precautions": "Never bite or crush extended release tablets."
+  },
+  {
+    "medicine_name": "Nifedipine 30mg Retard",
+    "uses": "Severe hypertension, Raynaud phenomenon, preterm labor tocolysis.",
+    "dosage": "20-30mg once or twice daily swallowed whole.",
+    "side_effects": "Flushing, headache, dizziness, pedal edema.",
+    "precautions": "Never bite or crush extended release tablets."
+  },
+  {
+    "medicine_name": "Diltiazem 30mg",
+    "uses": "Angina pectoris, rate control in atrial fibrillation, hypertension.",
+    "dosage": "30-60mg 3 times daily or 90-120mg SR daily.",
+    "side_effects": "Bradycardia, ankle swelling, constipation, headache.",
+    "precautions": "Check pulse regularly; avoid in severe AV block or heart failure."
+  },
+  {
+    "medicine_name": "Diltiazem 60mg",
+    "uses": "Angina pectoris, rate control in atrial fibrillation, hypertension.",
+    "dosage": "30-60mg 3 times daily or 90-120mg SR daily.",
+    "side_effects": "Bradycardia, ankle swelling, constipation, headache.",
+    "precautions": "Check pulse regularly; avoid in severe AV block or heart failure."
+  },
+  {
+    "medicine_name": "Diltiazem 90mg SR",
+    "uses": "Angina pectoris, rate control in atrial fibrillation, hypertension.",
+    "dosage": "30-60mg 3 times daily or 90-120mg SR daily.",
+    "side_effects": "Bradycardia, ankle swelling, constipation, headache.",
+    "precautions": "Check pulse regularly; avoid in severe AV block or heart failure."
+  },
+  {
+    "medicine_name": "Diltiazem 120mg SR",
+    "uses": "Angina pectoris, rate control in atrial fibrillation, hypertension.",
+    "dosage": "30-60mg 3 times daily or 90-120mg SR daily.",
+    "side_effects": "Bradycardia, ankle swelling, constipation, headache.",
+    "precautions": "Check pulse regularly; avoid in severe AV block or heart failure."
+  },
+  {
+    "medicine_name": "Verapamil 40mg",
+    "uses": "Supraventricular tachycardia (SVT), angina, hypertrophic cardiomyopathy.",
+    "dosage": "40-80mg 3 times daily.",
+    "side_effects": "Severe constipation, bradycardia, hypotension.",
+    "precautions": "Eat high fiber diet to counter constipation; avoid with beta-blockers."
+  },
+  {
+    "medicine_name": "Verapamil 80mg",
+    "uses": "Supraventricular tachycardia (SVT), angina, hypertrophic cardiomyopathy.",
+    "dosage": "40-80mg 3 times daily.",
+    "side_effects": "Severe constipation, bradycardia, hypotension.",
+    "precautions": "Eat high fiber diet to counter constipation; avoid with beta-blockers."
+  },
+  {
+    "medicine_name": "Verapamil 120mg SR",
+    "uses": "Supraventricular tachycardia (SVT), angina, hypertrophic cardiomyopathy.",
+    "dosage": "40-80mg 3 times daily.",
+    "side_effects": "Severe constipation, bradycardia, hypotension.",
+    "precautions": "Eat high fiber diet to counter constipation; avoid with beta-blockers."
+  },
+  {
+    "medicine_name": "Atenolol 25mg",
+    "uses": "Beta-blocker for hypertension, angina pectoris, post-MI.",
+    "dosage": "50mg once daily before breakfast.",
+    "side_effects": "Slow heart rate (bradycardia), cold hands/feet, fatigue.",
+    "precautions": "Do not stop suddenly; contraindicated in severe asthma."
+  },
+  {
+    "medicine_name": "Atenolol 50mg",
+    "uses": "Beta-blocker for hypertension, angina pectoris, post-MI.",
+    "dosage": "50mg once daily before breakfast.",
+    "side_effects": "Slow heart rate (bradycardia), cold hands/feet, fatigue.",
+    "precautions": "Do not stop suddenly; contraindicated in severe asthma."
+  },
+  {
+    "medicine_name": "Atenolol 100mg",
+    "uses": "Beta-blocker for hypertension, angina pectoris, post-MI.",
+    "dosage": "50mg once daily before breakfast.",
+    "side_effects": "Slow heart rate (bradycardia), cold hands/feet, fatigue.",
+    "precautions": "Do not stop suddenly; contraindicated in severe asthma."
+  },
+  {
+    "medicine_name": "Metoprolol Tartrate 25mg",
+    "uses": "Angina prevention, acute myocardial infarction management.",
+    "dosage": "50mg twice daily with or immediately after food.",
+    "side_effects": "Fatigue, slow pulse, insomnia, dizziness.",
+    "precautions": "Never stop abruptly to avoid rebound angina or arrhythmia."
+  },
+  {
+    "medicine_name": "Metoprolol Tartrate 50mg",
+    "uses": "Angina prevention, acute myocardial infarction management.",
+    "dosage": "50mg twice daily with or immediately after food.",
+    "side_effects": "Fatigue, slow pulse, insomnia, dizziness.",
+    "precautions": "Never stop abruptly to avoid rebound angina or arrhythmia."
+  },
+  {
+    "medicine_name": "Metoprolol Tartrate 100mg",
+    "uses": "Angina prevention, acute myocardial infarction management.",
+    "dosage": "50mg twice daily with or immediately after food.",
+    "side_effects": "Fatigue, slow pulse, insomnia, dizziness.",
+    "precautions": "Never stop abruptly to avoid rebound angina or arrhythmia."
+  },
+  {
+    "medicine_name": "Metoprolol Succinate ER 12.5mg",
+    "uses": "Sustained release beta-1 blocker for chronic heart failure and BP.",
+    "dosage": "25-50mg once daily in morning.",
+    "side_effects": "Bradycardia, lightheadedness, fatigue.",
+    "precautions": "Swallow whole; do not chew extended release tablet."
+  },
+  {
+    "medicine_name": "Metoprolol Succinate ER 25mg",
+    "uses": "Sustained release beta-1 blocker for chronic heart failure and BP.",
+    "dosage": "25-50mg once daily in morning.",
+    "side_effects": "Bradycardia, lightheadedness, fatigue.",
+    "precautions": "Swallow whole; do not chew extended release tablet."
+  },
+  {
+    "medicine_name": "Metoprolol Succinate ER 50mg",
+    "uses": "Sustained release beta-1 blocker for chronic heart failure and BP.",
+    "dosage": "25-50mg once daily in morning.",
+    "side_effects": "Bradycardia, lightheadedness, fatigue.",
+    "precautions": "Swallow whole; do not chew extended release tablet."
+  },
+  {
+    "medicine_name": "Metoprolol Succinate ER 100mg",
+    "uses": "Sustained release beta-1 blocker for chronic heart failure and BP.",
+    "dosage": "25-50mg once daily in morning.",
+    "side_effects": "Bradycardia, lightheadedness, fatigue.",
+    "precautions": "Swallow whole; do not chew extended release tablet."
+  },
+  {
+    "medicine_name": "Propranolol 10mg",
+    "uses": "Tremors, performance anxiety, migraine prevention, portal hypertension.",
+    "dosage": "10-40mg 2-3 times daily before meals.",
+    "side_effects": "Cold fingers, fatigue, vivid dreams, bronchospasm.",
+    "precautions": "Strictly contraindicated in bronchial asthma patients."
+  },
+  {
+    "medicine_name": "Propranolol 20mg",
+    "uses": "Tremors, performance anxiety, migraine prevention, portal hypertension.",
+    "dosage": "10-40mg 2-3 times daily before meals.",
+    "side_effects": "Cold fingers, fatigue, vivid dreams, bronchospasm.",
+    "precautions": "Strictly contraindicated in bronchial asthma patients."
+  },
+  {
+    "medicine_name": "Propranolol 40mg",
+    "uses": "Tremors, performance anxiety, migraine prevention, portal hypertension.",
+    "dosage": "10-40mg 2-3 times daily before meals.",
+    "side_effects": "Cold fingers, fatigue, vivid dreams, bronchospasm.",
+    "precautions": "Strictly contraindicated in bronchial asthma patients."
+  },
+  {
+    "medicine_name": "Propranolol 80mg SR",
+    "uses": "Tremors, performance anxiety, migraine prevention, portal hypertension.",
+    "dosage": "10-40mg 2-3 times daily before meals.",
+    "side_effects": "Cold fingers, fatigue, vivid dreams, bronchospasm.",
+    "precautions": "Strictly contraindicated in bronchial asthma patients."
+  },
+  {
+    "medicine_name": "Bisoprolol 2.5mg",
+    "uses": "Cardioselective beta blocker for systolic heart failure and hypertension.",
+    "dosage": "2.5-5mg once daily in morning.",
+    "side_effects": "Fatigue, dizziness, bradycardia.",
+    "precautions": "Titrate dose slowly in heart failure patients."
+  },
+  {
+    "medicine_name": "Bisoprolol 5mg",
+    "uses": "Cardioselective beta blocker for systolic heart failure and hypertension.",
+    "dosage": "2.5-5mg once daily in morning.",
+    "side_effects": "Fatigue, dizziness, bradycardia.",
+    "precautions": "Titrate dose slowly in heart failure patients."
+  },
+  {
+    "medicine_name": "Bisoprolol 10mg",
+    "uses": "Cardioselective beta blocker for systolic heart failure and hypertension.",
+    "dosage": "2.5-5mg once daily in morning.",
+    "side_effects": "Fatigue, dizziness, bradycardia.",
+    "precautions": "Titrate dose slowly in heart failure patients."
+  },
+  {
+    "medicine_name": "Carvedilol 3.125mg",
+    "uses": "Dual alpha and beta blocker for congestive heart failure and cardiomyopathy.",
+    "dosage": "3.125-12.5mg twice daily strictly with meals.",
+    "side_effects": "Postural hypotension, dizziness, fluid retention.",
+    "precautions": "Take with meals to slow absorption and reduce dizziness."
+  },
+  {
+    "medicine_name": "Carvedilol 6.25mg",
+    "uses": "Dual alpha and beta blocker for congestive heart failure and cardiomyopathy.",
+    "dosage": "3.125-12.5mg twice daily strictly with meals.",
+    "side_effects": "Postural hypotension, dizziness, fluid retention.",
+    "precautions": "Take with meals to slow absorption and reduce dizziness."
+  },
+  {
+    "medicine_name": "Carvedilol 12.5mg",
+    "uses": "Dual alpha and beta blocker for congestive heart failure and cardiomyopathy.",
+    "dosage": "3.125-12.5mg twice daily strictly with meals.",
+    "side_effects": "Postural hypotension, dizziness, fluid retention.",
+    "precautions": "Take with meals to slow absorption and reduce dizziness."
+  },
+  {
+    "medicine_name": "Carvedilol 25mg",
+    "uses": "Dual alpha and beta blocker for congestive heart failure and cardiomyopathy.",
+    "dosage": "3.125-12.5mg twice daily strictly with meals.",
+    "side_effects": "Postural hypotension, dizziness, fluid retention.",
+    "precautions": "Take with meals to slow absorption and reduce dizziness."
+  },
+  {
+    "medicine_name": "Nebivolol 2.5mg",
+    "uses": "Third-generation beta blocker with nitric oxide mediated vasodilation.",
+    "dosage": "5mg once daily.",
+    "side_effects": "Headache, dizziness, paresthesias, fatigue.",
+    "precautions": "Preserves erectile function compared to older beta-blockers."
+  },
+  {
+    "medicine_name": "Nebivolol 5mg",
+    "uses": "Third-generation beta blocker with nitric oxide mediated vasodilation.",
+    "dosage": "5mg once daily.",
+    "side_effects": "Headache, dizziness, paresthesias, fatigue.",
+    "precautions": "Preserves erectile function compared to older beta-blockers."
+  },
+  {
+    "medicine_name": "Labetalol 100mg",
+    "uses": "Severe pregnancy hypertension (preeclampsia), hypertensive crisis.",
+    "dosage": "100-200mg twice daily with meals.",
+    "side_effects": "Scalp tingling, postural hypotension, fatigue.",
+    "precautions": "Drug of choice for pregnancy-induced hypertension."
+  },
+  {
+    "medicine_name": "Labetalol 100mg/20ml Injection",
+    "uses": "Severe pregnancy hypertension (preeclampsia), hypertensive crisis.",
+    "dosage": "100-200mg twice daily with meals.",
+    "side_effects": "Scalp tingling, postural hypotension, fatigue.",
+    "precautions": "Drug of choice for pregnancy-induced hypertension."
+  },
+  {
+    "medicine_name": "Furosemide 20mg",
+    "uses": "Potent loop diuretic for pulmonary edema, congestive heart failure, fluid swelling.",
+    "dosage": "20-40mg once daily in morning.",
+    "side_effects": "Frequent urination, dehydration, hypokalemia (low potassium).",
+    "precautions": "Take early in morning; eat potassium-rich foods (bananas/coconut water)."
+  },
+  {
+    "medicine_name": "Furosemide 40mg",
+    "uses": "Potent loop diuretic for pulmonary edema, congestive heart failure, fluid swelling.",
+    "dosage": "20-40mg once daily in morning.",
+    "side_effects": "Frequent urination, dehydration, hypokalemia (low potassium).",
+    "precautions": "Take early in morning; eat potassium-rich foods (bananas/coconut water)."
+  },
+  {
+    "medicine_name": "Furosemide 20mg/2ml Injection",
+    "uses": "Potent loop diuretic for pulmonary edema, congestive heart failure, fluid swelling.",
+    "dosage": "20-40mg once daily in morning.",
+    "side_effects": "Frequent urination, dehydration, hypokalemia (low potassium).",
+    "precautions": "Take early in morning; eat potassium-rich foods (bananas/coconut water)."
+  },
+  {
+    "medicine_name": "Torsemide 5mg",
+    "uses": "Long-acting loop diuretic for chronic edema, heart failure, renal edema.",
+    "dosage": "10-20mg once daily in morning.",
+    "side_effects": "Urinary urgency, thirst, electrolyte depletion.",
+    "precautions": "More predictable oral absorption than furosemide."
+  },
+  {
+    "medicine_name": "Torsemide 10mg",
+    "uses": "Long-acting loop diuretic for chronic edema, heart failure, renal edema.",
+    "dosage": "10-20mg once daily in morning.",
+    "side_effects": "Urinary urgency, thirst, electrolyte depletion.",
+    "precautions": "More predictable oral absorption than furosemide."
+  },
+  {
+    "medicine_name": "Torsemide 20mg",
+    "uses": "Long-acting loop diuretic for chronic edema, heart failure, renal edema.",
+    "dosage": "10-20mg once daily in morning.",
+    "side_effects": "Urinary urgency, thirst, electrolyte depletion.",
+    "precautions": "More predictable oral absorption than furosemide."
+  },
+  {
+    "medicine_name": "Torsemide 10mg/2ml Injection",
+    "uses": "Long-acting loop diuretic for chronic edema, heart failure, renal edema.",
+    "dosage": "10-20mg once daily in morning.",
+    "side_effects": "Urinary urgency, thirst, electrolyte depletion.",
+    "precautions": "More predictable oral absorption than furosemide."
+  },
+  {
+    "medicine_name": "Hydrochlorothiazide 12.5mg",
+    "uses": "Mild thiazide diuretic widely used in combination antihypertensive tablets.",
+    "dosage": "12.5-25mg once daily in morning.",
+    "side_effects": "Hypokalemia, raised uric acid (gout flare), increased blood sugar.",
+    "precautions": "Take in morning; periodic serum electrolyte monitoring."
+  },
+  {
+    "medicine_name": "Hydrochlorothiazide 25mg",
+    "uses": "Mild thiazide diuretic widely used in combination antihypertensive tablets.",
+    "dosage": "12.5-25mg once daily in morning.",
+    "side_effects": "Hypokalemia, raised uric acid (gout flare), increased blood sugar.",
+    "precautions": "Take in morning; periodic serum electrolyte monitoring."
+  },
+  {
+    "medicine_name": "Chlorthalidone 6.25mg",
+    "uses": "Long acting thiazide-like diuretic providing sustained 48-hour BP reduction.",
+    "dosage": "12.5mg once daily with breakfast.",
+    "side_effects": "Electrolyte loss, dizziness, hyperuricemia.",
+    "precautions": "High potency; effective in resistant systolic hypertension."
+  },
+  {
+    "medicine_name": "Chlorthalidone 12.5mg",
+    "uses": "Long acting thiazide-like diuretic providing sustained 48-hour BP reduction.",
+    "dosage": "12.5mg once daily with breakfast.",
+    "side_effects": "Electrolyte loss, dizziness, hyperuricemia.",
+    "precautions": "High potency; effective in resistant systolic hypertension."
+  },
+  {
+    "medicine_name": "Spironolactone 25mg",
+    "uses": "Potassium-sparing diuretic for liver ascites, resistant hypertension, heart failure.",
+    "dosage": "25-50mg once or twice daily with food.",
+    "side_effects": "Hyperkalemia, gynecomastia in men, irregular periods.",
+    "precautions": "Do not take potassium supplements alongside."
+  },
+  {
+    "medicine_name": "Spironolactone 50mg",
+    "uses": "Potassium-sparing diuretic for liver ascites, resistant hypertension, heart failure.",
+    "dosage": "25-50mg once or twice daily with food.",
+    "side_effects": "Hyperkalemia, gynecomastia in men, irregular periods.",
+    "precautions": "Do not take potassium supplements alongside."
+  },
+  {
+    "medicine_name": "Spironolactone 100mg",
+    "uses": "Potassium-sparing diuretic for liver ascites, resistant hypertension, heart failure.",
+    "dosage": "25-50mg once or twice daily with food.",
+    "side_effects": "Hyperkalemia, gynecomastia in men, irregular periods.",
+    "precautions": "Do not take potassium supplements alongside."
+  },
+  {
+    "medicine_name": "Atorvastatin 10mg",
+    "uses": "Lowers LDL cholesterol and triglycerides; prevents heart attacks and stroke.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle ache (myalgia), mild liver enzyme increase, constipation.",
+    "precautions": "Report unexplained muscle pain, tenderness, or weakness immediately."
+  },
+  {
+    "medicine_name": "Atorvastatin 20mg",
+    "uses": "Lowers LDL cholesterol and triglycerides; prevents heart attacks and stroke.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle ache (myalgia), mild liver enzyme increase, constipation.",
+    "precautions": "Report unexplained muscle pain, tenderness, or weakness immediately."
+  },
+  {
+    "medicine_name": "Atorvastatin 40mg",
+    "uses": "Lowers LDL cholesterol and triglycerides; prevents heart attacks and stroke.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle ache (myalgia), mild liver enzyme increase, constipation.",
+    "precautions": "Report unexplained muscle pain, tenderness, or weakness immediately."
+  },
+  {
+    "medicine_name": "Atorvastatin 80mg",
+    "uses": "Lowers LDL cholesterol and triglycerides; prevents heart attacks and stroke.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle ache (myalgia), mild liver enzyme increase, constipation.",
+    "precautions": "Report unexplained muscle pain, tenderness, or weakness immediately."
+  },
+  {
+    "medicine_name": "Rosuvastatin 5mg",
+    "uses": "Potent statin for aggressive LDL lowering and arterial plaque stabilization.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle pain, abdominal pain, headache, weakness.",
+    "precautions": "Higher potency per milligram than atorvastatin; take at bedtime."
+  },
+  {
+    "medicine_name": "Rosuvastatin 10mg",
+    "uses": "Potent statin for aggressive LDL lowering and arterial plaque stabilization.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle pain, abdominal pain, headache, weakness.",
+    "precautions": "Higher potency per milligram than atorvastatin; take at bedtime."
+  },
+  {
+    "medicine_name": "Rosuvastatin 20mg",
+    "uses": "Potent statin for aggressive LDL lowering and arterial plaque stabilization.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle pain, abdominal pain, headache, weakness.",
+    "precautions": "Higher potency per milligram than atorvastatin; take at bedtime."
+  },
+  {
+    "medicine_name": "Rosuvastatin 40mg",
+    "uses": "Potent statin for aggressive LDL lowering and arterial plaque stabilization.",
+    "dosage": "10-20mg once daily at bedtime.",
+    "side_effects": "Muscle pain, abdominal pain, headache, weakness.",
+    "precautions": "Higher potency per milligram than atorvastatin; take at bedtime."
+  },
+  {
+    "medicine_name": "Fenofibrate 67mg",
+    "uses": "Reduces very high blood triglycerides (>500 mg/dL) to prevent pancreatitis.",
+    "dosage": "145mg once daily with largest meal.",
+    "side_effects": "Abdominal pain, back pain, increased liver enzymes.",
+    "precautions": "Combine with low-fat diet and exercise."
+  },
+  {
+    "medicine_name": "Fenofibrate 145mg",
+    "uses": "Reduces very high blood triglycerides (>500 mg/dL) to prevent pancreatitis.",
+    "dosage": "145mg once daily with largest meal.",
+    "side_effects": "Abdominal pain, back pain, increased liver enzymes.",
+    "precautions": "Combine with low-fat diet and exercise."
+  },
+  {
+    "medicine_name": "Fenofibrate 200mg",
+    "uses": "Reduces very high blood triglycerides (>500 mg/dL) to prevent pancreatitis.",
+    "dosage": "145mg once daily with largest meal.",
+    "side_effects": "Abdominal pain, back pain, increased liver enzymes.",
+    "precautions": "Combine with low-fat diet and exercise."
+  },
+  {
+    "medicine_name": "Clopidogrel 75mg",
+    "uses": "Antiplatelet blood thinner for stroke prevention, post-cardiac stent placement.",
+    "dosage": "75mg once daily with water.",
+    "side_effects": "Easy bruising, prolonged bleeding from cuts, nosebleeds.",
+    "precautions": "Stop 5-7 days before scheduled elective surgeries as advised by surgeon."
+  },
+  {
+    "medicine_name": "Clopidogrel 150mg",
+    "uses": "Antiplatelet blood thinner for stroke prevention, post-cardiac stent placement.",
+    "dosage": "75mg once daily with water.",
+    "side_effects": "Easy bruising, prolonged bleeding from cuts, nosebleeds.",
+    "precautions": "Stop 5-7 days before scheduled elective surgeries as advised by surgeon."
+  },
+  {
+    "medicine_name": "Ticagrelor 60mg",
+    "uses": "Potent reversible P2Y12 platelet inhibitor after acute coronary syndrome / stent.",
+    "dosage": "90mg twice daily with aspirin.",
+    "side_effects": "Dyspnea (shortness of breath), bleeding, bradycardia.",
+    "precautions": "Do not skip doses; report sudden breathlessness to cardiologist."
+  },
+  {
+    "medicine_name": "Ticagrelor 90mg",
+    "uses": "Potent reversible P2Y12 platelet inhibitor after acute coronary syndrome / stent.",
+    "dosage": "90mg twice daily with aspirin.",
+    "side_effects": "Dyspnea (shortness of breath), bleeding, bradycardia.",
+    "precautions": "Do not skip doses; report sudden breathlessness to cardiologist."
+  },
+  {
+    "medicine_name": "Prasugrel 5mg",
+    "uses": "Potent irreversible antiplatelet agent for angioplasty stented patients.",
+    "dosage": "10mg once daily with aspirin.",
+    "side_effects": "Major bleeding, epistaxis, anemia.",
+    "precautions": "Contraindicated in prior stroke / TIA or body weight < 60kg."
+  },
+  {
+    "medicine_name": "Prasugrel 10mg",
+    "uses": "Potent irreversible antiplatelet agent for angioplasty stented patients.",
+    "dosage": "10mg once daily with aspirin.",
+    "side_effects": "Major bleeding, epistaxis, anemia.",
+    "precautions": "Contraindicated in prior stroke / TIA or body weight < 60kg."
+  },
+  {
+    "medicine_name": "Warfarin 1mg",
+    "uses": "Oral vitamin K anticoagulant for deep vein thrombosis, atrial fibrillation, metallic valve.",
+    "dosage": "Dose adjusted to target INR (usually 2.0-3.0) once daily in evening.",
+    "side_effects": "Major bleeding risk, skin necrosis.",
+    "precautions": "Routine INR blood test mandatory; maintain consistent green leafy vegetable intake."
+  },
+  {
+    "medicine_name": "Warfarin 2mg",
+    "uses": "Oral vitamin K anticoagulant for deep vein thrombosis, atrial fibrillation, metallic valve.",
+    "dosage": "Dose adjusted to target INR (usually 2.0-3.0) once daily in evening.",
+    "side_effects": "Major bleeding risk, skin necrosis.",
+    "precautions": "Routine INR blood test mandatory; maintain consistent green leafy vegetable intake."
+  },
+  {
+    "medicine_name": "Warfarin 5mg",
+    "uses": "Oral vitamin K anticoagulant for deep vein thrombosis, atrial fibrillation, metallic valve.",
+    "dosage": "Dose adjusted to target INR (usually 2.0-3.0) once daily in evening.",
+    "side_effects": "Major bleeding risk, skin necrosis.",
+    "precautions": "Routine INR blood test mandatory; maintain consistent green leafy vegetable intake."
+  },
+  {
+    "medicine_name": "Acenocoumarol 1mg",
+    "uses": "Fast-acting oral anticoagulant widely used in India for valve replacement.",
+    "dosage": "1-3mg once daily in evening adjusted to INR target.",
+    "side_effects": "Bleeding from gums, bruising, dark urine.",
+    "precautions": "Strict regular monthly INR monitoring required."
+  },
+  {
+    "medicine_name": "Acenocoumarol 2mg",
+    "uses": "Fast-acting oral anticoagulant widely used in India for valve replacement.",
+    "dosage": "1-3mg once daily in evening adjusted to INR target.",
+    "side_effects": "Bleeding from gums, bruising, dark urine.",
+    "precautions": "Strict regular monthly INR monitoring required."
+  },
+  {
+    "medicine_name": "Acenocoumarol 4mg (Acitrom)",
+    "uses": "Fast-acting oral anticoagulant widely used in India for valve replacement.",
+    "dosage": "1-3mg once daily in evening adjusted to INR target.",
+    "side_effects": "Bleeding from gums, bruising, dark urine.",
+    "precautions": "Strict regular monthly INR monitoring required."
+  },
+  {
+    "medicine_name": "Dabigatran 75mg",
+    "uses": "Direct thrombin inhibitor for non-valvular atrial fibrillation and DVT.",
+    "dosage": "110-150mg twice daily with full glass of water.",
+    "side_effects": "Dyspepsia, GI bleeding, bruising.",
+    "precautions": "Swallow capsule whole; do not open or chew pellets."
+  },
+  {
+    "medicine_name": "Dabigatran 110mg",
+    "uses": "Direct thrombin inhibitor for non-valvular atrial fibrillation and DVT.",
+    "dosage": "110-150mg twice daily with full glass of water.",
+    "side_effects": "Dyspepsia, GI bleeding, bruising.",
+    "precautions": "Swallow capsule whole; do not open or chew pellets."
+  },
+  {
+    "medicine_name": "Dabigatran 150mg (Pradaxa)",
+    "uses": "Direct thrombin inhibitor for non-valvular atrial fibrillation and DVT.",
+    "dosage": "110-150mg twice daily with full glass of water.",
+    "side_effects": "Dyspepsia, GI bleeding, bruising.",
+    "precautions": "Swallow capsule whole; do not open or chew pellets."
+  },
+  {
+    "medicine_name": "Rivaroxaban 10mg",
+    "uses": "Factor Xa inhibitor for stroke prevention in atrial fibrillation and DVT.",
+    "dosage": "15-20mg once daily with evening dinner.",
+    "side_effects": "Bleeding, dizziness, headache.",
+    "precautions": "Must be taken with food for optimal absorption."
+  },
+  {
+    "medicine_name": "Rivaroxaban 15mg",
+    "uses": "Factor Xa inhibitor for stroke prevention in atrial fibrillation and DVT.",
+    "dosage": "15-20mg once daily with evening dinner.",
+    "side_effects": "Bleeding, dizziness, headache.",
+    "precautions": "Must be taken with food for optimal absorption."
+  },
+  {
+    "medicine_name": "Rivaroxaban 20mg (Xarelto)",
+    "uses": "Factor Xa inhibitor for stroke prevention in atrial fibrillation and DVT.",
+    "dosage": "15-20mg once daily with evening dinner.",
+    "side_effects": "Bleeding, dizziness, headache.",
+    "precautions": "Must be taken with food for optimal absorption."
+  },
+  {
+    "medicine_name": "Apixaban 2.5mg",
+    "uses": "Factor Xa inhibitor with lowest major gastrointestinal bleeding risk.",
+    "dosage": "5mg twice daily with water.",
+    "side_effects": "Bruising, hematuria, epistaxis.",
+    "precautions": "No routine INR monitoring required; safe in moderate renal impairment."
+  },
+  {
+    "medicine_name": "Apixaban 5mg (Eliquis)",
+    "uses": "Factor Xa inhibitor with lowest major gastrointestinal bleeding risk.",
+    "dosage": "5mg twice daily with water.",
+    "side_effects": "Bruising, hematuria, epistaxis.",
+    "precautions": "No routine INR monitoring required; safe in moderate renal impairment."
+  },
+  {
+    "medicine_name": "Isosorbide Dinitrate 5mg Sublingual",
+    "uses": "Sublingual emergency tablet for acute angina chest pain attack.",
+    "dosage": "5mg dissolved under tongue while seated immediately when chest pain begins.",
+    "side_effects": "Throbbing headache, severe dizziness, sudden facial flushing.",
+    "precautions": "Sit down before taking due to sudden BP drop. Seek emergency care if pain persists after 5 min."
+  },
+  {
+    "medicine_name": "Isosorbide Dinitrate 10mg",
+    "uses": "Sublingual emergency tablet for acute angina chest pain attack.",
+    "dosage": "5mg dissolved under tongue while seated immediately when chest pain begins.",
+    "side_effects": "Throbbing headache, severe dizziness, sudden facial flushing.",
+    "precautions": "Sit down before taking due to sudden BP drop. Seek emergency care if pain persists after 5 min."
+  },
+  {
+    "medicine_name": "Isosorbide Dinitrate 20mg",
+    "uses": "Sublingual emergency tablet for acute angina chest pain attack.",
+    "dosage": "5mg dissolved under tongue while seated immediately when chest pain begins.",
+    "side_effects": "Throbbing headache, severe dizziness, sudden facial flushing.",
+    "precautions": "Sit down before taking due to sudden BP drop. Seek emergency care if pain persists after 5 min."
+  },
+  {
+    "medicine_name": "Isosorbide Mononitrate 20mg",
+    "uses": "Prophylaxis and chronic management of recurrent angina pectoris.",
+    "dosage": "30-60mg SR once daily in morning.",
+    "side_effects": "Headache, postural hypotension, reflex tachycardia.",
+    "precautions": "Leave a nitrate-free interval of 10-12 hours daily to avoid tolerance."
+  },
+  {
+    "medicine_name": "Isosorbide Mononitrate 30mg SR",
+    "uses": "Prophylaxis and chronic management of recurrent angina pectoris.",
+    "dosage": "30-60mg SR once daily in morning.",
+    "side_effects": "Headache, postural hypotension, reflex tachycardia.",
+    "precautions": "Leave a nitrate-free interval of 10-12 hours daily to avoid tolerance."
+  },
+  {
+    "medicine_name": "Isosorbide Mononitrate 60mg SR",
+    "uses": "Prophylaxis and chronic management of recurrent angina pectoris.",
+    "dosage": "30-60mg SR once daily in morning.",
+    "side_effects": "Headache, postural hypotension, reflex tachycardia.",
+    "precautions": "Leave a nitrate-free interval of 10-12 hours daily to avoid tolerance."
+  },
+  {
+    "medicine_name": "Nitroglycerin 0.4mg Sublingual",
+    "uses": "Controlled release vasodilator preventing nocturnal and exertion angina.",
+    "dosage": "2.6-6.4mg twice daily swallowed whole.",
+    "side_effects": "Headache, dizziness upon rising.",
+    "precautions": "Do not crush or chew CR tablet; do not combine with sildenafil/tadalafil."
+  },
+  {
+    "medicine_name": "Nitroglycerin 2.6mg CR",
+    "uses": "Controlled release vasodilator preventing nocturnal and exertion angina.",
+    "dosage": "2.6-6.4mg twice daily swallowed whole.",
+    "side_effects": "Headache, dizziness upon rising.",
+    "precautions": "Do not crush or chew CR tablet; do not combine with sildenafil/tadalafil."
+  },
+  {
+    "medicine_name": "Nitroglycerin 6.4mg CR",
+    "uses": "Controlled release vasodilator preventing nocturnal and exertion angina.",
+    "dosage": "2.6-6.4mg twice daily swallowed whole.",
+    "side_effects": "Headache, dizziness upon rising.",
+    "precautions": "Do not crush or chew CR tablet; do not combine with sildenafil/tadalafil."
+  },
+  {
+    "medicine_name": "Nitroglycerin 25mg/5ml IV",
+    "uses": "Controlled release vasodilator preventing nocturnal and exertion angina.",
+    "dosage": "2.6-6.4mg twice daily swallowed whole.",
+    "side_effects": "Headache, dizziness upon rising.",
+    "precautions": "Do not crush or chew CR tablet; do not combine with sildenafil/tadalafil."
+  },
+  {
+    "medicine_name": "Digoxin 0.25mg",
+    "uses": "Increases cardiac contractility in severe heart failure, controls atrial fibrillation rate.",
+    "dosage": "0.25mg once daily with monitoring.",
+    "side_effects": "Nausea, yellow-green halos around lights, cardiac arrhythmias.",
+    "precautions": "Narrow therapeutic window; report nausea, vomiting or vision changes promptly."
+  },
+  {
+    "medicine_name": "Digoxin 0.05mg/ml Paediatric Elixir",
+    "uses": "Increases cardiac contractility in severe heart failure, controls atrial fibrillation rate.",
+    "dosage": "0.25mg once daily with monitoring.",
+    "side_effects": "Nausea, yellow-green halos around lights, cardiac arrhythmias.",
+    "precautions": "Narrow therapeutic window; report nausea, vomiting or vision changes promptly."
+  },
+  {
+    "medicine_name": "Amiodarone 100mg",
+    "uses": "Broad spectrum antiarrhythmic for ventricular tachycardia and refractory AFib.",
+    "dosage": "200mg daily after loading phase.",
+    "side_effects": "Pulmonary fibrosis, corneal microdeposits, thyroid dysfunction, slate-grey skin.",
+    "precautions": "Requires baseline chest X-ray, thyroid, and liver monitoring."
+  },
+  {
+    "medicine_name": "Amiodarone 200mg",
+    "uses": "Broad spectrum antiarrhythmic for ventricular tachycardia and refractory AFib.",
+    "dosage": "200mg daily after loading phase.",
+    "side_effects": "Pulmonary fibrosis, corneal microdeposits, thyroid dysfunction, slate-grey skin.",
+    "precautions": "Requires baseline chest X-ray, thyroid, and liver monitoring."
+  },
+  {
+    "medicine_name": "Amiodarone 150mg/3ml Injection",
+    "uses": "Broad spectrum antiarrhythmic for ventricular tachycardia and refractory AFib.",
+    "dosage": "200mg daily after loading phase.",
+    "side_effects": "Pulmonary fibrosis, corneal microdeposits, thyroid dysfunction, slate-grey skin.",
+    "precautions": "Requires baseline chest X-ray, thyroid, and liver monitoring."
+  },
+  {
+    "medicine_name": "Zerodol-P",
+    "uses": "Severe inflammatory musculoskeletal trauma, dental swelling, post-surgical pain.",
+    "dosage": "1 tablet twice daily after meals.",
+    "side_effects": "Gastric pain, nausea, drowsiness, dyspepsia.",
+    "precautions": "Avoid taking with other NSAIDs or anticoagulants without supervision."
+  },
+  {
+    "medicine_name": "Zerodol-SP",
+    "uses": "Acute surgical swelling, severe edema, post-extraction dental pain.",
+    "dosage": "1 tablet twice daily after food.",
+    "side_effects": "Heartburn, diarrhoea, transient bloating.",
+    "precautions": "Use with gastro-resistant PPI in elderly patients."
+  },
+  {
+    "medicine_name": "Combiflam",
+    "uses": "Severe dental pain, traumatic sprains, severe backache, fever with inflammation.",
+    "dosage": "1 tablet twice daily after meals for 3-5 days.",
+    "side_effects": "Gastritis, stomach burning, nausea, dizziness.",
+    "precautions": "Avoid continuous use beyond 5 days. Not safe for chronic kidney patients."
+  },
+  {
+    "medicine_name": "Meftal-Spas",
+    "uses": "Abdominal colic, spasmodic period cramps, intestinal spasms.",
+    "dosage": "1 tablet 2-3 times daily as required after food.",
+    "side_effects": "Dry mouth, blurred vision, mild drowsiness.",
+    "precautions": "Avoid operating machinery if feeling dizzy."
+  },
+  {
+    "medicine_name": "Voveran 50",
+    "uses": "Post-traumatic pain, severe osteoarthritis, migraine attack pain.",
+    "dosage": "1 tablet 2 times daily after food.",
+    "side_effects": "Gastric burning, nausea, dizziness.",
+    "precautions": "Take with plenty of water. Contraindicated in active gastric ulcer."
+  },
+  {
+    "medicine_name": "Voveran Emulgel",
+    "uses": "Localized muscle sprain, neck stiffness, sports injuries, lower back ache.",
+    "dosage": "Apply thin layer gently to affected area 3-4 times daily.",
+    "side_effects": "Mild skin redness, local irritation, itching.",
+    "precautions": "Do not apply to open cuts, burns, or broken skin. Wash hands after use."
+  },
+  {
+    "medicine_name": "Volini Gel",
+    "uses": "Muscular pain, neck and shoulder ache, sprains and sciatica relief.",
+    "dosage": "Apply gently on the affected area 3 to 4 times a day.",
+    "side_effects": "Skin burning, redness, mild tingling.",
+    "precautions": "Wash hands after application; keep away from eyes and mucous membranes."
+  },
+  {
+    "medicine_name": "Moov Ointment",
+    "uses": "Ayurvedic & modern fast pain relief ointment for backache and joint pain.",
+    "dosage": "Massage gently over affected area 3-4 times daily.",
+    "side_effects": "Local warming sensation, redness.",
+    "precautions": "Do not apply on broken skin or with heating pads."
+  },
+  {
+    "medicine_name": "Iodex UltraGel",
+    "uses": "Deep penetrating pain relief gel for muscular aches and neck pain.",
+    "dosage": "Apply to painful area 3-4 times daily.",
+    "side_effects": "Mild local skin irritation.",
+    "precautions": "Avoid contact with eyes."
+  },
+  {
+    "medicine_name": "Omnigel Spray",
+    "uses": "Quick spray pain relief for sports injuries, sprains, and back pain.",
+    "dosage": "Spray from 5cm distance on affected site 3-4 times daily.",
+    "side_effects": "Cold sensation followed by mild stinging.",
+    "precautions": "Do not inhale spray; do not spray near flames."
+  },
+  {
+    "medicine_name": "Relispray",
+    "uses": "Instant pain relief spray for sports injuries, sprains, and muscle pulls.",
+    "dosage": "Spray on painful zone for 2-3 seconds from 10cm distance.",
+    "side_effects": "Cold tingling sensation.",
+    "precautions": "Do not spray near open eyes or fire."
+  },
+  {
+    "medicine_name": "Dolo 650",
+    "uses": "High grade fever, viral illnesses, joint pains, and acute backache.",
+    "dosage": "1 tablet every 6 to 8 hours after food.",
+    "side_effects": "Mild nausea, sweating; liver damage on excessive dosage.",
+    "precautions": "Do not take more than 4 tablets in 24 hours without clinical advice."
+  },
+  {
+    "medicine_name": "Crocin 650",
+    "uses": "Fever relief, dental ache, joint aches, and headache.",
+    "dosage": "1 tablet dissolved or swallowed after food up to 3 times daily.",
+    "side_effects": "Nausea, mild indigestion in rare instances.",
+    "precautions": "Avoid taking on completely empty stomach if susceptible to acidity."
+  },
+  {
+    "medicine_name": "Crocin Advance",
+    "uses": "Fast acting fever reducer and analgesic for bodily aches.",
+    "dosage": "1 tablet every 4 to 6 hours after meals.",
+    "side_effects": "Mild gastric upset.",
+    "precautions": "Do not exceed 4g paracetamol in 24 hours."
+  },
+  {
+    "medicine_name": "Calpol 250 Paediatric Syrup",
+    "uses": "Paediatric fever, teething pain, post-immunization pyrexia.",
+    "dosage": "10-15 mg/kg per dose every 4-6 hours.",
+    "side_effects": "Rare allergic rashes, mild nausea.",
+    "precautions": "Measure with calibrated syringe; keep out of children reach."
+  },
+  {
+    "medicine_name": "Calpol 120 Infant Suspension",
+    "uses": "Infant fever and mild discomfort from colds or vaccines.",
+    "dosage": "5-10 ml based on paediatric weight recommendations.",
+    "side_effects": "Rare allergic reactions.",
+    "precautions": "Do not exceed stated dose or duration beyond 3 days without doctor check."
+  },
+  {
+    "medicine_name": "Disprin Soluble",
+    "uses": "Acute tension headache, migraine relief, acute chest pain emergency.",
+    "dosage": "Dissolve 1-2 tablets in half a glass of water and drink immediately.",
+    "side_effects": "Gastric acidity, heartburn, mild nausea.",
+    "precautions": "Not recommended for children under 16 due to Reye syndrome risk."
+  },
+  {
+    "medicine_name": "Ultracet",
+    "uses": "Acute moderate to severe orthopedic and traumatic pain.",
+    "dosage": "1-2 tablets every 6 hours post meal.",
+    "side_effects": "Nausea, somnolence, dry mouth, constipation.",
+    "precautions": "Do not drive; avoid duplicate paracetamol ingestion."
+  },
+  {
+    "medicine_name": "Azee 500",
+    "uses": "Bacterial chest infection, sinusitis, throat infection, skin cellulitis.",
+    "dosage": "1 tablet daily at fixed time for 3 days.",
+    "side_effects": "Gastric cramping, diarrhea, temporary taste alterations.",
+    "precautions": "Complete 3-day course; do not take antacids within 2 hours."
+  },
+  {
+    "medicine_name": "Augmentin 625 Duo",
+    "uses": "Resistant bacterial infections, ENT infections, dental abscess, post-surgical wounds.",
+    "dosage": "1 tablet twice daily after food for 5-7 days.",
+    "side_effects": "Diarrhea, nausea, abdominal discomfort, fungal thrush.",
+    "precautions": "Take at the start of a meal to minimize digestive distress."
+  },
+  {
+    "medicine_name": "Augmentin 1000",
+    "uses": "Severe dental and bone infections, respiratory tract infections.",
+    "dosage": "1 tablet twice daily with food.",
+    "side_effects": "Nausea, diarrhea, loose stools.",
+    "precautions": "Complete full antibiotic course."
+  },
+  {
+    "medicine_name": "Ciplox 500",
+    "uses": "Bacterial dysentery, enteric fever, bone infections.",
+    "dosage": "1 tablet every 12 hours for 5 days.",
+    "side_effects": "Nausea, metallic taste, tendon stiffness.",
+    "precautions": "Stop immediately and report if Achilles tendon pain occurs."
+  },
+  {
+    "medicine_name": "Flagyl 400",
+    "uses": "Intestinal amoebiasis, bacterial vaginosis, liver abscess.",
+    "dosage": "1 tablet thrice daily after food for 7 days.",
+    "side_effects": "Nausea, furred tongue, headache.",
+    "precautions": "Avoid alcohol for 48 hours post completion of course."
+  },
+  {
+    "medicine_name": "Zentel 400",
+    "uses": "Single-dose chewable deworming for intestinal worms.",
+    "dosage": "Chew 1 tablet (400mg) with a fatty meal.",
+    "side_effects": "Mild stomach ache, nausea.",
+    "precautions": "Not recommended during first trimester of pregnancy."
+  },
+  {
+    "medicine_name": "O2 Tablet",
+    "uses": "Acute bacterial and amoebic mixed diarrhea, dysentery, dental infections.",
+    "dosage": "1 tablet twice daily after food for 3-5 days.",
+    "side_effects": "Metallic taste, dark urine, nausea, mild dizziness.",
+    "precautions": "Do not consume alcohol. Complete full course."
+  },
+  {
+    "medicine_name": "Pan 40",
+    "uses": "Hyperacidity, gastroesophageal reflux disease (GERD), gastric ulcer healing.",
+    "dosage": "1 tablet once daily early morning 30 minutes before breakfast.",
+    "side_effects": "Headache, flatulence, mild diarrhea.",
+    "precautions": "Swallow whole; do not crush or chew. Take on empty stomach."
+  },
+  {
+    "medicine_name": "Pan-D",
+    "uses": "Acid reflux with nausea, morning sickness, GERD with bloating.",
+    "dosage": "1 capsule once daily 30 minutes before first meal of day.",
+    "side_effects": "Dry mouth, headache, mild abdominal cramps.",
+    "precautions": "Do not take in heart rhythm disorders due to domperidone."
+  },
+  {
+    "medicine_name": "Omez 20",
+    "uses": "Acid indigestion, stomach pain, burning sensation in chest.",
+    "dosage": "1 capsule early morning before food.",
+    "side_effects": "Mild constipation, headache.",
+    "precautions": "Take regularly for prescribed 2-4 weeks."
+  },
+  {
+    "medicine_name": "Omez-D",
+    "uses": "Acidity accompanied by gas, bloating, and nausea.",
+    "dosage": "1 capsule once daily before breakfast.",
+    "side_effects": "Headache, dry mouth.",
+    "precautions": "Take 30 minutes before food."
+  },
+  {
+    "medicine_name": "Razo 20",
+    "uses": "Frequent nighttime heartburn, reflux esophagitis.",
+    "dosage": "1 tablet in morning with water.",
+    "side_effects": "Mild diarrhea, dizziness.",
+    "precautions": "Avoid trigger foods like excessive spice, caffeine, and tobacco."
+  },
+  {
+    "medicine_name": "Razo-D",
+    "uses": "Acid reflux, regurgitation, belching, nausea and indigestion.",
+    "dosage": "1 capsule before morning breakfast.",
+    "side_effects": "Dry mouth, headache, transient diarrhea.",
+    "precautions": "Consult doctor if palpitations occur."
+  },
+  {
+    "medicine_name": "Nexpro 40",
+    "uses": "Severe erosive esophagitis, triple therapy for H. pylori eradication.",
+    "dosage": "40mg once daily on empty stomach.",
+    "side_effects": "Headache, constipation, nausea.",
+    "precautions": "Active S-isomer of omeprazole with potent acid control."
+  },
+  {
+    "medicine_name": "Rantac 150",
+    "uses": "Fast relief from acidity, heartburn, and sour burping.",
+    "dosage": "1 tablet twice daily 30 minutes before meals.",
+    "side_effects": "Headache, constipation, tiredness.",
+    "precautions": "Take 30 minutes before meals or at bedtime."
+  },
+  {
+    "medicine_name": "Rantac 300",
+    "uses": "Nocturnal gastric acid suppression, active ulcer healing.",
+    "dosage": "1 tablet single dose at bedtime.",
+    "side_effects": "Mild dizziness, transient rash.",
+    "precautions": "Avoid heavy smoking which impairs nocturnal ulcer healing."
+  },
+  {
+    "medicine_name": "Gelusil Liquid Antacid",
+    "uses": "Immediate neutralizing relief from heartburn, gas, and stomach acidity.",
+    "dosage": "2-4 teaspoons (10-20ml) 1 hour after meals and at bedtime.",
+    "side_effects": "Mild constipation or diarrhea depending on dose.",
+    "precautions": "Shake well before pouring. Do not take within 2 hours of antibiotics."
+  },
+  {
+    "medicine_name": "Digene Chewable Tablet",
+    "uses": "Chewable tablet for rapid relief from acidity, gas, and stomach fullness.",
+    "dosage": "Chew 2 to 4 tablets after meals and whenever heartburn strikes.",
+    "side_effects": "Mild chalky taste, slight loose stools.",
+    "precautions": "Chew thoroughly; do not swallow whole."
+  },
+  {
+    "medicine_name": "Digene Mint Gel",
+    "uses": "Soothing fast liquid antacid for gastric heartburn and bloating.",
+    "dosage": "10ml after meals and at bedtime.",
+    "side_effects": "Mild bowel softening.",
+    "precautions": "Shake bottle well before use."
+  },
+  {
+    "medicine_name": "Eno Fruit Salt (Regular)",
+    "uses": "Fast 6-second relief from acidity and indigestion.",
+    "dosage": "Dissolve 1 sachet (5g) in a glass of water and drink immediately while fizzing.",
+    "side_effects": "Burping, gas release, mild stomach distension.",
+    "precautions": "Contains sodium; use with caution in severe hypertension."
+  },
+  {
+    "medicine_name": "Eno Fruit Salt (Lemon)",
+    "uses": "Effervescent fast relief from heartburn, stomach burning, and gas.",
+    "dosage": "Dissolve in glass of water and drink immediately.",
+    "side_effects": "Burping, mild alkalization.",
+    "precautions": "Do not take within 2 hours of other oral medicines."
+  },
+  {
+    "medicine_name": "Emeset 4",
+    "uses": "Nausea and vomiting from gastroenteritis, chemo, or surgery.",
+    "dosage": "1 tablet dissolved on tongue or swallowed 30 min before meals.",
+    "side_effects": "Headache, constipation, flushing, lightheadedness.",
+    "precautions": "Safe and highly effective for acute pediatric and adult vomiting."
+  },
+  {
+    "medicine_name": "Emeset 8",
+    "uses": "Severe acute vomiting, food poisoning emesis, chemotherapy vomiting.",
+    "dosage": "1 tablet every 8 hours as needed.",
+    "side_effects": "Constipation, headache, sensation of warmth.",
+    "precautions": "Maintain electrolyte rehydration while stopping vomiting."
+  },
+  {
+    "medicine_name": "Perinorm 10",
+    "uses": "Severe persistent vomiting, GERD, post-chemotherapy emesis.",
+    "dosage": "1 tablet up to 3 times daily 30 minutes before food.",
+    "side_effects": "Drowsiness, restlessness, extrapyramidal tremors (facial twitching).",
+    "precautions": "Do not use in bowel obstruction or epilepsy; limit to 5 days."
+  },
+  {
+    "medicine_name": "Drotin 40",
+    "uses": "Smooth muscle colic, biliary colic, uterine menstrual cramps, renal colic.",
+    "dosage": "1-2 tablets three times daily.",
+    "side_effects": "Vertigo, nausea, palpitations, dry mouth.",
+    "precautions": "Non-anticholinergic antispasmodic; does not cause dry mouth or glaucoma issues."
+  },
+  {
+    "medicine_name": "Drotin-M",
+    "uses": "Severe acute abdominal spasmodic pain, dysmenorrhea.",
+    "dosage": "1 tablet twice or thrice daily after meals.",
+    "side_effects": "Heartburn, dizziness, nausea.",
+    "precautions": "Take after food to protect gastric lining."
+  },
+  {
+    "medicine_name": "Dulcolax 5mg",
+    "uses": "Short term constipation relief, pre-procedure bowel evacuation.",
+    "dosage": "1-2 tablets at bedtime with a glass of water.",
+    "side_effects": "Abdominal cramps, rectal burning, diarrhea.",
+    "precautions": "Swallow tablet whole with water; do not take with milk or antacids."
+  },
+  {
+    "medicine_name": "Cremaffin Plus Syrup",
+    "uses": "Gentle overnight laxative and stool softener for piles and hard stools.",
+    "dosage": "15ml to 30ml at bedtime with water.",
+    "side_effects": "Nausea, mild cramping.",
+    "precautions": "Do not use regularly for more than 1 week without clinical advice."
+  },
+  {
+    "medicine_name": "Glycomet 500",
+    "uses": "First-line oral treatment for Type 2 Diabetes Mellitus.",
+    "dosage": "1 tablet twice daily with meals.",
+    "side_effects": "Nausea, metallic taste, diarrhea.",
+    "precautions": "Always take with food."
+  },
+  {
+    "medicine_name": "Glycomet 1g SR",
+    "uses": "Sustained round-the-clock glucose control for Type 2 diabetes.",
+    "dosage": "1 tablet once daily with evening meal.",
+    "side_effects": "Minimal GI upset.",
+    "precautions": "Swallow whole; do not chew sustained release matrix."
+  },
+  {
+    "medicine_name": "Glycomet-GP 1",
+    "uses": "Dual oral combination for fasting and post-meal glucose control.",
+    "dosage": "1 tablet once daily with breakfast.",
+    "side_effects": "Hypoglycemia if meal delayed, mild bloating.",
+    "precautions": "Always maintain regular meal timings."
+  },
+  {
+    "medicine_name": "Glycomet-GP 2",
+    "uses": "Stronger dual combination for resistant Type 2 diabetes.",
+    "dosage": "1 tablet with morning meal.",
+    "side_effects": "Tremors, weakness, sweatiness if food skipped.",
+    "precautions": "Monitor blood sugar regularly."
+  },
+  {
+    "medicine_name": "Galvus 50",
+    "uses": "DPP-4 inhibitor for steady blood sugar control.",
+    "dosage": "1 tablet twice daily with meals.",
+    "side_effects": "Mild dizziness, headache.",
+    "precautions": "Low hypoglycemia risk; weight neutral."
+  },
+  {
+    "medicine_name": "Galvus Met 50/500",
+    "uses": "Complementary insulin sensitization and incretin enhancement.",
+    "dosage": "1 tablet twice daily with meals.",
+    "side_effects": "Nausea, mild headache.",
+    "precautions": "Take with meals to prevent stomach discomfort."
+  },
+  {
+    "medicine_name": "Januvia 100",
+    "uses": "DPP-4 inhibitor improving incretin levels in Type 2 diabetes.",
+    "dosage": "1 tablet once daily with or without meals.",
+    "side_effects": "Nasopharyngitis, headache.",
+    "precautions": "Very low risk of hypoglycemia; weight neutral."
+  },
+  {
+    "medicine_name": "Janumet 50/500",
+    "uses": "Dual therapy of sitagliptin and metformin for Type 2 diabetes.",
+    "dosage": "1 tablet twice daily with meals.",
+    "side_effects": "Nausea, diarrhea, headache.",
+    "precautions": "Take with meals to minimize stomach upset."
+  },
+  {
+    "medicine_name": "Forxiga 10",
+    "uses": "SGLT-2 inhibitor promoting urinary glucose excretion; heart failure protection.",
+    "dosage": "1 tablet once daily in morning with water.",
+    "side_effects": "Genital mycotic infections (fungal thrush), frequent urination.",
+    "precautions": "Maintain generous water intake; maintain intimate hygiene."
+  },
+  {
+    "medicine_name": "Jardiance 10",
+    "uses": "Reduces cardiovascular mortality and kidney disease progression in diabetics.",
+    "dosage": "1 tablet once daily in morning.",
+    "side_effects": "Urinary tract infections, volume depletion.",
+    "precautions": "Stop temporarily if severe dehydration or major surgery occurs."
+  },
+  {
+    "medicine_name": "Thyronorm 25mcg",
+    "uses": "Replacement therapy for mild hypothyroidism / subclinical thyroid failure.",
+    "dosage": "1 tablet once daily early morning 30-60 min before breakfast.",
+    "side_effects": "Palpitations, sweating if overdosed.",
+    "precautions": "Take on empty stomach with plain water."
+  },
+  {
+    "medicine_name": "Thyronorm 50mcg",
+    "uses": "Primary hypothyroidism hormone restoration.",
+    "dosage": "1 tablet once daily early morning upon waking.",
+    "side_effects": "Nervousness, tachycardia if dose is too high.",
+    "precautions": "Check TSH every 6-8 weeks until stable."
+  },
+  {
+    "medicine_name": "Thyronorm 100mcg",
+    "uses": "Post-thyroidectomy or severe autoimmune hypothyroidism.",
+    "dosage": "1 tablet once daily early morning.",
+    "side_effects": "Weight loss, heat intolerance, tremor if excess.",
+    "precautions": "Lifelong therapy usually required; take strictly on empty stomach."
+  },
+  {
+    "medicine_name": "Telma 40",
+    "uses": "First-line ARB for essential hypertension and kidney protection.",
+    "dosage": "1 tablet once daily in morning with or without food.",
+    "side_effects": "Dizziness on standing, backache.",
+    "precautions": "Avoid potassium supplements; contraindicated in pregnancy."
+  },
+  {
+    "medicine_name": "Telma 80",
+    "uses": "Severe hypertension, reduction of cardiovascular events.",
+    "dosage": "1 tablet once daily.",
+    "side_effects": "Hypotension, hyperkalemia, fatigue.",
+    "precautions": "Monitor serum potassium and creatinine periodically."
+  },
+  {
+    "medicine_name": "Telma-H",
+    "uses": "Resistant hypertension combining ARB with mild diuretic.",
+    "dosage": "1 tablet once daily in morning.",
+    "side_effects": "Mild dehydration, dizziness.",
+    "precautions": "Take in morning to prevent nighttime urination."
+  },
+  {
+    "medicine_name": "Telma-AM",
+    "uses": "Synergistic dual therapy for uncontrolled blood pressure.",
+    "dosage": "1 tablet once daily.",
+    "side_effects": "Ankle swelling (pedal edema), dizziness.",
+    "precautions": "Report severe swelling in feet or ankles to physician."
+  },
+  {
+    "medicine_name": "Amlong 5",
+    "uses": "Calcium channel blocker for hypertension and chronic stable angina.",
+    "dosage": "1 tablet once daily with water.",
+    "side_effects": "Ankle edema, facial flushing, headache.",
+    "precautions": "Avoid grapefruit juice; do not discontinue abruptly."
+  },
+  {
+    "medicine_name": "Amlong 10",
+    "uses": "Uncontrolled hypertension, chronic vasospastic angina pectoris.",
+    "dosage": "1 tablet once daily.",
+    "side_effects": "Marked peripheral ankle swelling, dizziness.",
+    "precautions": "Elevating legs while resting helps alleviate ankle edema."
+  },
+  {
+    "medicine_name": "Cardace 2.5",
+    "uses": "Post-heart attack protection, heart failure, high BP.",
+    "dosage": "1 tablet once daily at bedtime initially.",
+    "side_effects": "Dry cough, orthostatic hypotension.",
+    "precautions": "Take at bedtime initially to prevent first-dose dizziness."
+  },
+  {
+    "medicine_name": "Cardace 5",
+    "uses": "Cardiovascular risk reduction in diabetic and hypertensive patients.",
+    "dosage": "1 tablet once daily with water.",
+    "side_effects": "Dry cough, mild headache.",
+    "precautions": "Avoid high potassium salt substitutes."
+  },
+  {
+    "medicine_name": "Betacard 25",
+    "uses": "Beta-blocker for hypertension, angina pectoris, post-MI.",
+    "dosage": "1 tablet once daily before breakfast.",
+    "side_effects": "Slow heart rate, cold extremities.",
+    "precautions": "Do not stop suddenly; contraindicated in severe asthma."
+  },
+  {
+    "medicine_name": "Betacard 50",
+    "uses": "Beta-blocker for cardiac rate control and blood pressure.",
+    "dosage": "1 tablet once daily.",
+    "side_effects": "Bradycardia, fatigue, dizziness.",
+    "precautions": "Check pulse regularly before taking."
+  },
+  {
+    "medicine_name": "Betaloc 25 ER",
+    "uses": "Sustained release beta-1 blocker for chronic heart failure and BP.",
+    "dosage": "1 tablet once daily in morning.",
+    "side_effects": "Bradycardia, lightheadedness, fatigue.",
+    "precautions": "Swallow whole; do not chew extended release tablet."
+  },
+  {
+    "medicine_name": "Betaloc 50 ER",
+    "uses": "24-hour heart rate control in atrial fibrillation and ischemic heart disease.",
+    "dosage": "1 tablet once daily.",
+    "side_effects": "Dizziness, cold extremities.",
+    "precautions": "Check resting pulse; consult if heart rate drops below 55 bpm."
+  }
+]

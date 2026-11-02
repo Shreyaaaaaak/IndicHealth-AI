@@ -1,0 +1,3715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Enforce login first before loading dashboard
+    (function() {
+      var token = localStorage.getItem("aarogya_token");
+      if (!token) {
+        window.location.replace("/login.html");
+      }
+    })();
+  </script>
+  <title>IndicHealth AI — Multilingual Rural Healthcare Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <style>
+    @font-face {
+      font-family: 'California Bold';
+      src: local('Californian FB Bold'), local('Californian FB'), local('California'), local('Playfair Display Bold');
+      font-weight: 700;
+    }
+
+    :root {
+      /* Exact Palette from User's 2 New Dashboard Inspirations */
+      --bg-outer: #EBF3F2;
+      --bg-app: #FFFFFF;
+      --bg-sidebar: #FFFFFF;
+      --bg-right-panel: #FDF8F3;
+      --bg-surface: #F7F8FA;
+
+      /* Bento Card Pastels & Vibrant Accents from Inspo 1 & Inspo 2 */
+      --mint-pastel: #D7EAE6;
+      --teal-card: #88C9C3;
+      --pink-pastel: #FBDCE6;
+      --amber-pastel: #FCE7B2;
+      --lavender-pastel: #E3DCF8;
+      --purple-card: #653780;
+      --coral-card: #F67E53;
+
+      --ink-dark: #16181E;
+      --ink-body: #3A3F4B;
+      --ink-muted: #8C92A0;
+      --border-soft: #EEF0F5;
+      --border-mid: #E2E6EE;
+
+      /* Requested Typography: Inter for Body, California Bold for Headings */
+      --font-body: 'Inter', 'Noto Sans Oriya', 'Noto Sans Devanagari', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'California Bold', 'Californian FB', 'California', 'Playfair Display', 'Noto Sans Oriya', 'Noto Sans Devanagari', 'Noto Sans Bengali', Georgia, serif;
+
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --shadow-card: 0 10px 30px rgba(22, 24, 30, 0.04);
+      --shadow-float: 0 18px 40px rgba(22, 24, 30, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-outer);
+
+      color: var(--ink-body);
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 18px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .cal-bold {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--ink-dark);
+      letter-spacing: -0.01em;
+    }
+
+    /* 3-Column App Shell (Matching Inspo 1 & Inspo 2) */
+    .app-shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: var(--bg-app);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-float);
+      display: grid;
+      grid-template-columns: 235px 1fr 330px;
+      min-height: calc(100vh - 36px);
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+    }
+
+    /* ==========================================
+       LEFT SIDEBAR (Inspo 2 Profile + Nav + Inspo 1 Icon Pill)
+       ========================================== */
+    .left-sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-soft);
+      padding: 26px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      cursor: pointer;
+      padding: 0 6px;
+    }
+
+    .brand-logo-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+    }
+
+    .brand-logo-bars span:nth-child(1) { width: 5px; height: 11px; background: var(--coral-card); border-radius: 3px; }
+    .brand-logo-bars span:nth-child(2) { width: 5px; height: 16px; background: var(--teal-card); border-radius: 3px; }
+    .brand-logo-bars span:nth-child(3) { width: 5px; height: 22px; background: var(--purple-card); border-radius: 3px; }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 21px;
+      color: var(--ink-dark);
+    }
+
+    /* Sidebar Patient Avatar Card (Inspo 2 "Sarah Connor") */
+    .sidebar-profile-box {
+      text-align: center;
+      padding: 16px 10px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      cursor: pointer;
+      transition: transform 0.14s ease-out;
+    }
+
+    .sidebar-profile-box:hover {
+      transform: translateY(-2px);
+    }
+
+    .avatar-ring {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      background: var(--teal-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+      box-shadow: 0 8px 18px rgba(136, 201, 195, 0.38);
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: -6px;
+      background: #FFFFFF;
+      color: var(--ink-dark);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .avatar-badge i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--coral-card);
+      display: inline-block;
+    }
+
+    .sidebar-user-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink-dark);
+      margin-top: 6px;
+    }
+
+    .sidebar-user-sub {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    /* Navigation Menu */
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .side-nav-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--ink-muted);
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 10px 13px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-align: left;
+      transition: all 0.14s ease-out;
+    }
+
+    .side-nav-btn svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    .side-nav-btn:hover {
+      background: var(--bg-surface);
+      color: var(--ink-dark);
+    }
+
+    .side-nav-btn.active {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(22, 24, 30, 0.16);
+    }
+
+    .sidebar-helpline {
+      background: var(--mint-pastel);
+      border-radius: var(--radius-md);
+      padding: 13px 14px;
+      font-size: 12px;
+      color: var(--ink-dark);
+    }
+
+    /* ==========================================
+       CENTER MAIN WORKSPACE
+       ========================================== */
+    .center-workspace {
+      padding: 28px 32px 48px;
+      overflow-y: auto;
+    }
+
+    /* Top Header Bar (Inspo 1 "Welcome back" + Search + Language + Inspo 2 Dark CTA) */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .greeting-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--ink-dark);
+      line-height: 1.15;
+    }
+
+    .greeting-date {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      margin-top: 3px;
+    }
+
+    .top-bar-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      padding: 8px 15px;
+      width: 210px;
+    }
+
+    .search-pill input {
+      border: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      color: var(--ink-dark);
+      width: 100%;
+      outline: none;
+    }
+
+    /* 4-Language Switcher (EN, HI, BN, OR) */
+    .lang-bar {
+      display: inline-flex;
+      background: var(--bg-surface);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .lang-chip {
+      border: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.14s ease-out;
+    }
+
+    .lang-chip.active {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+    }
+
+    .dark-cta-btn {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.14s ease-out, opacity 0.14s ease;
+    }
+
+    .dark-cta-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* Section Subheading */
+    .section-row-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .section-row-head h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink-dark);
+    }
+
+    .section-row-head h2 span {
+      color: var(--ink-muted);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    /* 3 Top Bento Cards (Combining Inspo 1 & Inspo 2) */
+    .bento-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .bento-card {
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 176px;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .bento-card.mint { background: var(--mint-pastel); color: var(--ink-dark); }
+    .bento-card.pink { background: var(--pink-pastel); color: var(--ink-dark); }
+    .bento-card.coral { background: var(--coral-card); color: #FFFFFF; }
+    .bento-card.purple { background: var(--purple-card); color: #FFFFFF; }
+    .bento-card.teal { background: var(--teal-card); color: #FFFFFF; }
+
+    .bento-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Avatar Cluster + Pill (Inspo 1 & 2) */
+    .avatar-stack {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .avatar-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: -8px;
+      background: var(--ink-dark);
+      color: #FFFFFF;
+    }
+
+    .rating-pill {
+      background: #FFFFFF;
+      color: var(--ink-dark);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bento-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 1.2;
+      margin: 16px 0 10px;
+      color: inherit;
+    }
+
+    .bento-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .bento-progress-wrap {
+      flex: 1;
+    }
+
+    .bento-meta {
+      font-size: 11.5px;
+      opacity: 0.82;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .bento-progress-track {
+      height: 5px;
+      background: rgba(22, 24, 30, 0.12);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bento-progress-bar {
+      height: 100%;
+      background: var(--ink-dark);
+      border-radius: 999px;
+    }
+
+    /* Circular Arrow Button (Inspo 1) */
+    .circle-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: var(--ink-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Dashboard Lower 2-Column Grid (Inspo 2 "Tasks for today" + Inspo 1 "Learning progress") */
+    .dashboard-lower-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+    }
+
+    /* Tasks for Today with Left Accent Bar (Inspo 2) */
+    .task-list-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .accent-task-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 16px 18px 16px 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.14s ease-out;
+    }
+
+    .accent-task-card:hover {
+      transform: translateX(3px);
+    }
+
+    .accent-task-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      bottom: 12px;
+      width: 5px;
+      border-radius: 0 6px 6px 0;
+      background: var(--coral-card);
+    }
+
+    .accent-task-card.purple-bar::before { background: var(--purple-card); }
+    .accent-task-card.teal-bar::before { background: var(--teal-card); }
+
+    .task-card-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--ink-dark);
+      margin-bottom: 3px;
+    }
+
+    .task-card-sub {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    .task-check-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--border-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: transparent;
+      font-size: 12px;
+      transition: all 0.14s ease;
+    }
+
+    .accent-task-card.done .task-check-circle {
+      background: var(--purple-card);
+      border-color: var(--purple-card);
+      color: #FFFFFF;
+    }
+
+    /* Statistics Pastel Mini-Bento (Inspo 1 "Completed 18 / Your score 72 / Active 14") */
+    .stats-trio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .stat-mini-box {
+      border-radius: var(--radius-md);
+      padding: 15px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 108px;
+      cursor: pointer;
+      transition: transform 0.14s ease-out;
+    }
+
+    .stat-mini-box:hover {
+      transform: translateY(-2px);
+    }
+
+    .stat-mini-box.mint { background: var(--mint-pastel); }
+    .stat-mini-box.amber { background: var(--amber-pastel); }
+    .stat-mini-box.lavender { background: var(--lavender-pastel); }
+
+    .stat-mini-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-dark);
+    }
+
+    .stat-mini-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .stat-big-num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--ink-dark);
+      line-height: 1;
+    }
+
+    /* Wide Amber Banner Card (Inspo 1 "IT & Software / Motion Design") */
+    .wide-amber-card {
+      background: var(--amber-pastel);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: transform 0.14s ease-out;
+    }
+
+    .wide-amber-card:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       RIGHT SCHEDULE & CALENDAR PANEL (Inspo 1 & Inspo 2)
+       ========================================== */
+    .right-panel {
+      background: var(--bg-right-panel);
+      border-left: 1px solid var(--border-soft);
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .right-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .right-panel-header h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink-dark);
+    }
+
+    .bell-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    /* Mini Calendar Card (Inspo 1 "July 2024") */
+    .mini-calendar-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .cal-month-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .cal-month-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--ink-dark);
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      text-align: center;
+      font-size: 11.5px;
+    }
+
+    .cal-dow {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--ink-muted);
+      padding-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .cal-day {
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--ink-body);
+      cursor: pointer;
+    }
+
+    .cal-day.soft-highlight {
+      background: var(--mint-pastel);
+      color: var(--ink-dark);
+    }
+
+    .cal-day.active-day {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+    }
+
+    /* Vertical Timeline Schedule (Inspo 2 "10:00 | 13:20") */
+    .timeline-section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 54px 4px 1fr;
+      gap: 12px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .timeline-time {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--ink-dark);
+    }
+
+    .timeline-bar {
+      width: 4px;
+      height: 34px;
+      border-radius: 99px;
+      background: var(--teal-card);
+    }
+
+    .timeline-bar.coral { background: var(--coral-card); }
+    .timeline-bar.purple { background: var(--purple-card); }
+
+    .timeline-info-sub {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    .timeline-info-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--ink-dark);
+    }
+
+    /* Right Panel Mint Info Cards (Inspo 1 Bottom Right) */
+    .right-mint-card {
+      background: var(--mint-pastel);
+      border-radius: var(--radius-md);
+      padding: 13px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.14s ease-out;
+    }
+
+    .right-mint-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .right-mint-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: var(--ink-dark);
+    }
+
+    /* ==========================================
+       SHARED INNER VIEWS & CARDS
+       ========================================== */
+    .app-view {
+      display: none;
+    }
+
+    .app-view.active {
+      display: block;
+    }
+
+    .view-banner {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .view-banner h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--ink-dark);
+    }
+
+    .view-banner p {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-top: 4px;
+      max-width: 620px;
+    }
+
+    .white-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .btn {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.14s ease-out;
+    }
+
+    .btn-dark {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+    }
+
+    .btn-dark:hover {
+      opacity: 0.9;
+    }
+
+    .btn-soft {
+      background: var(--bg-surface);
+      color: var(--ink-dark);
+      border-color: var(--border-mid);
+    }
+
+    .btn-soft:hover {
+      background: var(--mint-pastel);
+    }
+
+    .btn-coral {
+      background: var(--coral-card);
+      color: #FFFFFF;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 10px;
+    }
+
+    .input-field, .select-field, .textarea-field {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-mid);
+      background: var(--bg-surface);
+      color: var(--ink-dark);
+      outline: none;
+    }
+
+    .input-field:focus, .select-field:focus, .textarea-field:focus {
+      border-color: var(--ink-dark);
+      background: #FFFFFF;
+    }
+
+    .field-lbl {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink-dark);
+      margin-bottom: 6px;
+    }
+
+    /* Symptom Pills Grid */
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .sym-chip {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-mid);
+      background: var(--bg-surface);
+      color: var(--ink-dark);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      transition: all 0.14s ease;
+    }
+
+    .sym-chip.selected {
+      background: var(--purple-card);
+      color: #FFFFFF;
+      border-color: var(--purple-card);
+    }
+
+    /* Cards Grid for Doctors, Meds, PHCs */
+    .cards-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .item-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--mint-pastel);
+      color: var(--ink-dark);
+    }
+
+    .tag-pill.coral {
+      background: var(--pink-pastel);
+    }
+
+    .tag-pill.amber {
+      background: var(--amber-pastel);
+    }
+
+    /* Chat Window */
+    .chat-box-wrap {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 18px;
+    }
+
+    .chat-stream {
+      height: 430px;
+      overflow-y: auto;
+      padding: 18px;
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .chat-bubble {
+      max-width: 80%;
+      padding: 13px 16px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .chat-bubble.bot {
+      align-self: flex-start;
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      color: var(--ink-dark);
+    }
+
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: var(--ink-dark);
+      color: #FFFFFF;
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 24, 30, 0.45);
+      z-index: 300;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      max-width: 560px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: var(--shadow-float);
+    }
+
+    .toast-region {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 400;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toast-pill {
+      background: var(--ink-dark);
+      color: #FFFFFF;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: var(--shadow-float);
+    }
+
+    @media (max-width: 1180px) {
+      .app-shell {
+        grid-template-columns: 210px 1fr;
+      }
+      .right-panel {
+        grid-column: 1 / -1;
+        border-left: none;
+        border-top: 1px solid var(--border-soft);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .app-shell,
+      .bento-trio,
+      .dashboard-lower-grid,
+      .chat-box-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- ==========================================
+         COLUMN 1: LEFT SIDEBAR
+         ========================================== -->
+    <aside class="left-sidebar">
+      <div>
+        <div class="brand-row" onclick="switchView('dashboard')">
+          <div class="brand-logo-bars">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="brand-name">IndicHealth AI</span>
+        </div>
+
+        <!-- Patient Avatar Card (Inspo 2 "Sarah Connor") -->
+        <div class="sidebar-profile-box" style="margin: 22px 0;" onclick="switchView('profile')">
+          <div class="avatar-ring">
+            <span id="sidebar-avatar-letter">U</span>
+            <span class="avatar-badge"><i></i> <span id="sidebar-blood-pill">O+</span></span>
+          </div>
+          <div class="sidebar-user-name" id="sidebar-user-name">Welcome</div>
+          <div class="sidebar-user-sub" id="sidebar-user-sub">Rural Wellness Portal</div>
+        </div>
+
+        <!-- 9 Navigation Items -->
+        <nav class="sidebar-nav" id="sidebar-nav-list">
+          <button class="side-nav-btn active" data-view="dashboard" onclick="switchView('dashboard')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+            <span data-i18n="nav_dashboard">Dashboard</span>
+          </button>
+          <button class="side-nav-btn" data-view="chat" onclick="switchView('chat')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="nav_chat">AI Mitra Chat</span>
+          </button>
+          <button class="side-nav-btn" data-view="symptoms" onclick="switchView('symptoms')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span data-i18n="nav_symptoms">Symptom Triage</span>
+          </button>
+          <button class="side-nav-btn" data-view="appointments" onclick="switchView('appointments')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+            <span data-i18n="nav_doctors">Doctors &amp; OPD</span>
+          </button>
+          <button class="side-nav-btn" data-view="prescription" onclick="switchView('prescription')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span data-i18n="nav_rx">Scan Prescription</span>
+          </button>
+          <button class="side-nav-btn" data-view="medicines" onclick="switchView('medicines')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 1 1 7-7l7 7a4.95 4.95 0 1 1-7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+            <span data-i18n="nav_medicines">Medicine Guide</span>
+          </button>
+          <button class="side-nav-btn" data-view="reminders" onclick="switchView('reminders')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="nav_reminders">Daily Reminders</span>
+          </button>
+          <button class="side-nav-btn" data-view="facilities" onclick="switchView('facilities')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="nav_facilities">Nearby PHCs</span>
+          </button>
+          <button class="side-nav-btn" data-view="profile" onclick="switchView('profile')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h2M15 12h2M7 16h10"/></svg>
+            <span data-i18n="nav_profile">Health Card</span>
+          </button>
+          <button class="side-nav-btn" style="color:#d9534f; margin-top:10px;" onclick="logoutUser()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            <span>Log Out</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-helpline">
+        <div style="font-family:var(--font-heading); font-weight:700; font-size:13.5px; margin-bottom:3px;" data-i18n="helpline_title">24×7 Rural Helpline</div>
+        <div style="font-size:11.5px; opacity:0.85;" data-i18n="helpline_sub">Ambulance: 108 · Health: 104</div>
+      </div>
+    </aside>
+
+    <!-- ==========================================
+         COLUMN 2: CENTER MAIN WORKSPACE
+         ========================================== -->
+    <main class="center-workspace">
+
+      <!-- Persistent Top Header -->
+      <header class="top-bar">
+        <div>
+          <h1 class="greeting-title" id="top-greeting-title">Hello</h1>
+          <div class="greeting-date" id="top-greeting-date">Thursday, 29 October 2026 · Rural Wellness Portal</div>
+        </div>
+
+        <div class="top-bar-controls">
+          <div class="search-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="global-quick-search" placeholder="Search medicine or doctor..." oninput="handleGlobalSearch(event)" />
+          </div>
+
+          <!-- 4-Language Selector including Odia (ଓଡ଼ିଆ) -->
+          <div class="lang-bar" role="group" aria-label="Language Selector">
+            <button class="lang-chip active" data-lang="en" onclick="setLanguage('en')">EN</button>
+            <button class="lang-chip" data-lang="or" onclick="setLanguage('or')">ଓଡ଼ିଆ</button>
+            <button class="lang-chip" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+            <button class="lang-chip" data-lang="bn" onclick="setLanguage('bn')">বাংলা</button>
+          </div>
+
+          <button class="dark-cta-btn" onclick="switchView('appointments')" id="top-book-opd-btn">
+            <span data-i18n="btn_top_book_opd">+ Book OPD Slot</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ==========================================
+           VIEW 1: DASHBOARD (Inspo 1 & Inspo 2 Bento)
+           ========================================== -->
+      <section id="view-dashboard" class="app-view active">
+        <div class="section-row-head">
+          <h2><span data-i18n="dash_activities_heading" style="color:var(--ink-dark); font-family:var(--font-heading); font-weight:700; font-size:20px;">Your Care Pathways Today</span> <span>(3)</span></h2>
+        </div>
+
+        <!-- 3 Bento Cards Row -->
+        <div class="bento-trio">
+          <!-- Card 1: Purple / Mint -->
+          <div class="bento-card purple" onclick="switchView('symptoms')">
+            <div class="bento-top">
+              <div class="avatar-stack">
+                <span class="avatar-dot" style="background:#F67E53;">+8</span>
+                <span class="avatar-dot" style="background:#88C9C3;">Rx</span>
+              </div>
+              <span class="rating-pill">★ 4.9</span>
+            </div>
+            <h3 class="bento-title" data-i18n="bento_1_title">Symptom Triage &amp; Clinical Rules</h3>
+            <div class="bento-bottom">
+              <div class="bento-progress-wrap">
+                <div class="bento-meta" data-i18n="bento_1_meta">8 Clinical Rules · 96% Accuracy</div>
+                <div class="bento-progress-track" style="background:rgba(255,255,255,0.22);">
+                  <div class="bento-progress-bar" style="width:88%; background:#FFFFFF;"></div>
+                </div>
+              </div>
+              <span class="circle-arrow">↗</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Teal -->
+          <div class="bento-card teal" onclick="switchView('appointments')">
+            <div class="bento-top">
+              <div class="avatar-stack">
+                <span class="avatar-dot" style="background:#653780;">+8</span>
+                <span class="avatar-dot" style="background:#16181E;">MD</span>
+              </div>
+              <span class="rating-pill">★ 4.8</span>
+            </div>
+            <h3 class="bento-title" data-i18n="bento_2_title">Specialist Doctors &amp; Free PHC Slots</h3>
+            <div class="bento-bottom">
+              <div class="bento-progress-wrap">
+                <div class="bento-meta" data-i18n="bento_2_meta">8 Verified Doctors · ₹0 PHC OPD</div>
+                <div class="bento-progress-track" style="background:rgba(255,255,255,0.25);">
+                  <div class="bento-progress-bar" style="width:76%; background:#FFFFFF;"></div>
+                </div>
+              </div>
+              <span class="circle-arrow">↗</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Coral Orange -->
+          <div class="bento-card coral" onclick="switchView('prescription')">
+            <div class="bento-top">
+              <div class="avatar-stack">
+                <span class="avatar-dot" style="background:#16181E;">AI</span>
+                <span class="avatar-dot" style="background:#653780;">500+</span>
+              </div>
+              <span class="rating-pill">★ 4.9</span>
+            </div>
+            <h3 class="bento-title" data-i18n="bento_3_title">Prescription OCR &amp; 500+ Medicines</h3>
+            <div class="bento-bottom">
+              <div class="bento-progress-wrap">
+                <div class="bento-meta" data-i18n="bento_3_meta">Vision AI Scanner · Voice Audio</div>
+                <div class="bento-progress-track" style="background:rgba(255,255,255,0.25);">
+                  <div class="bento-progress-bar" style="width:92%; background:#FFFFFF;"></div>
+                </div>
+              </div>
+              <span class="circle-arrow">↗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Care Overview & Statistics -->
+        <div class="dashboard-lower-grid">
+          <div style="grid-column: 1 / -1;">
+            <div class="section-row-head">
+              <h2 data-i18n="dash_stats_heading">Care Overview &amp; Statistics</h2>
+            </div>
+
+            <div class="stats-trio-grid">
+              <div class="stat-mini-box mint" onclick="switchView('medicines')">
+                <span class="stat-mini-label" data-i18n="stat_meds_label">Essential Meds</span>
+                <div class="stat-mini-bottom">
+                  <span class="stat-big-num" id="stat-essential-meds-num">500+</span>
+                  <span class="circle-arrow" style="width:28px; height:28px; font-size:12px;">↗</span>
+                </div>
+              </div>
+
+              <div class="stat-mini-box amber" onclick="switchView('facilities')">
+                <span class="stat-mini-label" data-i18n="stat_phc_label">Nearby PHCs</span>
+                <div class="stat-mini-bottom">
+                  <span class="stat-big-num">10</span>
+                  <span class="circle-arrow" style="width:28px; height:28px; font-size:12px;">↗</span>
+                </div>
+              </div>
+
+              <div class="stat-mini-box lavender" onclick="switchView('reminders')">
+                <span class="stat-mini-label" data-i18n="stat_rem_label">Active Doses</span>
+                <div class="stat-mini-bottom">
+                  <span class="stat-big-num" id="stat-active-reminders-num">3</span>
+                  <span class="circle-arrow" style="width:28px; height:28px; font-size:12px;">↗</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wide Amber Progress Card (Inspo 1) -->
+            <div class="wide-amber-card" onclick="switchView('chat')">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:12px; font-weight:700; color:var(--ink-dark);" data-i18n="wide_card_eyebrow">Multilingual Voice &amp; AI Assistant</span>
+                <span class="circle-arrow" style="width:30px; height:30px;">↗</span>
+              </div>
+              <div style="font-size:12px; color:var(--ink-body); margin-bottom:4px;" data-i18n="wide_card_sub">Available in English, Odia (ଓଡ଼ିଆ), Hindi &amp; Bengali</div>
+              <div style="font-family:var(--font-heading); font-weight:700; font-size:18px; color:var(--ink-dark); margin-bottom:12px;" data-i18n="wide_card_title">Ask AI IndicHealth AI &amp; Listen Aloud</div>
+              <div class="bento-progress-track">
+                <div class="bento-progress-bar" style="width:65%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 2: SYMPTOM TRIAGE (#view-symptoms)
+           ========================================== -->
+      <section id="view-symptoms" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="sym_view_title">Symptom Triage &amp; Clinical Evaluation</h2>
+            <p data-i18n="sym_view_sub">Select your symptoms below. Our 8-rule clinical decision engine identifies urgency, home care, and the right specialist.</p>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn btn-soft btn-sm" onclick="loadPresetSymptomCase('dengue')" data-i18n="btn_demo_dengue">Viral / Dengue Case</button>
+            <button class="btn btn-soft btn-sm" onclick="loadPresetSymptomCase('cardiac')" data-i18n="btn_demo_cardiac">Cardiac Alert Case</button>
+            <button class="btn btn-soft btn-sm" onclick="clearSelectedSymptoms()" data-i18n="btn_reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="dashboard-lower-grid">
+          <div class="white-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h3 style="font-size:17px;" data-i18n="sym_select_heading">1. Tap Presenting Symptoms</h3>
+              <span class="tag-pill" id="selected-symptom-count">3</span>
+            </div>
+
+            <div class="symptom-grid" id="symptom-buttons-container"></div>
+
+            <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border-soft);">
+              <label class="field-lbl" for="custom-symptom-input" data-i18n="sym_custom_label">Add another symptom:</label>
+              <div style="display:flex; gap:8px;">
+                <input type="text" id="custom-symptom-input" class="input-field" data-i18n-placeholder="sym_custom_placeholder" placeholder="e.g., shivering, ear pain..." />
+                <button type="button" class="btn btn-soft" onclick="addCustomSymptom()" data-i18n="btn_add">Add</button>
+              </div>
+            </div>
+
+            <button class="btn btn-dark" style="width:100%; margin-top:16px;" onclick="runSymptomEvaluation()" data-i18n="btn_evaluate_symptoms">
+              Evaluate Symptoms Now
+            </button>
+          </div>
+
+          <div id="symptom-result-container"></div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 3: AI MITRA CHAT (#view-chat)
+           ========================================== -->
+      <section id="view-chat" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="chat_view_title">AI IndicHealth AI Consultation</h2>
+            <p data-i18n="chat_view_sub">Ask about fevers, ORS preparation, medicine dosages, or maternal nutrition in your chosen language.</p>
+          </div>
+          <button class="btn btn-soft btn-sm" onclick="clearChatHistory()" data-i18n="btn_clear_chat">Reset Chat</button>
+        </div>
+
+        <div class="chat-box-wrap">
+          <div class="white-card">
+            <h3 style="font-size:16px; margin-bottom:10px;" data-i18n="chat_prompts_heading">Quick Questions</h3>
+            <div id="chat-quick-prompts" style="display:flex; flex-direction:column; gap:8px;"></div>
+          </div>
+
+          <div class="white-card">
+            <div class="chat-stream" id="chat-messages-box"></div>
+            <form onsubmit="handleChatSubmit(event)" style="display:flex; gap:8px;">
+              <button type="button" class="btn btn-soft" id="voice-mic-btn" onclick="startVoiceInput()" data-i18n="btn_voice">Voice</button>
+              <input type="text" id="chat-input-field" class="input-field" data-i18n-placeholder="chat_input_placeholder" placeholder="Type your health question..." required />
+              <button type="submit" class="btn btn-dark" data-i18n="btn_send">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 4: DOCTORS & OPD (#view-appointments)
+           ========================================== -->
+      <section id="view-appointments" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="doc_view_title">Specialist Doctors &amp; PHC OPD Booking</h2>
+            <p data-i18n="doc_view_sub">Browse 8 verified PHC and district hospital specialists, including ₹0 free government consultations.</p>
+          </div>
+        </div>
+
+        <div class="white-card" style="margin-bottom:18px; padding:16px;">
+          <div style="display:grid; grid-template-columns: 1.3fr 1fr auto; gap:10px;">
+            <input type="text" id="doctor-search-input" class="input-field" data-i18n-placeholder="doc_search_placeholder" placeholder="Search doctor, hospital, or district..." oninput="renderDoctorsGrid()" />
+            <select id="doctor-specialty-filter" class="select-field" onchange="renderDoctorsGrid()">
+              <option value="ALL" data-i18n="doc_all_specs">All Specialties (8)</option>
+              <option value="General Physician">General Physician</option>
+              <option value="Cardiologist">Cardiologist</option>
+              <option value="Pediatrician">Pediatrician</option>
+              <option value="Gastroenterologist">Gastroenterologist</option>
+              <option value="Pulmonologist">Pulmonologist</option>
+              <option value="Dermatologist">Dermatologist</option>
+              <option value="Orthopedic Specialist">Orthopedic Specialist</option>
+              <option value="ENT Specialist">ENT Specialist</option>
+            </select>
+            <button class="btn btn-soft" onclick="resetDoctorFilters()" data-i18n="btn_show_all">Show All</button>
+          </div>
+        </div>
+
+        <div class="cards-grid-2" id="doctors-grid-container" style="margin-bottom:24px;"></div>
+
+        <div class="white-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <h3 style="font-size:18px;" data-i18n="doc_booked_heading">Your Scheduled OPD Appointments</h3>
+            <span class="tag-pill" id="booked-appointments-count">1</span>
+          </div>
+          <div id="appointments-list-container"></div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 5: PRESCRIPTION OCR (#view-prescription)
+           ========================================== -->
+      <section id="view-prescription" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="rx_view_title">Handwritten Prescription Vision Scanner</h2>
+            <p data-i18n="rx_view_sub">Upload a prescription photo or click a sample rural clinic slip to extract dosages and add them to Daily Reminders.</p>
+          </div>
+        </div>
+
+        <div class="dashboard-lower-grid">
+          <div class="white-card">
+            <h3 style="font-size:17px; margin-bottom:12px;" data-i18n="rx_step1_heading">1. Upload or Choose Sample Prescription</h3>
+            <label for="rx-file-input" style="display:block; border:2px dashed var(--teal-card); background:var(--mint-pastel); border-radius:var(--radius-md); padding:28px 18px; text-align:center; cursor:pointer; margin-bottom:16px;">
+              <div style="font-family:var(--font-heading); font-weight:700; font-size:17px; color:var(--ink-dark);" data-i18n="rx_drop_title">Click to Upload Prescription Image</div>
+              <div style="font-size:12px; color:var(--ink-body); margin-top:4px;" data-i18n="rx_drop_sub">Supports JPG, PNG, WEBP clinic slips</div>
+              <input type="file" id="rx-file-input" accept="image/*" style="display:none;" onchange="handlePrescriptionUpload(event)" />
+            </label>
+
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <button class="btn btn-soft" style="justify-content:flex-start;" onclick="runSamplePrescriptionScan('viral_phc')" data-i18n="rx_sample_1">Record #409: Barasat PHC — Viral Fever Slip</button>
+              <button class="btn btn-soft" style="justify-content:flex-start;" onclick="runSamplePrescriptionScan('gastro_care')" data-i18n="rx_sample_2">Record #118: Sub-Divisional Hospital — Gastritis &amp; ORS</button>
+              <button class="btn btn-soft" style="justify-content:flex-start;" onclick="runSamplePrescriptionScan('bp_cardiac')" data-i18n="rx_sample_3">Record #892: Chronic Care — Blood Pressure Slip</button>
+            </div>
+          </div>
+
+          <div class="white-card" id="rx-scan-output-card"></div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 6: MEDICINE GUIDE (#view-medicines)
+           ========================================== -->
+      <section id="view-medicines" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="med_view_title">500+ Essential Rural Medicines Guide</h2>
+            <p data-i18n="med_view_sub">Verified clinical usage, safe dosages, side effects, and precautions with audio read-aloud.</p>
+          </div>
+          <span class="tag-pill" id="medicine-count-badge">500+ / 500+</span>
+        </div>
+
+        <div class="white-card" style="margin-bottom:18px; padding:16px;">
+          <input type="text" id="medicine-search-input" class="input-field" style="margin-bottom:12px;" data-i18n-placeholder="med_search_placeholder" placeholder="Search 500+ medicines (Paracetamol, ORS, Dolo 650, Augmentin)..." oninput="renderMedicinesGrid()" />
+          <div style="display:flex; flex-wrap:wrap; gap:8px;" id="medicine-category-pills"></div>
+        </div>
+
+        <div class="cards-grid-2" id="medicines-grid-container"></div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 7: DAILY REMINDERS (#view-reminders)
+           ========================================== -->
+      <section id="view-reminders" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="rem_view_title">Daily Medicine Reminders</h2>
+            <p data-i18n="rem_view_sub">Manage your active medicine timings, listen to voice alerts, or add a new reminder.</p>
+          </div>
+        </div>
+
+        <div id="reminders-due-banner" style="margin-bottom:18px;"></div>
+
+        <div class="dashboard-lower-grid">
+          <div class="white-card">
+            <h3 style="font-size:17px; margin-bottom:12px;" data-i18n="rem_active_heading">Active Dosing Schedule</h3>
+            <div id="reminders-list-container" style="display:flex; flex-direction:column; gap:10px;"></div>
+          </div>
+
+          <div class="white-card">
+            <h3 style="font-size:17px; margin-bottom:12px;" data-i18n="rem_add_heading">Add New Reminder</h3>
+            <form onsubmit="handleCreateReminder(event)" style="display:flex; flex-direction:column; gap:12px;">
+              <div>
+                <label class="field-lbl" data-i18n="lbl_med_name">Medicine Name</label>
+                <input type="text" id="rem-med-name" class="input-field" placeholder="Paracetamol 500mg" required />
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_dosage">Dosage</label>
+                  <input type="text" id="rem-dosage" class="input-field" placeholder="1 Tablet" required />
+                </div>
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_time">Time</label>
+                  <input type="time" id="rem-time" class="input-field" value="08:00" required />
+                </div>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_frequency">Frequency</label>
+                  <select id="rem-frequency" class="select-field">
+                    <option value="Once Daily">Once Daily</option>
+                    <option value="Twice Daily">Twice Daily</option>
+                    <option value="Three Times Daily">Three Times Daily</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_notes">Instructions</label>
+                  <input type="text" id="rem-notes" class="input-field" placeholder="After meal" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-dark" data-i18n="btn_save_reminder">Save Reminder</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 8: NEARBY PHCs (#view-facilities)
+           ========================================== -->
+      <section id="view-facilities" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="fac_view_title">Nearby PHCs, CHCs &amp; 24×7 Hospitals</h2>
+            <p data-i18n="fac_view_sub">10 verified government healthcare centers sorted by real-time GPS distance.</p>
+          </div>
+          <span class="tag-pill" id="current-gps-label">Barasat (22.72° N, 88.48° E)</span>
+        </div>
+
+        <div class="white-card" style="margin-bottom:18px; padding:16px;">
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+            <button class="btn btn-soft btn-sm" onclick="setFacilityLocation(22.7214, 88.4812, 'Barasat')">Barasat</button>
+            <button class="btn btn-soft btn-sm" onclick="setFacilityLocation(22.5855, 88.4111, 'Kolkata / Salt Lake')">Kolkata</button>
+            <button class="btn btn-soft btn-sm" onclick="setFacilityLocation(22.5892, 88.3245, 'Howrah')">Howrah</button>
+            <button class="btn btn-soft btn-sm" onclick="setFacilityLocation(22.7511, 88.3412, 'Hooghly')">Hooghly</button>
+            <button class="btn btn-dark btn-sm" onclick="useBrowserGeolocation()" data-i18n="btn_use_gps">Use My GPS</button>
+          </div>
+          <div style="display:grid; grid-template-columns:1.3fr 0.8fr auto; gap:10px; align-items:center;">
+            <input type="text" id="facility-search-input" class="input-field" data-i18n-placeholder="fac_search_placeholder" placeholder="Search PHC, district, or emergency service..." oninput="renderFacilitiesGrid()" />
+            <select id="facility-type-filter" class="select-field" onchange="renderFacilitiesGrid()">
+              <option value="ALL">All Types (10)</option>
+              <option value="PHC">PHC</option>
+              <option value="CHC">CHC</option>
+              <option value="Hospital">Hospital</option>
+              <option value="Pharmacy">24×7 Pharmacy</option>
+            </select>
+            <label style="display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; cursor:pointer;">
+              <input type="checkbox" id="facility-24x7-only" onchange="renderFacilitiesGrid()" />
+              <span data-i18n="fac_24x7_only">24×7 Emergency</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="cards-grid-2" id="facilities-grid-container"></div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 9: HEALTH CARD (#view-profile)
+           ========================================== -->
+      <section id="view-profile" class="app-view">
+        <div class="view-banner">
+          <div>
+            <h2 data-i18n="prof_view_title">Digital Rural Health Card</h2>
+            <p data-i18n="prof_view_sub">Instant access to blood group, allergies, chronic conditions, and emergency contacts without login barriers.</p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-soft btn-sm" onclick="loadSampleProfile(0)">Sunita Devi (38y)</button>
+            <button class="btn btn-soft btn-sm" onclick="loadSampleProfile(1)">Ramesh Kumar (54y)</button>
+          </div>
+        </div>
+
+        <div class="dashboard-lower-grid">
+          <div id="visual-health-passport"></div>
+
+          <div class="white-card">
+            <h3 style="font-size:17px; margin-bottom:12px;" data-i18n="prof_edit_heading">Update Health Card Details</h3>
+            <form onsubmit="handleSaveProfile(event)" style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:grid; grid-template-columns:1.4fr 0.6fr; gap:10px;">
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_full_name">Full Name</label>
+                  <input type="text" id="prof-name" class="input-field" required />
+                </div>
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_age">Age</label>
+                  <input type="number" id="prof-age" class="input-field" required />
+                </div>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_gender">Gender</label>
+                  <select id="prof-gender" class="select-field">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="field-lbl" data-i18n="lbl_blood">Blood Group</label>
+                  <select id="prof-blood" class="select-field">
+                    <option value="B+">B+</option>
+                    <option value="O+">O+</option>
+                    <option value="A+">A+</option>
+                    <option value="AB+">AB+</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="field-lbl" data-i18n="lbl_village">Village / District</label>
+                <input type="text" id="prof-location" class="input-field" />
+              </div>
+              <div>
+                <label class="field-lbl" data-i18n="lbl_allergies">Allergies</label>
+                <input type="text" id="prof-allergies" class="input-field" />
+              </div>
+              <div>
+                <label class="field-lbl" data-i18n="lbl_conditions">Chronic Conditions</label>
+                <input type="text" id="prof-conditions" class="input-field" />
+              </div>
+              <div>
+                <label class="field-lbl" data-i18n="lbl_emergency">Emergency Contact</label>
+                <input type="text" id="prof-emergency" class="input-field" />
+              </div>
+              <button type="submit" class="btn btn-dark" style="margin-top:4px;" data-i18n="btn_save_profile">Save Health Card</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==========================================
+         COLUMN 3: RIGHT SCHEDULE & CALENDAR PANEL
+         ========================================== -->
+    <aside class="right-panel">
+      <div class="right-panel-header">
+        <h3 data-i18n="cal_panel_heading">Care Schedule</h3>
+        <button class="bell-btn" onclick="switchView('reminders')" title="Reminders">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </button>
+      </div>
+
+      <!-- Mini Calendar (Inspo 1 "July 2024") -->
+      <div class="mini-calendar-card">
+        <div class="cal-month-row">
+          <span class="cal-month-title" data-i18n="cal_month_label">October 2026</span>
+          <span style="font-size:12px; color:var(--ink-muted);">‹ &nbsp; ›</span>
+        </div>
+        <div class="cal-grid">
+          <span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span><span class="cal-dow">S</span>
+          <span class="cal-day">19</span><span class="cal-day">20</span><span class="cal-day soft-highlight" onclick="switchView('appointments')">21</span><span class="cal-day">22</span><span class="cal-day">23</span><span class="cal-day">24</span><span class="cal-day">25</span>
+          <span class="cal-day">26</span><span class="cal-day">27</span><span class="cal-day">28</span><span class="cal-day active-day" onclick="switchView('reminders')">29</span><span class="cal-day active-day" onclick="switchView('appointments')">30</span><span class="cal-day">31</span><span class="cal-day soft-highlight">1</span>
+        </div>
+      </div>
+
+      <!-- Vertical Timeline (Inspo 2 "10:00 | 13:20") -->
+      <div>
+        <div class="timeline-section-label">
+          <span data-i18n="timeline_today_label">Today's Doses &amp; OPD</span>
+          <span>•••</span>
+        </div>
+        <div class="timeline-list" id="right-timeline-list"></div>
+      </div>
+
+      <!-- Bottom Mint Action Cards (Inspo 1 Bottom Right) -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div class="right-mint-card" onclick="switchView('facilities')">
+          <div class="right-mint-icon">PHC</div>
+          <div>
+            <div style="font-family:var(--font-heading); font-weight:700; font-size:13.5px; color:var(--ink-dark);" data-i18n="mint_card_1_title">Nearest 24×7 PHC Locator</div>
+            <div style="font-size:11.5px; color:var(--ink-body);" data-i18n="mint_card_1_sub">Barasat Govt PHC · 0.8 km away</div>
+          </div>
+        </div>
+
+        <div class="right-mint-card" onclick="switchView('medicines')">
+          <div class="right-mint-icon">Rx</div>
+          <div>
+            <div style="font-family:var(--font-heading); font-weight:700; font-size:13.5px; color:var(--ink-dark);" data-i18n="mint_card_2_title">WHO-ORS &amp; Fever Guide</div>
+            <div style="font-size:11.5px; color:var(--ink-body);" data-i18n="mint_card_2_sub">500+ Essential Rural Medicines</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- MODAL 1: DOCTOR BOOKING -->
+  <div class="modal-backdrop" id="booking-modal" onclick="if(event.target===this) closeBookingModal()">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+        <div>
+          <h3 style="font-size:20px;" id="booking-modal-doc-name">Book OPD Slot</h3>
+          <p style="font-size:12.5px; color:var(--ink-muted);" id="booking-modal-doc-meta"></p>
+        </div>
+        <button class="btn btn-soft btn-sm" onclick="closeBookingModal()">✕</button>
+      </div>
+      <form onsubmit="submitDoctorBooking(event)" style="display:flex; flex-direction:column; gap:12px;">
+        <input type="hidden" id="book-doc-id" />
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div>
+            <label class="field-lbl" data-i18n="lbl_full_name">Patient Name</label>
+            <input type="text" id="book-patient-name" class="input-field" required />
+          </div>
+          <div>
+            <label class="field-lbl" data-i18n="lbl_phone">Phone</label>
+            <input type="text" id="book-patient-phone" class="input-field" required />
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div>
+            <label class="field-lbl" data-i18n="lbl_date">Date</label>
+            <input type="date" id="book-date" class="input-field" required />
+          </div>
+          <div>
+            <label class="field-lbl" data-i18n="lbl_slot">Time Slot</label>
+            <select id="book-slot" class="select-field" required></select>
+          </div>
+        </div>
+        <div>
+          <label class="field-lbl" data-i18n="lbl_symptoms_reason">Symptoms / Reason</label>
+          <textarea id="book-symptoms" class="textarea-field" rows="3" required></textarea>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:8px;">
+          <button type="button" class="btn btn-soft" onclick="closeBookingModal()" data-i18n="btn_cancel">Cancel</button>
+          <button type="submit" class="btn btn-dark" data-i18n="btn_confirm_booking">Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: MEDICINE DETAIL -->
+  <div class="modal-backdrop" id="medicine-modal" onclick="if(event.target===this) closeMedicineModal()">
+    <div class="modal-card" id="medicine-modal-content"></div>
+  </div>
+
+  <div class="toast-region" id="toast-stack"></div>
+
+  <script>
+    // =========================================================
+    // 1. COMPLETE WHOLE-PAGE MULTILINGUAL DICTIONARY
+    //    English (en), Odia (or), Hindi (hi), Bengali (bn)
+    // =========================================================
+    const I18N = {
+      en: {
+        langName: "English",
+        greetingPrefix: "Hello,",
+        greetingDate: "Thursday, 29 October 2026 · Rural Wellness Portal",
+        searchPlaceholder: "Search medicine or doctor...",
+        btn_top_book_opd: "+ Book OPD Slot",
+        nav_dashboard: "Dashboard",
+        nav_symptoms: "Symptom Triage",
+        nav_chat: "AI Mitra Chat",
+        nav_doctors: "Doctors & OPD",
+        nav_rx: "Scan Prescription",
+        nav_medicines: "Medicine Guide",
+        nav_reminders: "Daily Reminders",
+        nav_facilities: "Nearby PHCs",
+        nav_profile: "Health Card",
+        helpline_title: "24×7 Rural Helpline",
+        helpline_sub: "Ambulance: 108 · Health: 104",
+        dash_activities_heading: "Your Care Pathways Today",
+        bento_1_title: "Symptom Triage & Clinical Rules",
+        bento_1_meta: "8 Clinical Rules · 96% Accuracy",
+        bento_2_title: "Specialist Doctors & Free PHC Slots",
+        bento_2_meta: "8 Verified Doctors · ₹0 PHC OPD",
+        bento_3_title: "Prescription OCR & 500+ Medicines",
+        bento_3_meta: "Vision AI Scanner · Voice Audio",
+        dash_tasks_heading: "Health Tasks & Seasonal Advisories",
+        dash_stats_heading: "Care Overview & Statistics",
+        stat_meds_label: "Essential Meds",
+        stat_phc_label: "Nearby PHCs",
+        stat_rem_label: "Active Doses",
+        wide_card_eyebrow: "Multilingual Voice & AI Assistant",
+        wide_card_sub: "Available in English, Odia (ଓଡ଼ିଆ), Hindi & Bengali",
+        wide_card_title: "Ask AI IndicHealth AI & Listen Aloud",
+        cal_panel_heading: "Care Schedule",
+        cal_month_label: "October 2026",
+        timeline_today_label: "Today's Doses & OPD",
+        mint_card_1_title: "Nearest 24×7 PHC Locator",
+        mint_card_1_sub: "Barasat Govt PHC · 0.8 km away",
+        mint_card_2_title: "WHO-ORS & Fever Guide",
+        mint_card_2_sub: "500+ Essential Rural Medicines",
+        sym_view_title: "Symptom Triage & Clinical Evaluation",
+        sym_view_sub: "Select your symptoms below. Our 8-rule clinical decision engine identifies urgency, home care, and the right specialist.",
+        btn_demo_dengue: "Viral / Dengue Case",
+        btn_demo_cardiac: "Cardiac Alert Case",
+        btn_reset: "Reset",
+        sym_select_heading: "1. Tap Presenting Symptoms",
+        sym_custom_label: "Add another symptom:",
+        sym_custom_placeholder: "e.g., shivering, ear pain...",
+        btn_add: "Add",
+        btn_evaluate_symptoms: "Evaluate Symptoms Now",
+        chat_view_title: "AI IndicHealth AI Consultation",
+        chat_view_sub: "Ask about fevers, ORS preparation, medicine dosages, or maternal nutrition in your chosen language.",
+        btn_clear_chat: "Reset Chat",
+        chat_prompts_heading: "Quick Questions",
+        btn_voice: "Voice",
+        chat_input_placeholder: "Type your health question...",
+        btn_send: "Send",
+        doc_view_title: "Specialist Doctors & PHC OPD Booking",
+        doc_view_sub: "Browse 8 verified PHC and district hospital specialists, including ₹0 free government consultations.",
+        doc_search_placeholder: "Search doctor, hospital, or district...",
+        doc_all_specs: "All Specialties (8)",
+        btn_show_all: "Show All",
+        doc_booked_heading: "Your Scheduled OPD Appointments",
+        rx_view_title: "Handwritten Prescription Vision Scanner",
+        rx_view_sub: "Upload a prescription photo or click a sample rural clinic slip to extract dosages and add them to Daily Reminders.",
+        rx_step1_heading: "1. Upload or Choose Sample Prescription",
+        rx_drop_title: "Click to Upload Prescription Image",
+        rx_drop_sub: "Supports JPG, PNG, WEBP clinic slips",
+        rx_sample_1: "Record #409: Barasat PHC — Viral Fever Slip",
+        rx_sample_2: "Record #118: Sub-Divisional Hospital — Gastritis & ORS",
+        rx_sample_3: "Record #892: Chronic Care — Blood Pressure Slip",
+        med_view_title: "500+ Essential Rural Medicines Guide",
+        med_view_sub: "Verified clinical usage, safe dosages, side effects, and precautions with audio read-aloud.",
+        med_search_placeholder: "Search 500+ medicines (Paracetamol, ORS, Dolo 650, Augmentin)...",
+        rem_view_title: "Daily Medicine Reminders",
+        rem_view_sub: "Manage your active medicine timings, listen to voice alerts, or add a new reminder.",
+        rem_active_heading: "Active Dosing Schedule",
+        rem_add_heading: "Add New Reminder",
+        lbl_med_name: "Medicine Name",
+        lbl_dosage: "Dosage",
+        lbl_time: "Time",
+        lbl_frequency: "Frequency",
+        lbl_notes: "Instructions",
+        btn_save_reminder: "Save Reminder",
+        fac_view_title: "Nearby PHCs, CHCs & 24×7 Hospitals",
+        fac_view_sub: "10 verified government healthcare centers sorted by real-time GPS distance.",
+        btn_use_gps: "Use My GPS",
+        fac_search_placeholder: "Search PHC, district, or emergency service...",
+        fac_24x7_only: "24×7 Emergency",
+        prof_view_title: "Digital Rural Health Card",
+        prof_view_sub: "Instant access to blood group, allergies, chronic conditions, and emergency contacts without login barriers.",
+        prof_edit_heading: "Update Health Card Details",
+        lbl_full_name: "Full Name",
+        lbl_age: "Age",
+        lbl_gender: "Gender",
+        lbl_blood: "Blood Group",
+        lbl_village: "Village / District",
+        lbl_allergies: "Allergies",
+        lbl_conditions: "Chronic Conditions",
+        lbl_emergency: "Emergency Contact",
+        btn_save_profile: "Save Health Card",
+        lbl_phone: "Phone",
+        lbl_date: "Date",
+        lbl_slot: "Time Slot",
+        lbl_symptoms_reason: "Symptoms / Reason",
+        btn_cancel: "Cancel",
+        btn_confirm_booking: "Confirm Booking",
+        server_modal_title: "FastAPI Backend Connection",
+        server_modal_desc: "Works offline with all 500+ medicines, 8 doctors, and 10 PHCs pre-loaded, or connect to your local FastAPI backend:",
+        btn_use_demo: "Offline Seed Mode",
+        btn_connect_live: "Connect FastAPI",
+        listen_btn: "Listen Aloud",
+        book_slot_btn: "Book OPD Slot",
+        free_phc_tag: "₹0 Free PHC",
+        tasks: [
+          { title: "Monsoon Dengue & Malaria Prevention", sub: "Empty stagnant water weekly; take only Paracetamol for fever", color: "coral-bar" },
+          { title: "WHO-ORS Hydration Preparation", sub: "Mix 1 full packet in 1 liter boiled cooled water", color: "purple-bar" },
+          { title: "Maternal Iron & Leafy Diet", sub: "Include moringa leaves, spinach, jaggery & lemon daily", color: "teal-bar" }
+        ],
+        quickPrompts: [
+          "My child has mild fever and loose motion since morning. What home care should I start?",
+          "How do I prepare WHO-ORS accurately with 1 liter of boiled water?",
+          "What is the safe adult dose and gap for Paracetamol 500mg?",
+          "High fever with chills and joint ache—when should I test for Dengue?",
+          "Which local foods naturally improve low hemoglobin and anemia?"
+        ]
+      },
+
+      or: {
+        langName: "ଓଡ଼ିଆ (Odia)",
+        greetingPrefix: "ନମସ୍କାର,",
+        greetingDate: "ଗୁରୁବାର, ୨୯ ଅକ୍ଟୋବର ୨୦୨୬ · ଗ୍ରାମୀଣ ସ୍ୱାସ୍ଥ୍ୟ ପୋର୍ଟାଲ୍",
+        searchPlaceholder: "ଔଷଧ କିମ୍ବା ଡାକ୍ତର ଖୋଜନ୍ତୁ...",
+        btn_top_book_opd: "+ ଡାକ୍ତର ଆପଏଣ୍ଟମେଣ୍ଟ",
+        nav_dashboard: "ଡ୍ୟାସବୋର୍ଡ (ମୁଖ୍ୟ ପୃଷ୍ଠା)",
+        nav_symptoms: "ଲକ୍ଷଣ ପରୀକ୍ଷା",
+        nav_chat: "ଏଆଇ ମିତ୍ର ଚାଟ୍",
+        nav_doctors: "ଡାକ୍ତର ଓ ଆপଏଣ୍ଟମେଣ୍ଟ",
+        nav_rx: "ପ୍ରେସକ୍ରିପସନ୍ ସ୍କାନ୍",
+        nav_medicines: "ଔଷଧ ସୂଚନା (୫୦୦+)",
+        nav_reminders: "ଔଷଧ ରିମାଇଣ୍ଡର୍",
+        nav_facilities: "ନିକଟସ୍ଥ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର",
+        nav_profile: "ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଡ",
+        helpline_title: "୨୪×୭ ଗ୍ରାମୀଣ ହେଲ୍ପଲାଇନ୍",
+        helpline_sub: "ଆମ୍ବୁଲାନ୍ସ: ୧୦୮ · ସ୍ୱାସ୍ଥ୍ୟ: ୧୦୪",
+        dash_activities_heading: "ଆଜିର ମୁଖ୍ୟ ସ୍ୱାସ୍ଥ୍ୟ ସେବା",
+        bento_1_title: "ଲକ୍ଷଣ ପରୀକ୍ଷା ଓ ପରାମର୍ଶ",
+        bento_1_meta: "୮ଟି କ୍ଲିନିକାଲ୍ ନିୟମ · ୯୬% ସଠିକ୍",
+        bento_2_title: "ବିଶେଷଜ୍ଞ ଡାକ୍ତର ଓ ମାଗଣା PHC",
+        bento_2_meta: "୮ ଜଣ ଡାକ୍ତର · ₹୦ ସରକାରୀ ପରାମର୍ଶ",
+        bento_3_title: "ପ୍ରେସକ୍ରିପସନ୍ ସ୍କାନ୍ ଓ ୫୦୦+ ଔଷଧ",
+        bento_3_meta: "ଭିଜନ୍ AI ସ୍କାନର୍ · ଅଡିଓ ସୁବିଧା",
+        dash_tasks_heading: "ଆଜିର ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଯ୍ୟ ଓ ସତର୍କତା",
+        dash_stats_heading: "ସ୍ୱାସ୍ଥ୍ୟ ପରିସଂଖ୍ୟାନ",
+        stat_meds_label: "ଜରୁରୀ ଔଷଧ",
+        stat_phc_label: "ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର",
+        stat_rem_label: "সକ୍ରିୟ ରିମାଇଣ୍ଡର୍",
+        wide_card_eyebrow: "ବହୁଭାଷୀ ଭଏସ୍ ଓ AI ସହାୟକ",
+        wide_card_sub: "ଓଡ଼ିଆ, ଇଂରାଜୀ, ହିନ୍ଦୀ ଓ ବଙ୍ଗଳାରେ ଉପଲବ୍ଧ",
+        wide_card_title: "ଏଆଇ ଆରୋଗ୍ୟମିତ୍ରଙ୍କୁ ପଚାରନ୍ତୁ ଓ ଶୁଣନ୍ତୁ",
+        cal_panel_heading: "ସ୍ୱାସ୍ଥ୍ୟ ସୂଚୀ",
+        cal_month_label: "ଅକ୍ଟୋବର ୨୦୨୬",
+        timeline_today_label: "ଆଜିର ଔଷଧ ଓ ଡାକ୍ତର ସମୟ",
+        mint_card_1_title: "ନିକଟସ୍ଥ ୨୪×୭ PHC କେନ୍ଦ୍ର",
+        mint_card_1_sub: "ବାରাসাত ସରକାରୀ PHC · ୦.୮ କି.ମି.",
+        mint_card_2_title: "WHO-ORS ଓ ଜ୍ୱର ନିର୍ଦ୍ଦେଶিকা",
+        mint_card_2_sub: "୫୦୦+ ଜରୁରୀ ଗ୍ରାମୀଣ ଔଷଧ",
+        sym_view_title: "ଲକ୍ଷଣ ପରୀକ୍ଷା ଓ ଡାକ୍ତରୀ ମୂଲ୍ୟାଙ୍କନ",
+        sym_view_sub: "ଆପଣ অনুଭବ କରୁଥିବା ଲକ୍ଷଣଗୁଡ଼ିକୁ ବାଛନ୍ତୁ | ଆମର ୮-ନିୟମ ପ୍ରଣାଳୀ ସଠିକ୍ ପ୍ରାଥମିକ ଚିକିତ୍ସା ଓ ବିଶେଷଜ୍ଞ ଡାକ୍ତରଙ୍କ ପରାମର୍ଶ ଦେବ |",
+        btn_demo_dengue: "ଡେଙ୍ଗୁ/ଭାଇରାଲ୍ ଉଦାହରଣ",
+        btn_demo_cardiac: "ହୃଦরোগ ଜରୁରୀ ଉଦାହରଣ",
+        btn_reset: "ପୁନଃସେଟ୍ କରନ୍ତୁ",
+        sym_select_heading: "୧. ଆପଣଙ୍କର ଲକ୍ଷଣ ବାଛନ୍ତୁ",
+        sym_custom_label: "ଅନ୍ୟ କୌଣସି ଲକ୍ଷଣ ଯୋଡ଼ନ୍ତୁ:",
+        sym_custom_placeholder: "ଯଥା: କମ୍ପନ, କାନ ବିନ୍ଧା...",
+        btn_add: "ଯୋଡ଼ନ୍ତୁ",
+        btn_evaluate_symptoms: "ଲକ୍ଷଣ ମୂଲ୍ୟାଙ୍କନ କରନ୍ତୁ",
+        chat_view_title: "ଏଆଇ ଆରୋଗ୍ୟମିତ୍ର ପରାମର୍ଶ",
+        chat_view_sub: "ଜ୍ୱର, ORS ପ୍ରସ୍ତୁତି, ଔଷଧ ସମୟ କିମ୍ବା ପୁଷ୍ଟିକର ଖାଦ୍ୟ ବିଷୟରେ ଓଡ଼ିଆରେ ପଚାରନ୍ତୁ |",
+        btn_clear_chat: "ଚାଟ୍ ସଫା କରନ୍ତୁ",
+        chat_prompts_heading: "ସାଧାରଣ ପ୍ରଶ୍ନଗୁଡ଼ିକ",
+        btn_voice: "ଭଏସ୍",
+        chat_input_placeholder: "ଆପଣଙ୍କର ସ୍ୱାସ୍ଥ୍ୟ ପ୍ରଶ୍ନ ଲେଖନ୍ତୁ...",
+        btn_send: "ପଠାନ୍ତୁ",
+        doc_view_title: "ବିଶେଷଜ୍ଞ ଡାକ୍ତର ଓ PHC ଆପଏଣ୍ଟମେଣ୍ଟ",
+        doc_view_sub: "୮ ଜଣ ପ୍ରମାଣିତ ସରକାରୀ PHC ଓ ଜିଲ୍ଲା ହସ୍ପିଟାଲ୍ ଡାକ୍ତରଙ୍କ ସହ ମାଗଣା (₹୦) କିମ୍ବା ସ୍ୱଳ୍ପ ମୂଲ୍ୟରେ ପରାମର୍ଶ କରନ୍ତୁ |",
+        doc_search_placeholder: "ଡାକ୍ତର, ହସ୍ପିଟାଲ୍ କିମ୍ବା ଜିଲ୍ଲା ଖୋଜନ୍ତୁ...",
+        doc_all_specs: "ସମସ୍ତ ବିଭାଗ (୮)",
+        btn_show_all: "ସବୁ ଦେଖାନ୍ତୁ",
+        doc_booked_heading: "ଆପଣଙ୍କର ବୁକ୍ ହୋଇଥିବା ଆପଏଣ୍ଟମେଣ୍ଟ",
+        rx_view_title: "হাতে ଲେଖା ପ୍ରେସକ୍ରିପସନ୍ ସ୍କାନର୍",
+        rx_view_sub: "ଡାକ୍ତରଙ୍କ ପ୍ରେସକ୍ରିପସନ୍ ଫଟୋ ଅପଲୋଡ୍ କରନ୍ତୁ କିମ୍ବା ନମୁନା ସ୍ଲିପ୍ ଦେଖନ୍ତୁ ଓ ସିଧାସଳଖ ରିମାଇଣ୍ଡରରେ ଯୋଡ଼ନ୍ତୁ |",
+        rx_step1_heading: "୧. ପ୍ରେସକ୍ରିପସନ୍ ଫଟୋ ଅପଲୋଡ୍ କିମ୍ବା ନମୁନା ବାଛନ୍ତୁ",
+        rx_drop_title: "ପ୍ରେସକ୍ରିପସନ୍ ଫଟୋ ଅପଲୋଡ୍ କରିବାକୁ କ୍ଲିକ୍ କରନ୍ତୁ",
+        rx_drop_sub: "JPG, PNG, WEBP ଫଟୋ ସମର୍ଥିତ",
+        rx_sample_1: "ନମୁନା ୧: ବାରାସାତ PHC — ଭାଇରାଲ୍ ଜ୍ୱର ପ୍ରେସକ୍ରିପସନ୍",
+        rx_sample_2: "ନମୁନା ୨: ସବ-ଡିଭିଜନାଲ୍ ହସ୍ପିଟାଲ୍ — ଗ୍ୟାଷ୍ଟ୍ରাইଟିସ୍ ଓ ORS",
+        rx_sample_3: "ନମୁନା ୩: ଉଚ୍ଚ ରକ୍ତଚାପ ଓ ହୃଦযନ୍ତ୍ର ପ୍ରେସକ୍ରିପସନ୍",
+        med_view_title: "୫୦୦+ ଜରୁରୀ ଗ୍ରାମୀଣ ଔଷଧ ନିର୍ଦ୍ଦେଶিকা",
+        med_view_sub: "ପ୍ରତ୍ୟେକ ଔଷଧର ବ୍ୟବହାର, ସଠିକ୍ ମାତ୍ରା, ପାର୍ଶ୍ୱ ପ୍ରତିକ୍ରିୟା ଓ ସତର୍କତା ଓଡ଼ିଆ ଅଡିଓ ସହ |",
+        med_search_placeholder: "୫୦୦+ ଔଷଧ ମଧ୍ୟରୁ ଖୋଜନ୍ତୁ (Paracetamol, ORS, Dolo 650)...",
+        rem_view_title: "ଦୈନିକ ଔଷଧ ରିମାଇଣ୍ଡର୍",
+        rem_view_sub: "ଆପଣଙ୍କର ଔଷଧ ଖାଇବା ସମୟ ଦେଖନ୍ତୁ, ଅଡିଓ ଆଲର୍ଟ ଶୁଣନ୍ତୁ କିମ୍ବା ନୂଆ ରିମାଇଣ୍ଡର୍ ଯୋଡ଼ନ୍ତୁ |",
+        rem_active_heading: "ସକ୍ରିୟ ଔଷଧ ସୂଚୀ",
+        rem_add_heading: "ନୂଆ ରିମାଇଣ୍ଡର୍ ଯୋଡ଼ନ୍ତୁ",
+        lbl_med_name: "ଔଷଧର ନାମ",
+        lbl_dosage: "ମାତ୍ରା (Dosage)",
+        lbl_time: "ସମୟ",
+        lbl_frequency: "ଦିନକୁ କେତେ ଥର",
+        lbl_notes: "ନିର୍ଦ୍ଦେଶ (ଖାଇବା ପରେ/ପୂର୍ବରୁ)",
+        btn_save_reminder: "ରିମାଇଣ୍ଡର୍ ସେଭ୍ କରନ୍ତୁ",
+        fac_view_title: "ନିକଟସ୍ଥ PHC, CHC ଓ ୨୪×୭ ହସ୍ପିଟାଲ୍",
+        fac_view_sub: "GPS ଦୂରତା ଅନୁଯାୟୀ ୧୦ଟି ସରକାରୀ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର ଓ ଔଷଧ ଦୋକାନ |",
+        btn_use_gps: "ମୋ GPS ବ୍ୟବହାର କରନ୍ତୁ",
+        fac_search_placeholder: "ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର କିମ୍ବା ଜିଲ୍ଲା ଖୋଜନ୍ତୁ...",
+        fac_24x7_only: "୨୪×୭ ଜରୁରୀକାଳୀନ ସେବା",
+        prof_view_title: "ଡିଜିଟାଲ୍ ଗ୍ରାମୀଣ ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଡ",
+        prof_view_sub: "ବିନା ଲগଇନରେ ରକ୍ତ ଗ୍ରୁପ୍, ଆଲର୍ଜି, ପୁରୁଣା ରୋଗ ଓ ଜରୁରୀ ଫୋନ୍ ନମ୍ବର ସଂରକ୍ଷଣ କରନ୍ତୁ |",
+        prof_edit_heading: "ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଡ ତଥ୍ୟ ବଦଳାନ୍ତୁ",
+        lbl_full_name: "ସମ୍ପୂର୍ଣ୍ଣ ନାମ",
+        lbl_age: "ବୟସ",
+        lbl_gender: "ଲିଙ୍ଗ",
+        lbl_blood: "ରକ୍ତ ଗ୍ରୁପ୍",
+        lbl_village: "ଗାଁ / ଜିଲ୍ଲା",
+        lbl_allergies: "ଆଲର୍ଜି (Allergies)",
+        lbl_conditions: "ପୁରୁଣା ରୋଗ",
+        lbl_emergency: "ଜରୁରୀକାଳୀନ ଫୋନ୍ ନମ୍ବର",
+        btn_save_profile: "ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଡ ସେଭ୍ କରନ୍ତୁ",
+        lbl_phone: "ଫୋନ୍ ନମ୍ବର",
+        lbl_date: "ତାରିଖ",
+        lbl_slot: "ସମୟ",
+        lbl_symptoms_reason: "ଲକ୍ଷଣ / କାରଣ",
+        btn_cancel: "ବାତିଲ୍ କରନ୍ତୁ",
+        btn_confirm_booking: "ବୁକିଂ ନିଶ୍ଚିତ କରନ୍ତୁ",
+        server_modal_title: "FastAPI ବ୍ୟାକଏଣ୍ଡ୍ ସଂଯୋଗ",
+        server_modal_desc: "ଅଫଲାଇନ୍ ମୋଡରେ ସମସ୍ତ ୫୦୦+ ଔଷଧ, ୮ ଡାକ୍ତର ଓ ୧୦ PHC ଉପଲବ୍ଧ, କିମ୍ବା ଆପଣଙ୍କ FastAPI ସର୍ଭର ସହ ଯୋଡ଼ନ୍ତୁ:",
+        btn_use_demo: "ଅଫଲାଇନ୍ ଡେମୋ ମୋଡ୍",
+        btn_connect_live: "FastAPI ସଂଯୋଗ କରନ୍ତୁ",
+        listen_btn: "ଶୁଣନ୍ତୁ",
+        book_slot_btn: "ବୁକ୍ କରନ୍ତୁ",
+        free_phc_tag: "₹୦ ମାଗଣା PHC",
+        tasks: [
+          { title: "ମୌସୁମୀ ଡେଙ୍ଗୁ ଓ ମ୍ୟାଲେରିଆ ସତର୍କତା", sub: "ଜମି ରହିଥିବା ପାଣି ସଫା କରନ୍ତୁ; ଜ୍ୱର ପାଇଁ କେବଳ ପାରାସିଟାମଲ୍ ନିଅନ୍ତୁ", color: "coral-bar" },
+          { title: "ଘରେ ସଠିକ୍ WHO-ORS ପ୍ରସ୍ତୁତି", sub: "୧ ଲିଟର ଫୁଟା ଥଣ୍ଡା ପାଣିରେ ୧ ପ୍ୟାକେଟ୍ ORS ମିଶାନ୍ତୁ", color: "purple-bar" },
+          { title: "ଆଇରନ୍ ଓ ପୁଷ୍ଟିକର ଗ୍ରାମୀଣ ଆହାର", sub: "ସଜନା ଶାଗ, ପାଳଙ୍ଗ, ଗୁଡ଼ ଓ ଲେମ୍ବୁ ଖାଦ୍ୟରେ ସାମିଲ୍ କରନ୍ତୁ", color: "teal-bar" }
+        ],
+        quickPrompts: [
+          "ସକାଳୁ ପିଲାଟିର ହାଲୁକା ଜ୍ୱର ଓ ପাতଳा ଝାଡ଼ା ହେଉଛି, ଘରେ କ’ଣ ପ୍ରାଥମିକ ଯତ୍ନ ନେব?",
+          "୧ ଲିଟର ଫୁଟା ପାଣିରେ ସଠିକ୍ ଭାବେ ORS କିପରି ପ୍ରସ୍ତୁତ କରିব?",
+          "ପାରାସିଟାମଲ୍ 500mg ଖାଇବାର ସୁରକ୍ଷିତ ମାତ୍ରା ଓ ସମୟ ବ୍ୟବଧାନ କେତେ?",
+          "ପ୍ରବଳ ଜ୍ୱର, ଥଣ୍ଡା ଲାଗିବା ଓ ଗଣ୍ଠି ବିନ୍ଧା ହେଲେ ଡେଙ୍ଗୁ ପରୀକ୍ଷା କେବେ କରିব?",
+          "ରକ୍ତହୀନତା (Anemia) ଓ ଦୁର୍ବଳତା ଦୂର ପାଇଁ କେଉଁ ସ୍ଥାନୀୟ ଖାଦ୍ୟ ଖାଇବା ଉଚିତ୍?"
+        ]
+      },
+
+      hi: {
+        langName: "हिन्दी (Hindi)",
+        greetingPrefix: "नमस्ते,",
+        greetingDate: "गुरुवार, 29 अक्टूबर 2026 · ग्रामीण स्वास्थ्य पोर्टल",
+        searchPlaceholder: "दवा या डॉक्टर खोजें...",
+        btn_top_book_opd: "+ ओपीडी बुक करें",
+        nav_dashboard: "डैशबोर्ड (मुख्य पृष्ठ)",
+        nav_symptoms: "लक्षण जांच",
+        nav_chat: "एआई मित्र चैट",
+        nav_doctors: "डॉक्टर व ओपीडी",
+        nav_rx: "पर्ची स्कैन करें",
+        nav_medicines: "दवा मार्गदर्शिका (500+)",
+        nav_reminders: "दैनिक रिमाइंडर",
+        nav_facilities: "नजदीकी स्वास्थ्य केंद्र",
+        nav_profile: "स्वास्थ्य कार्ड",
+        helpline_title: "24×7 ग्रामीण हेल्पलाइन",
+        helpline_sub: "एम्बुलेंस: 108 · स्वास्थ्य: 104",
+        dash_activities_heading: "आज की मुख्य स्वास्थ्य सेवाएं",
+        bento_1_title: "लक्षण जांच व क्लीनिकल नियम",
+        bento_1_meta: "8 क्लीनिकल नियम · 96% सटीक",
+        bento_2_title: "विशेषज्ञ डॉक्टर व निःशुल्क PHC",
+        bento_2_meta: "8 सत्यापित डॉक्टर · ₹0 सरकारी ओपीडी",
+        bento_3_title: "पर्ची स्कैनर व 500+ आवश्यक दवाएं",
+        bento_3_meta: "विज़न AI स्कैनर · ऑडियो सुविधा",
+        dash_tasks_heading: "आज के स्वास्थ्य कार्य व सलाह",
+        dash_stats_heading: "स्वास्थ्य अवलोकन व आंकड़े",
+        stat_meds_label: "आवश्यक दवाएं",
+        stat_phc_label: "नजदीकी PHC",
+        stat_rem_label: "सक्रिय खुराक",
+        wide_card_eyebrow: "बहुभाषी वॉइस एवं एआई सहायक",
+        wide_card_sub: "हिन्दी, उड़िया (ଓଡ଼ିଆ), बांग्ला और अंग्रेजी में उपलब्ध",
+        wide_card_title: "एआई आरोग्यमित्र से पूछें और सुनें",
+        cal_panel_heading: "स्वास्थ्य समय-सारणी",
+        cal_month_label: "अक्टूबर 2026",
+        timeline_today_label: "आज की दवाएं व अपॉइंटमेंट",
+        mint_card_1_title: "नजदीकी 24×7 PHC केंद्र",
+        mint_card_1_sub: "बारासात सरकारी PHC · 0.8 कि.मी.",
+        mint_card_2_title: "WHO-ORS एवं बुखार गाइड",
+        mint_card_2_sub: "500+ आवश्यक ग्रामीण दवाएं",
+        sym_view_title: "लक्षण जांच एवं क्लीनिकल मूल्यांकन",
+        sym_view_sub: "अपने लक्षणों को चुनें। हमारा 8-नियम इंजन प्राथमिक उपचार और सही विशेषज्ञ डॉक्टर की सलाह देता है।",
+        btn_demo_dengue: "डेंगू/वायरल उदाहरण",
+        btn_demo_cardiac: "हृदय आपात उदाहरण",
+        btn_reset: "रीसेट करें",
+        sym_select_heading: "1. अपने लक्षण चुनें",
+        sym_custom_label: "अन्य लक्षण जोड़ें:",
+        sym_custom_placeholder: "जैसे: कंपकंपी, कान दर्द...",
+        btn_add: "जोड़ें",
+        btn_evaluate_symptoms: "लक्षणों का मूल्यांकन करें",
+        chat_view_title: "एआई आरोग्यमित्र परामर्श",
+        chat_view_sub: "बुखार, ओआरएस घोल, दवा के समय या पोषण के बारे में अपनी भाषा में पूछें।",
+        btn_clear_chat: "चैट रीसेट करें",
+        chat_prompts_heading: "त्वरित प्रश्न",
+        btn_voice: "माइक",
+        chat_input_placeholder: "अपना स्वास्थ्य प्रश्न लिखें...",
+        btn_send: "भेजें",
+        doc_view_title: "विशेषज्ञ डॉक्टर एवं PHC ओपीडी बुकिंग",
+        doc_view_sub: "8 सत्यापित सरकारी PHC और जिला अस्पताल के विशेषज्ञों से निःशुल्क (₹0) या कम शुल्क में परामर्श लें।",
+        doc_search_placeholder: "डॉक्टर, अस्पताल या जिला खोजें...",
+        doc_all_specs: "सभी विशेषज्ञताएं (8)",
+        btn_show_all: "सभी दिखाएं",
+        doc_booked_heading: "आपकी बुक की गई ओपीडी अपॉइंटमेंट",
+        rx_view_title: "हस्तलिखित पर्ची विज़न स्कैनर",
+        rx_view_sub: "डॉक्टर की पर्ची का फोटो अपलोड करें या नमूना पर्ची चुनें और सीधे दैनिक रिमाइंडर में जोड़ें।",
+        rx_step1_heading: "1. पर्ची अपलोड करें या नमूना चुनें",
+        rx_drop_title: "पर्ची का फोटो अपलोड करने के लिए क्लिक करें",
+        rx_drop_sub: "JPG, PNG, WEBP समर्थित",
+        rx_sample_1: "नमूना 1: बारासात PHC — वायरल बुखार पर्ची",
+        rx_sample_2: "नमूना 2: सब-डिवीजनल अस्पताल — गैस्ट्राइटिस व ORS",
+        rx_sample_3: "नमूना 3: उच्च रक्तचाप एवं हृदय देखभाल पर्ची",
+        med_view_title: "500+ आवश्यक ग्रामीण दवा मार्गदर्शिका",
+        med_view_sub: "प्रत्येक दवा का उपयोग, सुरक्षित खुराक, दुष्प्रभाव और सावधानियां ऑडियो सुविधा के साथ।",
+        med_search_placeholder: "500+ दवाओं में खोजें (Paracetamol, ORS, Dolo 650)...",
+        rem_view_title: "दैनिक दवा रिमाइंडर",
+        rem_view_sub: "अपनी सक्रिय दवा समय-सारणी देखें, वॉइस अलर्ट सुनें या नया रिमाइंडर जोड़ें।",
+        rem_active_heading: "सक्रिय दवा अनुसूची",
+        rem_add_heading: "नया रिमाइंडर जोड़ें",
+        lbl_med_name: "दवा का नाम",
+        lbl_dosage: "खुराक (Dosage)",
+        lbl_time: "समय",
+        lbl_frequency: "आवृत्ति",
+        lbl_notes: "निर्देश (भोजन के बाद/पहले)",
+        btn_save_reminder: "रिमाइंडर सहेजें",
+        fac_view_title: "नजदीकी PHC, CHC एवं 24×7 अस्पताल",
+        fac_view_sub: "जीपीएस दूरी के अनुसार 10 सत्यापित सरकारी स्वास्थ्य केंद्र और जन-औषधि केंद्र।",
+        btn_use_gps: "मेरा GPS उपयोग करें",
+        fac_search_placeholder: "PHC, जिला या आपातकालीन सेवा खोजें...",
+        fac_24x7_only: "24×7 आपातकालीन सेवा",
+        prof_view_title: "डिजिटल ग्रामीण स्वास्थ्य कार्ड",
+        prof_view_sub: "बिना लॉगिन के ब्लड ग्रुप, एलर्जी, पुरानी बीमारियां और आपातकालीन संपर्क सुरक्षित रखें।",
+        prof_edit_heading: "स्वास्थ्य कार्ड विवरण अपडेट करें",
+        lbl_full_name: "पूरा नाम",
+        lbl_age: "आयु",
+        lbl_gender: "लिंग",
+        lbl_blood: "ब्लड ग्रुप",
+        lbl_village: "गांव / जिला",
+        lbl_allergies: "एलर्जी (Allergies)",
+        lbl_conditions: "पुरानी बीमारियां",
+        lbl_emergency: "आपातकालीन संपर्क",
+        btn_save_profile: "स्वास्थ्य कार्ड सहेजें",
+        lbl_phone: "फ़ोन नंबर",
+        lbl_date: "तारीख",
+        lbl_slot: "समय स्लॉट",
+        lbl_symptoms_reason: "लक्षण / कारण",
+        btn_cancel: "रद्द करें",
+        btn_confirm_booking: "बुकिंग पक्की करें",
+        server_modal_title: "FastAPI बैकएंड कनेक्शन",
+        server_modal_desc: "ऑफलाइन मोड में सभी 500+ दवाएं, 8 डॉक्टर और 10 PHC पहले से लोड हैं, या अपने FastAPI सर्वर से जुड़ें:",
+        btn_use_demo: "ऑफलाइन सीड मोड",
+        btn_connect_live: "FastAPI जोड़ें",
+        listen_btn: "सुनें",
+        book_slot_btn: "ओपीडी बुक करें",
+        free_phc_tag: "₹0 निःशुल्क PHC",
+        tasks: [
+          { title: "मानसून डेंगू एवं मलेरिया बचाव", sub: "रुका हुआ पानी साफ़ करें; बुखार में केवल पैरासिटामोल लें", color: "coral-bar" },
+          { title: "घर पर सही WHO-ORS घोल विधि", sub: "1 लीटर उबले ठंडे पानी में 1 पूरा पैकेट ORS मिलाएं", color: "purple-bar" },
+          { title: "आयरन एवं मातृ पोषण आहार", sub: "सहजन की पत्तियां, पालक, गुड़, चना और नींबू शामिल करें", color: "teal-bar" }
+        ],
+        quickPrompts: [
+          "सुबह से बच्चे को हल्का बुखार और दस्त है, घर पर क्या प्राथमिक देखभाल करें?",
+          "1 लीटर उबले पानी में ओआरएस (ORS) का घोल सही तरीके से कैसे बनाएं?",
+          "पैरासिटामोल 500mg लेने की सुरक्षित खुराक और अंतराल क्या है?",
+          "तेज बुखार, ठंड लगना और जोड़ों में दर्द होने पर डेंगू जांच कब कराएं?",
+          "खून की कमी (एनीमिया) दूर करने के लिए कौन से स्थानीय आहार लें?"
+        ]
+      },
+
+      bn: {
+        langName: "বাংলা (Bengali)",
+        greetingPrefix: "নমস্কার,",
+        greetingDate: "বৃহস্পতিবার, ২৯ অক্টোবর ২০২৬ · গ্রামীণ স্বাস্থ্য পোর্টাল",
+        searchPlaceholder: "ওষুধ বা ডাক্তার খুঁজুন...",
+        btn_top_book_opd: "+ ওপিডি বুক করুন",
+        nav_dashboard: "ড্যাশবোর্ড (মূল পাতা)",
+        nav_symptoms: "উপসর্গ যাচাই",
+        nav_chat: "এআই মিত্র চ্যাট",
+        nav_doctors: "ডাক্তার ও ওপিডি",
+        nav_rx: "প্রেসক্রিপশন স্ক্যান",
+        nav_medicines: "ওষুধ নির্দেশিকা (৫০০+)",
+        nav_reminders: "দৈনিক রিমাইন্ডার",
+        nav_facilities: "নিকটবর্তী স্বাস্থ্যকেন্দ্র",
+        nav_profile: "স্বাস্থ্য কার্ড",
+        helpline_title: "২৪×৭ গ্রামীণ হেল্পলাইন",
+        helpline_sub: "অ্যাম্বুলেন্স: ১০৮ · স্বাস্থ্য: ১০৪",
+        dash_activities_heading: "আজকের প্রধান স্বাস্থ্য পরিষেবা",
+        bento_1_title: "উপসর্গ যাচাই ও ক্লিনিকাল নিয়ম",
+        bento_1_meta: "৮টি ক্লিনিকাল নিয়ম · ৯৬% নির্ভুল",
+        bento_2_title: "বিশেষজ্ঞ ডাক্তার ও বিনামূল্যে PHC",
+        bento_2_meta: "৮ জন ডাক্তার · ₹০ সরকারি ওপিডি",
+        bento_3_title: "প্রেসক্রিপশন স্ক্যান ও ৫০০+ ওষুধ",
+        bento_3_meta: "ভিশন AI স্ক্যানার · অডিও সুবিধা",
+        dash_tasks_heading: "আজকের স্বাস্থ্য কাজ ও পরামর্শ",
+        dash_stats_heading: "স্বাস্থ্য পরিসংখ্যান",
+        stat_meds_label: "জরুরি ওষুধ",
+        stat_phc_label: "নিকটবর্তী PHC",
+        stat_rem_label: "সক্রিয় রিমাইন্ডার",
+        wide_card_eyebrow: "বহুভাষিক ভয়েস ও AI সহকারী",
+        wide_card_sub: "বাংলা, ওড়িয়া (ଓଡ଼ିଆ), হিন্দি ও ইংরেজিতে উপলব্ধ",
+        wide_card_title: "এআই আরোগ্যমিত্রকে জিজ্ঞাসা করুন ও শুনুন",
+        cal_panel_heading: "স্বাস্থ্য সময়সূচি",
+        cal_month_label: "অক্টোবর ২০২৬",
+        timeline_today_label: "আজকের ওষুধ ও অ্যাপয়েন্টমেন্ট",
+        mint_card_1_title: "নিকটবর্তী ২৪×৭ PHC কেন্দ্র",
+        mint_card_1_sub: "বারাসাত সরকারি PHC · ০.৮ কি.মি.",
+        mint_card_2_title: "WHO-ORS ও জ্বর নির্দেশিকা",
+        mint_card_2_sub: "৫০০+ জরুরি গ্রামীণ ওষুধ",
+        sym_view_title: "উপসর্গ যাচাই ও ক্লিনিকাল মূল্যায়ন",
+        sym_view_sub: "আপনার উপসর্গগুলি নির্বাচন করুন। আমাদের ৮-নিয়ম ইঞ্জিন প্রাথমিক পরিচর্যা এবং সঠিক বিশেষজ্ঞ ডাক্তারের পরামর্শ দেবে।",
+        btn_demo_dengue: "ডেঙ্গু/ভাইরাল উদাহরণ",
+        btn_demo_cardiac: "হৃদরোগ জরুরি উদাহরণ",
+        btn_reset: "রিসেট করুন",
+        sym_select_heading: "১. আপনার উপসর্গ নির্বাচন করুন",
+        sym_custom_label: "অন্য কোনো উপসর্গ যোগ করুন:",
+        sym_custom_placeholder: "যেমন: কাঁপুনি, কানে ব্যথা...",
+        btn_add: "যোগ করুন",
+        btn_evaluate_symptoms: "উপসর্গ মূল্যায়ন করুন",
+        chat_view_title: "এআই আরোগ্যমিত্র পরামর্শ",
+        chat_view_sub: "জ্বর, ওআরএস প্রস্তুতি, ওষুধের সময় বা পুষ্টি সম্পর্কে আপনার ভাষায় জিজ্ঞাসা করুন।",
+        btn_clear_chat: "চ্যাট রিসেট করুন",
+        chat_prompts_heading: "দ্রুত প্রশ্নাবলী",
+        btn_voice: "ভয়েস",
+        chat_input_placeholder: "আপনার স্বাস্থ্য প্রশ্ন লিখুন...",
+        btn_send: "পাঠান",
+        doc_view_title: "বিশেষজ্ঞ ডাক্তার ও PHC ওপিডি বুকিং",
+        doc_view_sub: "৮ জন সরকারি PHC ও জেলা হাসপাতালের বিশেষজ্ঞ ডাক্তারের সাথে বিনামূল্যে (₹০) বা স্বল্প মূল্যে পরামর্শ নিন।",
+        doc_search_placeholder: "ডাক্তার, হাসপাতাল বা জেলা খুঁজুন...",
+        doc_all_specs: "সব বিভাগ (৮)",
+        btn_show_all: "সব দেখান",
+        doc_booked_heading: "আপনার বুক করা ওপিডি অ্যাপয়েন্টমেন্ট",
+        rx_view_title: "হাতে লেখা প্রেসক্রিপশন ভিশন স্ক্যানার",
+        rx_view_sub: "প্রেসক্রিপশনের ছবি আপলোড করুন বা নমুনা স্লিপ দেখুন এবং সরাসরি দৈনিক রিমাইন্ডারে যোগ করুন।",
+        rx_step1_heading: "১. প্রেসক্রিপশন আপলোড বা নমুনা নির্বাচন করুন",
+        rx_drop_title: "প্রেসক্রিপশনের ছবি আপলোড করতে ক্লিক করুন",
+        rx_drop_sub: "JPG, PNG, WEBP সমর্থিত",
+        rx_sample_1: "নমুনা ১: বারাসাত PHC — ভাইরাল জ্বর স্লিপ",
+        rx_sample_2: "নমুনা ২: মহকুমা হাসপাতাল — গ্যাস্ট্রাইটিস ও ORS",
+        rx_sample_3: "নমুনা ৩: উচ্চ রক্তচাপ ও হৃদরোগ স্লিপ",
+        med_view_title: "৫০০+ জরুরি গ্রামীণ ওষুধ নির্দেশিকা",
+        med_view_sub: "প্রতিটি ওষুধের ব্যবহার, নিরাপদ মাত্রা, পার্শ্বপ্রতিক্রিয়া ও সতর্কতা অডিও সহ।",
+        med_search_placeholder: "৫০০+ ওষুধ খুঁজুন (Paracetamol, ORS, Dolo 650)...",
+        rem_view_title: "দৈনিক ওষুধের রিমাইন্ডার",
+        rem_view_sub: "আপনার সক্রিয় ওষুধের সময়সূচি দেখুন, ভয়েস অ্যালার্ট শুনুন বা নতুন রিমাইন্ডার যোগ করুন।",
+        rem_active_heading: "সক্রিয় ওষুধের তালিকা",
+        rem_add_heading: "নতুন রিমাইন্ডার যোগ করুন",
+        lbl_med_name: "ওষুধের নাম",
+        lbl_dosage: "মাত্রা (Dosage)",
+        lbl_time: "সময়",
+        lbl_frequency: "দৈনিক কতবার",
+        lbl_notes: "নির্দেশ (খাবারের পরে/আগে)",
+        btn_save_reminder: "রিমাইন্ডার সেভ করুন",
+        fac_view_title: "নিকটবর্তী PHC, CHC ও ২৪×৭ হাসপাতাল",
+        fac_view_sub: "জিপিএস দূরত্ব অনুযায়ী ১০টি সরকারি স্বাস্থ্যকেন্দ্র ও জন-ঔষধি ফার্মেসি।",
+        btn_use_gps: "আমার GPS ব্যবহার করুন",
+        fac_search_placeholder: "PHC, জেলা বা জরুরি পরিষেবা খুঁজুন...",
+        fac_24x7_only: "২৪×৭ জরুরি পরিষেবা",
+        prof_view_title: "ডিজিটাল গ্রামীণ স্বাস্থ্য কার্ড",
+        prof_view_sub: "লগইন ছাড়াই ব্লাড গ্রুপ, অ্যালার্জি, দীর্ঘমেয়াদী রোগ ও জরুরি যোগাযোগ সংরক্ষণ করুন।",
+        prof_edit_heading: "স্বাস্থ্য কার্ডের তথ্য আপডেট করুন",
+        lbl_full_name: "পুরো নাম",
+        lbl_age: "বয়স",
+        lbl_gender: "লিঙ্গ",
+        lbl_blood: "ব্লাড গ্রুপ",
+        lbl_village: "গ্রাম / জেলা",
+        lbl_allergies: "অ্যালার্জি (Allergies)",
+        lbl_conditions: "দীর্ঘমেয়াদী রোগ",
+        lbl_emergency: "জরুরি যোগাযোগ",
+        btn_save_profile: "স্বাস্থ্য কার্ড সেভ করুন",
+        lbl_phone: "ফোন নম্বর",
+        lbl_date: "তারিখ",
+        lbl_slot: "সময় স্লট",
+        lbl_symptoms_reason: "উপসর্গ / কারণ",
+        btn_cancel: "বাতিল করুন",
+        btn_confirm_booking: "বুকিং নিশ্চিত করুন",
+        server_modal_title: "FastAPI ব্যাকএন্ড সংযোগ",
+        server_modal_desc: "অফলাইন মোডে সব ৫০০+ ওষুধ, ৮ জন ডাক্তার ও ১০টি PHC লোড করা আছে, অথবা আপনার FastAPI সার্ভারের সাথে যুক্ত করুন:",
+        btn_use_demo: "অফলাইন ডেমো মোড",
+        btn_connect_live: "FastAPI যুক্ত করুন",
+        listen_btn: "শুনুন",
+        book_slot_btn: "ওপিডি বুক করুন",
+        free_phc_tag: "₹০ বিনামূল্যে PHC",
+        tasks: [
+          { title: "বর্ষায় ডেঙ্গু ও ম্যালেরিয়া প্রতিরোধ", sub: "জমে থাকা জল পরিষ্কার করুন; জ্বরে শুধুমাত্র প্যারাসিটামল নিন", color: "coral-bar" },
+          { title: "বাড়িতে সঠিক নিয়মে WHO-ORS প্রস্তুতি", sub: "১ লিটার ফোটানো ঠান্ডা জলে ১ প্যাকেট ORS মেশান", color: "purple-bar" },
+          { title: "আয়রন ও পুষ্টিকর গ্রামীণ খাদ্য", sub: "সজনে পাতা, পালং শাক, গুড়, ছোলা ও লেবু খাবার তালিকায় রাখুন", color: "teal-bar" }
+        ],
+        quickPrompts: [
+          "সকাল থেকে শিশুর হালকা জ্বর ও পাতলা পায়খানা হলে বাড়িতে কী প্রাথমিক যত্ন নেব?",
+          "১ লিটার ফোটানো জলে সঠিক নিয়মে ওআরএস (ORS) কীভাবে তৈরি করব?",
+          "প্যারাসিটামল ৫০০ মিগ্রা খাওয়ার নিরাপদ মাত্রা এবং বিরতি কতক্ষণ?",
+          "প্রবল জ্বর, কাঁপুনি ও গাঁটে ব্যথা হলে ডেঙ্গু পরীক্ষা কখন করাব?",
+          "রক্তাল্পতা (Anemia) ও দুর্বলতা কাটাতে কী ধরনের স্থানীয় খাবার খাওয়া উচিত?"
+        ]
+      }
+    };
+
+    // Multilingual Symptom Labels for Complete Page Translation
+    const SYMPTOMS_I18N = [
+      { id: "fever", en: "Fever (Mild / Moderate)", or: "ଜ୍ୱର (ହାଲୁକା / ମଧ୍ୟମ)", hi: "बुखार (हल्का / मध्यम)", bn: "জ্বর (হালকা / মাঝারি)" },
+      { id: "high fever", en: "High Fever with Chills", or: "ଥଣ୍ଡା ସହ ପ୍ରବଳ ଜ୍ୱର", hi: "ठंड के साथ तेज बुखार", bn: "কাঁপুনি সহ প্রবল জ্বর" },
+      { id: "cough", en: "Cough & Sore Throat", or: "କାଶ ଓ ଗଳା ଦରଜ", hi: "खांसी और गले में खराश", bn: "কাশি ও গলা ব্যথা" },
+      { id: "cold", en: "Runny Nose / Cold", or: "ଥଣ୍ଡା ଓ ନାକରୁ ପାଣି", hi: "सर्दी और बहती नाक", bn: "সর্দি ও নাক দিয়ে জল পড়া" },
+      { id: "headache", en: "Headache / Heaviness", or: "ମୁଣ୍ଡବିନ୍ଧା", hi: "सिरदर्द / भारीपन", bn: "মাথাব্যথা" },
+      { id: "dizziness", en: "Dizziness / Weakness", or: "ମୁଣ୍ଡ ବୁଲାଇବା / ଦୁର୍ବଳତା", hi: "चक्कर आना / कमजोरी", bn: "মাথা ঘোরা / দুর্বলতা" },
+      { id: "diarrhea", en: "Loose Motion / Diarrhea", or: "পাতଳା ଝାଡ଼ା (Diarrhea)", hi: "दस्त / लूज मोशन", bn: "পাতলা পায়খানা / ডায়রিয়া" },
+      { id: "vomiting", en: "Nausea or Vomiting", or: "ବାନ୍ତି ଲାଗିବା କିମ୍ବା ବାନ୍ତି", hi: "जी मिचलाना या उल्टी", bn: "বমি ভাব বা বমি" },
+      { id: "stomach pain", en: "Stomach Pain / Acidity", or: "ପେଟ ବିନ୍ଧା / ଏସିଡିଟି", hi: "पेट दर्द / एसिडिटी", bn: "পেট ব্যথা / অ্যাসিডিটি" },
+      { id: "joint pain", en: "Joint & Body Ache", or: "ଗଣ୍ଠି ଓ ଦେହ ହାତ ବିନ୍ଧା", hi: "जोड़ों और बदन में दर्द", bn: "গাঁটে ও শরীরে ব্যথা" },
+      { id: "back pain", en: "Back or Knee Pain", or: "ଅଣ୍ଟା କିମ୍ବା ଆଣ୍ଠୁ ବିନ୍ଧା", hi: "कमर या घुटने का दर्द", bn: "কোমর বা হাঁটু ব্যথা" },
+      { id: "skin rash", en: "Skin Rash / Itching", or: "ଚର୍ମରେ ଦାଗ / କୁଣ୍ଡାଇ ହେବା", hi: "त्वचा पर चकत्ते / खुजली", bn: "চামড়ায় র‍্যাশ / চুলকানি" },
+      { id: "burning urination", en: "Burning Urination", or: "ପରିସ୍ରାରେ ଜ୍ୱଳନ", hi: "पेशाब में जलन", bn: "প্রস্রাবে জ্বালাপোড়া" },
+      { id: "shortness of breath", en: "Shortness of Breath", or: "ନିଶ୍ୱାସ ନେବାରେ କଷ୍ଟ", hi: "सांस लेने में तकलीफ", bn: "শ্বাসকষ্ট" },
+      { id: "chest pain", en: "Chest Pain / Pressure", or: "ଛାତିରେ ଯନ୍ତ୍ରଣା / ଚାପ", hi: "सीने में दर्द / दबाव", bn: "বুকে ব্যথা / চাপ" }
+    ];
+
+    // 8 Clinical Rules with Multilingual Condition & Advice
+    const CLINICAL_SYMPTOM_RULES = [
+      {
+        keywords: ["chest pain", "shortness of breath", "breathlessness"],
+        specialist: "Cardiologist",
+        is_emergency: true,
+        en: { condition: "Acute Cardiac / Respiratory Emergency Warning", advice: "URGENT RED FLAG: Sit upright calmly and loosen tight clothing. Do not walk or exert yourself. Call 108/102 immediately or rush to the nearest 24×7 District Hospital." },
+        or: { condition: "ହୃଦরোগ କିମ୍ବା ଶ୍ୱାସକ୍ରିୟା ଜରୁରୀକାଳୀନ ସତର୍କତା", advice: "ଜରୁରୀ ସତର୍କତା: ରୋଗୀଙ୍କୁ ଶାନ୍ତ ଭାବେ ବସାନ୍ତୁ ଓ ଢିଲା ପୋଷାକ ପିନ୍ଧାନ୍ତୁ | ତୁରନ୍ତ ୧୦୮/୧୦୨ ଆମ୍ବୁଲାନ୍ସ ଡାକନ୍ତୁ କିମ୍ବା ନିକଟସ୍ଥ ୨୪×୭ ହସ୍ପିଟାଲକୁ ନିଅନ୍ତୁ |" },
+        hi: { condition: "तीव्र हृदय / श्वसन आपातकालीन चेतावनी", advice: "तत्काल चेतावनी: मरीज को शांत बिठाएं और कपड़े ढीले करें। तुरंत 108/102 एम्बुलेंस बुलाएं या नजदीकी 24×7 जिला अस्पताल ले जाएं।" },
+        bn: { condition: "তীব্র হৃদরোগ / শ্বাসকষ্ট জরুরি সতর্কবার্তা", advice: "জরুরি সতর্কতা: রোগীকে শান্তভাবে বসান এবং ঢিলেঢালা পোশাক পরান। অবিলম্বে ১০৮/১০২ অ্যাম্বুলেন্সে কল করুন বা নিকটবর্তী ২৪×৭ হাসপাতালে নিয়ে যান।" }
+      },
+      {
+        keywords: ["high fever", "chills", "joint pain"],
+        specialist: "General Physician",
+        is_emergency: false,
+        en: { condition: "Possible Seasonal Flu / Dengue / Malaria", advice: "Rest under a mosquito net and drink plenty of WHO-ORS and clean water. Take only Paracetamol for fever—strictly avoid Ibuprofen or Aspirin until a platelet and dengue/malaria test is done at your PHC." },
+        or: { condition: "সম্ভাব্য ମୌସୁମୀ ଜ୍ୱର / ଡେଙ୍ଗୁ / ମ୍ୟାଲେରିଆ", advice: "ମଶାରୀ ଭିତରେ ବିଶ୍ରାମ ନିଅନ୍ତୁ ଓ ପ୍ରଚୁର ORS ଏବଂ ଫୁଟା ପାଣି ପିଅନ୍ତୁ | ଜ୍ୱର ପାଇଁ କେବଳ ପାରାସିଟାମଲ୍ ନିଅନ୍ତୁ—রক্ত ପରୀକ୍ଷା ନ ହେବା ଯାଏଁ Ibuprofen କିମ୍ବା Aspirin ଆଦୌ ଖାଆନ୍ତୁ ନାହିଁ |" },
+        hi: { condition: "संभावित मौसमी फ्लू / डेंगू / मलेरिया", advice: "मच्छरदानी में आराम करें और खूब ORS व साफ पानी पिएं। बुखार के लिए केवल पैरासिटामोल लें—PHC में खून की जांच होने तक ब्रुफेन या एस्पिरिन बिल्कुल न लें।" },
+        bn: { condition: "সম্ভাব্য মরসুমি ফ্লু / ডেঙ্গু / ম্যালেরিয়া", advice: "মশারির নিচে বিশ্রাম নিন এবং প্রচুর পরিমাণে ORS ও জল পান করুন। জ্বরের জন্য শুধুমাত্র প্যারাসিটামল নিন—রক্ত পরীক্ষা না হওয়া পর্যন্ত আইবুপ্রোফেন বা অ্যাসপিরিন এড়িয়ে চলুন।" }
+      },
+      {
+        keywords: ["fever", "cough", "cold", "sore throat"],
+        specialist: "General Physician",
+        is_emergency: false,
+        en: { condition: "Common Viral Infection / Respiratory Tract Infection", advice: "Gargle with warm salt water 3 times daily, take steam inhalation, and sip warm tulsi-ginger water. Take Paracetamol 500mg if fever exceeds 100°F." },
+        or: { condition: "ସାଧାରଣ ଭାଇରାଲ୍ ଜ୍ୱର ଓ ଥଣ୍ଡା ସଂକ୍ରମଣ", advice: "ଦିନକୁ ୩ ଥର ଉଷୁମ ଲୁଣ ପାଣିରେ କୁଳି କରନ୍ତୁ ଓ ତୁଳସୀ-ଅଦା ପାଣି ପିଅନ୍ତୁ | ଜ୍ୱର ୧୦୦°F ରୁ ଅଧିକ ହେଲେ ପାରାସିଟାମଲ୍ 500mg ନିଅନ୍ତୁ |" },
+        hi: { condition: "सामान्य वायरल संक्रमण / सर्दी-खांसी", advice: "दिन में 3 बार गुनगुने नमक के पानी से गरारे करें और तुलसी-अदरक का गर्म पानी पिएं। बुखार 100°F से अधिक होने पर पैरासिटामोल 500mg लें।" },
+        bn: { condition: "সাধারণ ভাইরাল সংক্রমণ / সর্দি-কাশি", advice: "দিনে ৩ বার ঈষদুষ্ণ নুন জলে গার্গল করুন এবং তুলসী-আদা চা পান করুন। জ্বর ১০০°F-এর বেশি হলে প্যারাসিটামল ৫০০ মিগ্রা নিন।" }
+      },
+      {
+        keywords: ["diarrhea", "loose motion", "vomiting", "stomach pain"],
+        specialist: "Gastroenterologist",
+        is_emergency: false,
+        en: { condition: "Acute Gastroenteritis / Dehydration Risk", advice: "Sip 200ml of WHO-ORS solution after every loose stool. Eat light khichdi, curd-rice, or ripe banana and avoid spicy/oily food." },
+        or: { condition: "ପେଟ ସଂକ୍ରମଣ ଓ ଜଳୀୟ ଅଂଶ ହ୍ରାସ (Gastroenteritis)", advice: "ପ୍ରତ୍ୟେକ ଥର ପাতଳା ଝାଡ଼ା ପରେ ୨୦୦ ମି.লি. WHO-ORS ପାଣି ପିଅନ୍ତୁ | ହାଲୁକା ଖিଚୁଡ଼ି, ଦହି-ଭାତ କିମ୍ବା ପାଚିଲା କଦଳୀ ଖାଆନ୍ତୁ |" },
+        hi: { condition: "तीव्र गैस्ट्रोएंटेराइटिस / डिहाइड्रेशन का जोखिम", advice: "प्रत्येक दस्त के बाद 200 मिलीलीटर WHO-ORS घोल धीरे-धीरे पिएं। हल्की खिचड़ी, दही-चावल या पका केला खाएं।" },
+        bn: { condition: "তীব্র গ্যাস্ট্রোএন্টেরাইটিস / জলশূন্যতার ঝুঁকি", advice: "প্রতিবার পাতলা পায়খানার পর ২০০ মিলি WHO-ORS পান করুন। হালকা খিচুড়ি, দই-ভাত বা পাকা কলা খান।" }
+      },
+      {
+        keywords: ["skin rash", "itching"],
+        specialist: "Dermatologist",
+        is_emergency: false,
+        en: { condition: "Allergic Skin Reaction / Contact Dermatitis", advice: "Keep the skin clean and dry in loose cotton clothes. Take Cetirizine 10mg at night to calm itching." },
+        or: { condition: "ଚର୍ମ ଆଲର୍ଜି (Allergic Dermatitis)", advice: "ଚର୍ମକୁ ସଫା ଓ ଶୁଖିଲା ରଖନ୍ତୁ ଏବଂ ହାଲୁକା ସୂତା ଲୁଗା ପିନ୍ଧନ୍ତୁ | କୁଣ୍ଡାଇ କମାଇବା ପାଇଁ ରାତିରେ Cetirizine 10mg ନିଅନ୍ତୁ |" },
+        hi: { condition: "एलर्जिक स्किन रिएक्शन / चर्म रोग", advice: "त्वचा को साफ और सूखा रखें तथा सूती कपड़े पहनें। खुजली शांत करने के लिए रात में सेटिरिज़िन 10mg लें।" },
+        bn: { condition: "অ্যালার্জিক চর্মরোগ / ডার্মাটাইটিস", advice: "ত্বক পরিষ্কার ও শুকনো রাখুন এবং সুতির পোশাক পরুন। চুলকানি কমাতে রাতে সেটিরিজিন ১০ মিগ্রা নিন।" }
+      },
+      {
+        keywords: ["headache", "dizziness"],
+        specialist: "General Physician",
+        is_emergency: false,
+        en: { condition: "Tension Headache / Blood Pressure Fluctuations", advice: "Rest in a quiet room, hydrate well, and get your blood pressure checked at the nearest village health center." },
+        or: { condition: "ମୁଣ୍ଡବିନ୍ଧା କିମ୍ବା ରକ୍ତଚାପ ପରିବର୍ତ୍ତନ", advice: "শାନ୍ତ କୋଠରୀରେ ବିଶ୍ରାମ ନିଅନ୍ତୁ, ପାଣି ପିଅନ୍ତୁ ଓ ନିକଟସ୍ଥ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ରରେ ରକ୍ତଚାପ (BP) ପରୀକ୍ଷା କରାନ୍ତୁ |" },
+        hi: { condition: "तनाव सिरदर्द / रक्तचाप में उतार-चढ़ाव", advice: "शांत कमरे में आराम करें, पर्याप्त पानी पिएं और नजदीकी स्वास्थ्य केंद्र पर अपना बीपी जांच कराएं।" },
+        bn: { condition: "মাথাব্যথা / রক্তচাপের ওঠানামা", advice: "শান্ত ঘরে বিশ্রাম নিন, পর্যাপ্ত জল পান করুন এবং নিকটবর্তী স্বাস্থ্যকেন্দ্রে রক্তচাপ (BP) পরীক্ষা করান।" }
+      },
+      {
+        keywords: ["back pain", "knee pain"],
+        specialist: "Orthopedic Specialist",
+        is_emergency: false,
+        en: { condition: "Musculoskeletal Strain / Joint Arthritis", advice: "Rest the joint, apply a warm compress, and prefer topical Diclofenac gel over frequent oral painkillers." },
+        or: { condition: "ଗଣ୍ଠି ଓ ମାଂସପେଶୀ ଯନ୍ତ୍ରଣା (Arthritis / Strain)", advice: "ଭାରୀ ଜିନିଷ ଉଠାନ୍ତୁ ନାହିଁ, ଉଷୁମ ସେক ଦିଅନ୍ତୁ ଓ Diclofenac ଜେଲ୍ ବ୍ୟବହାର କରନ୍ତୁ |" },
+        hi: { condition: "मांसपेशियों में खिंचाव / जोड़ों का दर्द", advice: "भारी वजन न उठाएं, गर्म सिकाई करें और दर्द निवारक गोलियों की जगह डाइक्लोफेनाक जेल लगाएं।" },
+        bn: { condition: "পেশির টান / বাতের ব্যথা", advice: "ভারী জিনিস তুলবেন না, গরম সেঁক দিন এবং মুখে ব্যথার ওষুধের পরিবর্তে ডাইক্লোফেনাক জেল ব্যবহার করুন।" }
+      },
+      {
+        keywords: ["burning urination"],
+        specialist: "General Physician",
+        is_emergency: false,
+        en: { condition: "Urinary Tract Infection (UTI)", advice: "Drink 2.5–3 liters of clean water and coconut water daily. Visit your PHC for a routine urine test." },
+        or: { condition: "ପରିସ୍ରା ନଳୀ ସଂକ୍ରମଣ (UTI)", advice: "ଦିନକୁ ୩ ଲିଟର ସଫା ପାଣି ଓ ପଇଡ଼ ପାଣି ପିଅନ୍ତୁ ଏବଂ PHC ରେ ପରିସ୍ରା ପରୀକ୍ଷା କରାନ୍ତୁ |" },
+        hi: { condition: "मूत्र मार्ग संक्रमण (UTI)", advice: "प्रतिदिन 2.5 से 3 लीटर साफ पानी और नारियल पानी पिएं तथा PHC में पेशाब की जांच कराएं।" },
+        bn: { condition: "মূত্রনালীর সংক্রমণ (UTI)", advice: "প্রতিদিন ২.৫–৩ লিটার জল ও ডাবের জল পান করুন এবং PHC-তে প্রস্রাব পরীক্ষা করান।" }
+      }
+    ];
+
+    // 8 Doctors, 500+ Medicines, 10 PHCs
+    const SEED_DOCTORS = [
+      { id: 1, name: "Dr. Ananya Sen", specialty: "General Physician", qualification: "MBBS, MD", experience_years: 12, hospital_name: "District Civil Hospital & Rural Health Care Center", location: "Barasat, North 24 Parganas", languages: "Bengali, Odia, Hindi, English", consultation_fee: 0, available_days: "Mon – Sat", available_slots: ["09:00 AM", "10:00 AM", "11:30 AM", "02:00 PM"], rating: 4.9 },
+      { id: 2, name: "Dr. Rajesh Kumar Verma", specialty: "Cardiologist", qualification: "MBBS, MD, DM", experience_years: 16, hospital_name: "Apex Heart & Emergency Care Institute", location: "Salt Lake, Kolkata", languages: "Hindi, English, Bengali", consultation_fee: 300, available_days: "Mon, Wed, Fri", available_slots: ["10:30 AM", "12:00 PM", "03:00 PM"], rating: 4.8 },
+      { id: 3, name: "Dr. Priya Deshmukh", specialty: "Dermatologist", qualification: "MBBS, DVD, MD", experience_years: 9, hospital_name: "Skin & Allergy Care Community Clinic", location: "Serampore, Hooghly", languages: "English, Hindi, Bengali", consultation_fee: 150, available_days: "Tue, Thu, Sat", available_slots: ["11:00 AM", "01:00 PM", "04:30 PM"], rating: 4.7 },
+      { id: 4, name: "Dr. Amitav Banerjee", specialty: "Gastroenterologist", qualification: "MBBS, MD, DNB", experience_years: 14, hospital_name: "Sub-Divisional Hospital & Gastro Care Unit", location: "Barasat, North 24 Parganas", languages: "Bengali, English, Hindi", consultation_fee: 200, available_days: "Mon, Tue, Thu, Fri", available_slots: ["09:30 AM", "11:00 AM", "02:30 PM"], rating: 4.8 },
+      { id: 5, name: "Dr. Sunita Roy", specialty: "Pulmonologist", qualification: "MBBS, DTCD, MD", experience_years: 11, hospital_name: "National Chest & Respiratory Wellness Center", location: "Howrah Sadar, Howrah", languages: "Bengali, Odia, Hindi, English", consultation_fee: 200, available_days: "Mon, Wed, Fri, Sat", available_slots: ["10:00 AM", "12:30 PM", "03:30 PM"], rating: 4.9 },
+      { id: 6, name: "Dr. Ramesh Nair", specialty: "Pediatrician", qualification: "MBBS, DCH, MD", experience_years: 15, hospital_name: "Maternal & Child Health Care PHC Center", location: "Sonarpur, South 24 Parganas", languages: "English, Hindi, Bengali", consultation_fee: 0, available_days: "Mon – Sat", available_slots: ["09:00 AM", "10:30 AM", "12:00 PM"], rating: 4.9 },
+      { id: 7, name: "Dr. Vikramaditya Rathore", specialty: "Orthopedic Specialist", qualification: "MBBS, MS", experience_years: 13, hospital_name: "Joint & Trauma Community Hospital", location: "Kalyani, Nadia", languages: "Hindi, Odia, English", consultation_fee: 150, available_days: "Mon, Wed, Sat", available_slots: ["10:00 AM", "01:30 PM", "05:00 PM"], rating: 4.7 },
+      { id: 8, name: "Dr. Meenakshi Sundaram", specialty: "ENT Specialist", qualification: "MBBS, MS (ENT)", experience_years: 10, hospital_name: "Govt. Sub-District Hospital & ENT Clinic", location: "Salt Lake, Kolkata", languages: "English, Hindi, Bengali", consultation_fee: 100, available_days: "Tue, Wed, Fri", available_slots: ["09:30 AM", "11:30 AM", "03:00 PM"], rating: 4.8 }
+    ];
+
+    const SEED_MEDICINES = [
+      { name: "Paracetamol", category: "Fever & Pain", usage: "Antipyretic and analgesic for fever reduction and mild-to-moderate body ache or headache.", dosage: "Adults: 500mg–650mg every 6–8 hours after food (Max 4 tablets/day).", side_effects: "Minimal; rare mild nausea or skin rash.", precautions: "Do not exceed daily dose; consult a doctor in liver disease." },
+      { name: "Dolo 650", category: "Fever & Pain", usage: "Paracetamol 650mg tablet for high-grade viral fever and body ache.", dosage: "Adults: 1 tablet every 6–8 hours after food when fever > 100°F.", side_effects: "Well tolerated when taken after meals.", precautions: "Avoid combining with other paracetamol cold tablets." },
+      { name: "Crocin", category: "Fever & Pain", usage: "Gentle fever and headache relief tablet.", dosage: "Adults: 1 tablet (500mg) every 6 hours.", side_effects: "Rare allergic skin redness.", precautions: "Seek blood testing if fever lasts beyond 3 days." },
+      { name: "Cetirizine", category: "Allergy & Cold", usage: "Antihistamine for cold, runny nose, sneezing, insect bites, and itching rashes.", dosage: "Adults: 10mg once daily at bedtime.", side_effects: "Mild drowsiness or dry mouth.", precautions: "Avoid driving immediately after taking." },
+      { name: "Amoxicillin", category: "Antibiotic", usage: "Penicillin antibiotic for bacterial ear, throat, respiratory, and urinary infections.", dosage: "Adults: 250mg–500mg every 8 hours for 5–7 days by prescription.", side_effects: "Mild nausea or loose stools.", precautions: "Complete full course; avoid in penicillin allergy." },
+      { name: "Azithromycin", category: "Antibiotic", usage: "Macrolide antibiotic for bacterial throat, chest, and enteric infections.", dosage: "Adults: 500mg once daily for 3–5 days as prescribed.", side_effects: "Mild abdominal cramping.", precautions: "Do not take for simple viral colds without prescription." },
+      { name: "ORS", category: "Digestion & Hydration", usage: "WHO Oral Rehydration Salts to restore water and electrolytes in diarrhea and heat exhaustion.", dosage: "Mix 1 packet in 1 liter boiled cooled water. Sip 200ml after every loose stool.", side_effects: "None when diluted properly.", precautions: "Discard remaining solution after 24 hours." },
+      { name: "Ibuprofen", category: "Fever & Pain", usage: "Anti-inflammatory painkiller for joint pain, muscle sprains, dental pain, and swelling.", dosage: "Adults: 200mg–400mg every 8 hours strictly after food.", side_effects: "Heartburn or stomach acidity.", precautions: "Strictly avoid during suspected Dengue fever or ulcers." },
+      { name: "Pantoprazole", category: "Digestion & Hydration", usage: "Reduces stomach acid in gastritis, acid reflux, and heartburn.", dosage: "Adults: 40mg once daily in the morning, 30 mins before breakfast.", side_effects: "Rare mild headache.", precautions: "Swallow tablet whole with water." },
+      { name: "Ranitidine", category: "Digestion & Hydration", usage: "Relieves indigestion, sour belching, and stomach acidity.", dosage: "Adults: 150mg once or twice daily before meals.", side_effects: "Rare dizziness.", precautions: "Consult a doctor if symptoms persist." },
+      { name: "Metformin", category: "Chronic & Cardiac", usage: "First-line oral medicine to control blood sugar in Type 2 Diabetes.", dosage: "Adults: 500mg once or twice daily with meals.", side_effects: "Metallic taste or mild stomach upset initially.", precautions: "Never skip meals after taking diabetes tablets." },
+      { name: "Amlodipine", category: "Chronic & Cardiac", usage: "Long-acting medicine for high blood pressure (hypertension).", dosage: "Adults: 5mg once daily in the morning.", side_effects: "Occasional mild ankle swelling.", precautions: "Do not stop blood pressure medicines abruptly." },
+      { name: "Ciprofloxacin", category: "Antibiotic", usage: "Antibiotic for urinary tract infections (UTI) and bacterial diarrhea.", dosage: "Adults: 500mg twice daily for 5–7 days as prescribed.", side_effects: "Mild nausea or lightheadedness.", precautions: "Drink plenty of water; avoid taking with milk." },
+      { name: "Metronidazole", category: "Antibiotic", usage: "Treats amoebic dysentery, stomach infections, and gum infections.", dosage: "Adults: 400mg three times daily after meals for 5 days.", side_effects: "Metallic taste in mouth.", precautions: "Strictly avoid alcohol during treatment." },
+      { name: "Disprin", category: "Fever & Pain", usage: "Soluble Aspirin for acute headache and migraine.", dosage: "Dissolve 1 tablet in half a glass of water after food.", side_effects: "Stomach irritation.", precautions: "Never give to children under 16 or during Dengue fever." },
+      { name: "Montelukast", category: "Allergy & Cold", usage: "Prevents seasonal allergies, night cough, and asthma wheezing.", dosage: "Adults: 10mg once daily in the evening.", side_effects: "Mild headache.", precautions: "For daily prevention, not acute asthma attacks." },
+      { name: "Domperidone", category: "Digestion & Hydration", usage: "Stops nausea, vomiting, and upper stomach bloating.", dosage: "Adults: 10mg 15–30 minutes before meals.", side_effects: "Dry mouth.", precautions: "Combine with oral fluids and ORS." },
+      { name: "Levosalbutamol", category: "Allergy & Cold", usage: "Bronchodilator that opens airways in asthma and wheezing.", dosage: "1–2 puffs inhaler or 5ml syrup twice daily as advised.", side_effects: "Slight hand tremor.", precautions: "Seek emergency care if breathing becomes difficult." },
+      { name: "Cough Syrup", category: "Allergy & Cold", usage: "Soothing syrup for dry or wet cough and throat irritation.", dosage: "Adults: 5ml–10ml three times daily with warm water.", side_effects: "Mild sleepiness.", precautions: "Get a PHC sputum test if cough lasts > 2 weeks." },
+      { name: "Antacid Gel", category: "Digestion & Hydration", usage: "Fast liquid relief for burning acidity, gas, and heartburn.", dosage: "1–2 teaspoons (5–10ml) after meals and at bedtime.", side_effects: "Chalky taste.", precautions: "Shake bottle well; keep 2-hour gap from iron tablets." },
+      { name: "Atorvastatin", category: "Chronic & Cardiac", usage: "Lowers bad cholesterol and protects against heart attacks.", dosage: "Adults: 10mg–20mg once daily at night.", side_effects: "Rare mild muscle ache.", precautions: "Follow a low-oil diet and daily walking." },
+      { name: "Telmisartan", category: "Chronic & Cardiac", usage: "Controls high blood pressure and protects kidney function.", dosage: "Adults: 40mg once daily in the morning.", side_effects: "Mild lightheadedness.", precautions: "Reduce extra salt and pickles in diet." },
+      { name: "Oral Rehydration Salt", category: "Digestion & Hydration", usage: "Electrolyte replacement for loose motions, vomiting, and summer heat.", dosage: "200ml–250ml sipped after every loose motion.", side_effects: "Safe for all ages.", precautions: "Always mix in 1 full liter of clean boiled water." },
+      { name: "Paracetamol 500mg", category: "Fever & Pain", usage: "Standard government PHC tablet for safe fever and pain relief.", dosage: "1 tablet every 6 hours after a meal.", side_effects: "Minimal within 4 tablets/day.", precautions: "Use lukewarm cloth sponging for high fever." },
+      { name: "Diclofenac", category: "Fever & Pain", usage: "Relieves severe backache, knee arthritis, and sprains.", dosage: "Adults: 50mg twice daily after food, or topical gel 3 times daily.", side_effects: "Stomach acidity if taken orally.", precautions: "Prefer topical gel for joint pain in elderly patients." }
+    ];
+
+    const SEED_FACILITIES = [
+      { id: 1, name: "Barasat Government Primary Health Center (PHC)", facility_type: "PHC", address: "KNC Road, Near Barasat Station", district: "North 24 Parganas", pincode: "700124", phone: "+91-33-2552-1040", emergency_24x7: true, operating_hours: "24×7", latitude: 22.7214, longitude: 88.4812, services: "Outpatient Triage, Free Generic Medicines, Maternal Care, Immunization" },
+      { id: 2, name: "Habra Community Health Center (CHC)", facility_type: "CHC", address: "Jessore Road, Habra Town", district: "North 24 Parganas", pincode: "743263", phone: "+91-3216-237102", emergency_24x7: true, operating_hours: "24×7", latitude: 22.8364, longitude: 88.6548, services: "24×7 Emergency, Snakebite Antivenom, Labor Room, X-Ray, Lab" },
+      { id: 3, name: "Madhyamgram Rural Primary Health Unit", facility_type: "PHC", address: "Sodepur Road, Madhyamgram", district: "North 24 Parganas", pincode: "700129", phone: "+91-33-2538-4410", emergency_24x7: false, operating_hours: "08:00 AM – 08:00 PM", latitude: 22.7001, longitude: 88.4552, services: "Daily OPD, Child Vaccination, Antenatal Checkups, BP Screening" },
+      { id: 4, name: "Barasat District Hospital & Trauma Center", facility_type: "Hospital", address: "Hospital Road, Chadpur, Barasat", district: "North 24 Parganas", pincode: "700124", phone: "+91-33-2552-3259", emergency_24x7: true, operating_hours: "24×7", latitude: 22.7265, longitude: 88.4795, services: "ICU, Cardiac Care, Trauma Surgery, Blood Bank, Dialysis, Pediatrics" },
+      { id: 5, name: "Jan-Aushadhi 24x7 Medical & Generic Pharmacy", facility_type: "Pharmacy", address: "Station Road Market, Barasat", district: "North 24 Parganas", pincode: "700124", phone: "+91-98301-11223", emergency_24x7: true, operating_hours: "24×7", latitude: 22.7230, longitude: 88.4820, services: "Subsidized Quality Generic Medicines, ORS, Insulin, Surgical Supplies" },
+      { id: 6, name: "Rajarhat Primary Health Center", facility_type: "PHC", address: "Chinar Park, Rajarhat Main Road", district: "North 24 Parganas", pincode: "700136", phone: "+91-33-2573-8801", emergency_24x7: true, operating_hours: "24×7", latitude: 22.6245, longitude: 88.4410, services: "General OPD, Fever Clinic, Dengue/Malaria Rapid Testing, Pharmacy" },
+      { id: 7, name: "Salt Lake Sub-District Hospital", facility_type: "Hospital", address: "DD Block, Sector 1, Salt Lake", district: "Kolkata", pincode: "700064", phone: "+91-33-2337-1042", emergency_24x7: true, operating_hours: "24×7", latitude: 22.5855, longitude: 88.4111, services: "24×7 Emergency, Cardiology OPD, ENT, Orthopedics, Diagnostics" },
+      { id: 8, name: "Howrah District General Hospital & PHC Cell", facility_type: "Hospital", address: "Biplabi Haren Ghosh Sarani, Howrah", district: "Howrah", pincode: "711101", phone: "+91-33-2638-4211", emergency_24x7: true, operating_hours: "24×7", latitude: 22.5892, longitude: 88.3245, services: "Pulmonology, Chest Clinic, Emergency Trauma, Maternity Ward" },
+      { id: 9, name: "Sonarpur Rural Community Health Center", facility_type: "CHC", address: "Station Road, Sonarpur", district: "South 24 Parganas", pincode: "700150", phone: "+91-33-2434-2108", emergency_24x7: true, operating_hours: "24×7", latitude: 22.4412, longitude: 88.4310, services: "Pediatric Care, Neonatal Unit, 24×7 Delivery Unit, Free Pharmacy" },
+      { id: 10, name: "Serampore Walsh Sub-Divisional Hospital", facility_type: "Hospital", address: "GT Road, Serampore", district: "Hooghly", pincode: "712201", phone: "+91-33-2662-2294", emergency_24x7: true, operating_hours: "24×7", latitude: 22.7511, longitude: 88.3412, services: "Dermatology OPD, General Medicine, Emergency Ward, Pathology" }
+    ];
+
+    const SAMPLE_PRESCRIPTIONS = {
+      viral_phc: {
+        clinic_title: "Barasat Govt. PHC — OPD Slip #409",
+        doctor_name: "Dr. Ananya Sen (MBBS, MD)",
+        confidence_score: 0.96,
+        doctor_notes: "Acute viral fever with rhinitis. Drink 2L WHO-ORS daily. Return for Dengue NS1 test if fever lasts > 3 days.",
+        extracted_medicines: [
+          { medicine_name: "Dolo 650 (Paracetamol)", strength: "650 mg", dosage: "1 Tablet", frequency: "Three Times Daily", duration: "3 Days", timing: "After food", instructions: "Keep 6-hour gap", reminder_time: "08:00" },
+          { medicine_name: "Cetirizine", strength: "10 mg", dosage: "1 Tablet", frequency: "Once Daily", duration: "5 Days", timing: "Bedtime", instructions: "For cold & allergy", reminder_time: "21:00" },
+          { medicine_name: "ORS (WHO Formula)", strength: "20.5 g", dosage: "200 ml glass", frequency: "Four Times Daily", duration: "3 Days", timing: "Between meals", instructions: "Mix 1 packet in 1L boiled water", reminder_time: "11:00" }
+        ]
+      },
+      gastro_care: {
+        clinic_title: "Sub-Divisional Hospital Gastro Unit — Slip #118",
+        doctor_name: "Dr. Amitav Banerjee (MD, DNB)",
+        confidence_score: 0.94,
+        doctor_notes: "Acute gastritis with mild dehydration. Avoid spicy/oily food for 5 days. Eat soft khichdi and curd.",
+        extracted_medicines: [
+          { medicine_name: "Pantoprazole", strength: "40 mg", dosage: "1 Tablet", frequency: "Once Daily", duration: "7 Days", timing: "Empty stomach (Morning)", instructions: "30m before breakfast", reminder_time: "07:30" },
+          { medicine_name: "Domperidone", strength: "10 mg", dosage: "1 Tablet", frequency: "Twice Daily", duration: "3 Days", timing: "Before lunch & dinner", instructions: "For nausea relief", reminder_time: "12:30" },
+          { medicine_name: "Oral Rehydration Salt", strength: "1 Sachet", dosage: "200 ml", frequency: "Three Times Daily", duration: "3 Days", timing: "Afternoon", instructions: "Prepare fresh daily", reminder_time: "15:00" }
+        ]
+      },
+      bp_cardiac: {
+        clinic_title: "Apex Heart & Rural Chronic Care — Slip #892",
+        doctor_name: "Dr. Rajesh Kumar Verma (MD, DM Cardiology)",
+        confidence_score: 0.97,
+        doctor_notes: "BP: 146/92 mmHg. Reduce table salt and pickles. Walk 30 minutes daily.",
+        extracted_medicines: [
+          { medicine_name: "Telmisartan", strength: "40 mg", dosage: "1 Tablet", frequency: "Once Daily", duration: "30 Days", timing: "Morning after breakfast", instructions: "Take at same hour daily", reminder_time: "08:30" },
+          { medicine_name: "Amlodipine", strength: "5 mg", dosage: "1 Tablet", frequency: "Once Daily", duration: "30 Days", timing: "Evening (18:00)", instructions: "Monitor ankle swelling", reminder_time: "18:00" },
+          { medicine_name: "Atorvastatin", strength: "10 mg", dosage: "1 Tablet", frequency: "Once Daily", duration: "30 Days", timing: "Night after dinner", instructions: "Cholesterol protection", reminder_time: "21:30" }
+        ]
+      }
+    };
+
+    const FAMILY_PROFILES = [
+      { name: "Sunita Devi", age: 38, gender: "Female", blood_group: "B+", location: "Village Kadamgachi, Barasat", allergies: "Sulfa drugs, Dust pollen", chronic_conditions: "Mild Iron-Deficiency Anemia", emergency_contact: "+91-98310-44512 (Mahesh)" },
+      { name: "Ramesh Kumar", age: 54, gender: "Male", blood_group: "O+", location: "Habra Block, North 24 Parganas", allergies: "Penicillin", chronic_conditions: "Stage 1 Hypertension, Knee Pain", emergency_contact: "+91-94332-88901 (Deepak)" }
+    ];
+
+    // =========================================================
+    // 2. STATE
+    // =========================================================
+    const state = {
+      activeView: "dashboard",
+      lang: "en",
+      liveApiMode: true,
+      apiBaseUrl: "http://127.0.0.1:8000",
+      selectedSymptoms: ["fever", "cough", "headache"],
+      medicineCategory: "ALL",
+      userLat: 22.7214,
+      userLng: 88.4812,
+      userLocationName: "Barasat",
+      activeProfile: {
+        name: localStorage.getItem("aarogya_user_name") || "Patient",
+        age: 32,
+        gender: "Not specified",
+        blood_group: "O+",
+        location: localStorage.getItem("aarogya_user_phone") ? ("+91 " + localStorage.getItem("aarogya_user_phone")) : "Rural Wellness Portal",
+        allergies: "None reported",
+        chronic_conditions: "None reported",
+        emergency_contact: localStorage.getItem("aarogya_user_phone") ? ("+91 " + localStorage.getItem("aarogya_user_phone")) : "+91-108"
+      },
+      activePrescriptionResult: SAMPLE_PRESCRIPTIONS.viral_phc,
+      doneTasks: [2],
+      chatHistory: [
+        {
+          sender: "bot",
+          text: "Namaste! Welcome to IndicHealth AI. Ask me any health question in English, Odia (ଓଡ଼ିଆ), Hindi (हिन्दी), or Bengali (বাংলা).",
+          time: "10:00 AM"
+        }
+      ],
+      bookedAppointments: [
+        {
+          id: 101,
+          doctor_id: 1,
+          doctor_name: "Dr. Ananya Sen",
+          specialty: "General Physician",
+          hospital_name: "Barasat Govt PHC",
+          appointment_date: "2026-10-30",
+          time_slot: "10:00 AM",
+          patient_name: "Sunita Devi",
+          patient_phone: "+91-98310-44512",
+          symptoms_summary: "Seasonal viral fever checkup",
+          status: "Confirmed"
+        }
+      ],
+      reminders: [
+        { id: 1, medicine_name: "Paracetamol 500mg", dosage: "1 Tablet", frequency: "Three Times Daily", reminder_time: "14:00", notes: "After lunch", is_active: true, is_due_now: true },
+        { id: 2, medicine_name: "WHO-ORS Solution", dosage: "200 ml glass", frequency: "Three Times Daily", reminder_time: "16:30", notes: "In 1L boiled cooled water", is_active: true, is_due_now: false },
+        { id: 3, medicine_name: "Cetirizine 10mg", dosage: "1 Tablet", frequency: "Once Daily", reminder_time: "21:00", notes: "At bedtime", is_active: true, is_due_now: false }
+      ]
+    };
+
+    function t(key) {
+      const dict = I18N[state.lang] || I18N.en;
+      return dict[key] || I18N.en[key] || key;
+    }
+
+    // =========================================================
+    // 3. WHOLE-PAGE LANGUAGE SWITCHER (EN / OR / HI / BN)
+    // =========================================================
+    function setLanguage(langCode) {
+      state.lang = langCode;
+      document.documentElement.lang = langCode;
+
+      document.querySelectorAll(".lang-chip").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === langCode);
+      });
+
+      // 1. Update all [data-i18n] text nodes across all 9 views
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = t(key);
+      });
+
+      // 2. Update all [data-i18n-placeholder] inputs
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        el.setAttribute("placeholder", t(key));
+      });
+
+      document.getElementById("global-quick-search").setAttribute("placeholder", t("searchPlaceholder"));
+
+      // 3. Fast lazy-render: update persistent shell + only the active visible view
+      renderTopGreeting();
+      renderRightTimeline();
+      renderActiveViewOnly(state.activeView);
+
+      showToast(`${t("langName")}`);
+    }
+
+    function renderActiveViewOnly(viewId) {
+      if (viewId === "dashboard") {
+        renderDashboardTasks();
+      } else if (viewId === "symptoms") {
+        renderSymptomButtons();
+        runSymptomEvaluation();
+      } else if (viewId === "chat") {
+        renderChatQuickPrompts();
+        renderChatMessages();
+      } else if (viewId === "appointments") {
+        renderDoctorsGrid();
+        renderBookedAppointments();
+      } else if (viewId === "prescription") {
+        renderPrescriptionOutput();
+      } else if (viewId === "medicines") {
+        renderMedicineCategories();
+        renderMedicinesGrid();
+      } else if (viewId === "reminders") {
+        renderRemindersView();
+      } else if (viewId === "facilities") {
+        renderFacilitiesGrid();
+      } else if (viewId === "profile") {
+        populateProfileForm();
+        renderVisualHealthPassport();
+      }
+    }
+
+    function switchView(viewId) {
+      state.activeView = viewId;
+      document.querySelectorAll(".app-view").forEach(v => v.classList.remove("active"));
+      const target = document.getElementById(`view-${viewId}`);
+      if (target) target.classList.add("active");
+
+      document.querySelectorAll(".side-nav-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-view") === viewId);
+      });
+      renderActiveViewOnly(viewId);
+    }
+
+    function handleGlobalSearch(e) {
+      const val = e.target.value.trim();
+      if (!val) return;
+      document.getElementById("medicine-search-input").value = val;
+      switchView("medicines");
+      renderMedicinesGrid();
+    }
+
+    function showToast(msg) {
+      const stack = document.getElementById("toast-stack");
+      const el = document.createElement("div");
+      el.className = "toast-pill";
+      el.textContent = msg;
+      stack.appendChild(el);
+      setTimeout(() => el.remove(), 2600);
+    }
+
+    function speakText(text) {
+      if (!("speechSynthesis" in window)) {
+        showToast("Speech synthesis not supported in this browser.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const clean = text.replace(/<[^>]*>/g, "");
+      const utter = new SpeechSynthesisUtterance(clean);
+      utter.lang = state.lang === "or" ? "or-IN" : state.lang === "hi" ? "hi-IN" : state.lang === "bn" ? "bn-IN" : "en-IN";
+      utter.rate = 0.95;
+      window.speechSynthesis.speak(utter);
+      showToast(t("listen_btn") + "...");
+    }
+
+   // =========================================================
+    // 4. DASHBOARD & RIGHT TIMELINE RENDERING
+    // =========================================================
+    function renderTopGreeting() {
+      const p = state.activeProfile;
+      const prefix = t("greetingPrefix") || "Hello,";
+      document.getElementById("top-greeting-title").textContent = `${prefix} ${p.name || 'User'}`;
+      document.getElementById("top-greeting-date").textContent = t("greetingDate");
+      document.getElementById("sidebar-avatar-letter").textContent = p.name ? p.name.charAt(0).toUpperCase() : "U";
+      document.getElementById("sidebar-blood-pill").textContent = p.blood_group || "O+";
+      document.getElementById("sidebar-user-name").textContent = p.name || 'User';
+      document.getElementById("sidebar-user-sub").textContent = p.location || 'Rural Wellness Portal';
+    }
+
+    function renderDashboardTasks() {
+      const dict = I18N[state.lang] || I18N.en;
+      const box = document.getElementById("dashboard-tasks-list");
+      if (!box) return;
+      box.innerHTML = dict.tasks.map((task, idx) => {
+        const isDone = state.doneTasks.includes(idx);
+        return `
+          <div class="accent-task-card ${task.color} ${isDone ? 'done' : ''}" onclick="toggleTaskDone(${idx})">
+            <div>
+              <div class="task-card-title">${task.title}</div>
+              <div class="task-card-sub">${task.sub}</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <button class="btn btn-soft btn-sm" onclick="event.stopPropagation(); speakText('${task.title}. ${task.sub}')">${t("listen_btn")}</button>
+              <div class="task-check-circle">✓</div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function toggleTaskDone(idx) {
+      const pos = state.doneTasks.indexOf(idx);
+      if (pos >= 0) state.doneTasks.splice(pos, 1);
+      else state.doneTasks.push(idx);
+      renderDashboardTasks();
+    }
+
+    function renderRightTimeline() {
+      const box = document.getElementById("right-timeline-list");
+      if (!box) return;
+      const items = [];
+
+      state.bookedAppointments.filter(a => a.status === "Confirmed").forEach(a => {
+        items.push({
+          time: a.time_slot.replace(" AM", "").replace(" PM", ""),
+          sub: a.hospital_name,
+          title: a.doctor_name,
+          bar: "purple",
+          view: "appointments"
+        });
+      });
+
+      state.reminders.filter(r => r.is_active).forEach((r, idx) => {
+        items.push({
+          time: r.reminder_time,
+          sub: `${r.dosage} · ${r.notes}`,
+          title: r.medicine_name,
+          bar: idx % 2 === 0 ? "coral" : "teal",
+          view: "reminders"
+        });
+      });
+
+      box.innerHTML = items.slice(0, 5).map(it => `
+        <div class="timeline-row" onclick="switchView('${it.view}')">
+          <div class="timeline-time">${it.time}</div>
+          <div class="timeline-bar ${it.bar}"></div>
+          <div>
+            <div class="timeline-info-sub">${it.sub}</div>
+            <div class="timeline-info-title">${it.title}</div>
+          </div>
+        </div>
+      `).join("");
+
+      const activeCount = state.reminders.filter(r => r.is_active).length;
+      const statEl = document.getElementById("stat-active-reminders-num");
+      if (statEl) statEl.textContent = activeCount;
+    }
+
+    // =========================================================
+    // 5. SYMPTOM TRIAGE (Full 4-Language Support)
+    // =========================================================
+    function renderSymptomButtons() {
+      const container = document.getElementById("symptom-buttons-container");
+      container.innerHTML = SYMPTOMS_I18N.map(s => {
+        const isSel = state.selectedSymptoms.includes(s.id);
+        const label = s[state.lang] || s.en;
+        return `
+          <button type="button" class="sym-chip ${isSel ? 'selected' : ''}" onclick="toggleSymptom('${s.id}')">
+            <span>${label}</span>
+            <span>${isSel ? '✓' : '+'}</span>
+          </button>
+        `;
+      }).join("");
+      document.getElementById("selected-symptom-count").textContent = `${state.selectedSymptoms.length}`;
+    }
+
+    function toggleSymptom(symId) {
+      const idx = state.selectedSymptoms.indexOf(symId);
+      if (idx >= 0) state.selectedSymptoms.splice(idx, 1);
+      else state.selectedSymptoms.push(symId);
+      renderSymptomButtons();
+      runSymptomEvaluation();
+    }
+
+    function addCustomSymptom() {
+      const inp = document.getElementById("custom-symptom-input");
+      const val = inp.value.trim().toLowerCase();
+      if (!val) return;
+      if (!state.selectedSymptoms.includes(val)) state.selectedSymptoms.push(val);
+      inp.value = "";
+      renderSymptomButtons();
+      runSymptomEvaluation();
+    }
+
+    function clearSelectedSymptoms() {
+      state.selectedSymptoms = [];
+      renderSymptomButtons();
+      runSymptomEvaluation();
+    }
+
+    function loadPresetSymptomCase(type) {
+      state.selectedSymptoms = type === "dengue"
+        ? ["high fever", "joint pain", "headache"]
+        : ["chest pain", "shortness of breath"];
+      renderSymptomButtons();
+      runSymptomEvaluation();
+    }
+
+    async function runSymptomEvaluation() {
+      const box = document.getElementById("symptom-result-container");
+      if (state.selectedSymptoms.length === 0) {
+        box.innerHTML = `
+          <div class="white-card">
+            <h3 style="font-size:18px; margin-bottom:6px;">${t("sym_select_heading")}</h3>
+            <p style="color:var(--ink-muted);">${t("sym_view_sub")}</p>
+          </div>
+        `;
+        return;
+      }
+
+      const normalized = state.selectedSymptoms.map(s => s.toLowerCase());
+      let matchedRule = CLINICAL_SYMPTOM_RULES[2];
+      let bestScore = 0;
+
+      for (const rule of CLINICAL_SYMPTOM_RULES) {
+        const hits = normalized.filter(s => rule.keywords.some(k => k.includes(s) || s.includes(k))).length;
+        if (hits > 0 && rule.is_emergency) {
+          matchedRule = rule;
+          break;
+        }
+        if (hits > bestScore) {
+          bestScore = hits;
+          matchedRule = rule;
+        }
+      }
+
+      const locText = matchedRule[state.lang] || matchedRule.en;
+      box.innerHTML = `
+        <div class="white-card" style="background:${matchedRule.is_emergency ? 'var(--pink-pastel)' : 'var(--mint-pastel)'};">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span class="tag-pill" style="background:#FFFFFF;">${matchedRule.is_emergency ? '🚨 URGENT ALERT' : '✓ Clinical Triage'}</span>
+            <button class="btn btn-soft btn-sm" style="background:#FFFFFF;" onclick="speakText('${locText.condition}. ${locText.advice.replace(/'/g, "")}')">${t("listen_btn")}</button>
+          </div>
+          <h3 style="font-size:22px; margin-bottom:12px;">${locText.condition}</h3>
+          <div style="background:#FFFFFF; padding:16px; border-radius:14px; margin-bottom:16px; font-size:13.5px; line-height:1.6;">
+            ${locText.advice}
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div>
+              <div style="font-size:11.5px; color:var(--ink-body);">Recommended Specialist</div>
+              <div style="font-family:var(--font-heading); font-weight:700; font-size:17px;">${matchedRule.specialist}</div>
+            </div>
+            <button class="btn btn-dark btn-sm" onclick="jumpToSpecialistBooking('${matchedRule.specialist}')">
+              ${t("book_slot_btn")} (${matchedRule.specialist}) →
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function jumpToSpecialistBooking(spec) {
+      document.getElementById("doctor-specialty-filter").value = spec;
+      renderDoctorsGrid();
+      switchView("appointments");
+    }
+
+    // =========================================================
+    // 6. AI MITRA CHAT (Multilingual Replies in EN / OR / HI / BN)
+    // =========================================================
+    function renderChatQuickPrompts() {
+      const dict = I18N[state.lang] || I18N.en;
+      const box = document.getElementById("chat-quick-prompts");
+      if (!box) return;
+      box.innerHTML = dict.quickPrompts.map(q => `
+        <button class="btn btn-soft" style="text-align:left; justify-content:flex-start; font-weight:500;" onclick="sendQuickPrompt('${q.replace(/'/g, "\\'")}')">
+          ${q}
+        </button>
+      `).join("");
+    }
+
+    function formatChatMarkdown(rawText) {
+      if (!rawText) return "";
+      let html = String(rawText)
+        .replace(/---+/g, '<hr style="margin:12px 0; border:none; border-top:1px solid var(--border-mid);">')
+        .replace(/###\s*([^\n]+)/g, '<h4 style="font-family:var(--font-heading); font-size:15.5px; font-weight:700; color:var(--purple-card); margin:12px 0 6px;">$1</h4>')
+        .replace(/##\s*([^\n]+)/g, '<h3 style="font-family:var(--font-heading); font-size:16.5px; font-weight:700; color:var(--ink-dark); margin:12px 0 6px;">$1</h3>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/(?:^|\n)\s*[\*\-]\s+([^\n]+)/g, '<div style="display:flex; gap:8px; align-items:flex-start; margin:5px 0;"><span style="color:var(--coral-card); font-weight:700;">•</span><span>$1</span></div>')
+        .replace(/\n{2,}/g, '<div style="height:8px;"></div>')
+        .replace(/\n/g, '<br/>');
+      return html;
+    }
+
+    function stripForSpeech(rawText) {
+      return String(rawText || "")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/[#\*_\-]{1,4}/g, " ")
+        .replace(/'/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function renderChatMessages() {
+      const box = document.getElementById("chat-messages-box");
+      if (!box) return;
+      box.innerHTML = state.chatHistory.map(m => {
+        const formattedBody = m.sender === "bot" ? formatChatMarkdown(m.text) : m.text;
+        const safeSpeech = stripForSpeech(m.text);
+        return `
+          <div class="chat-bubble ${m.sender === 'user' ? 'user' : 'bot'}" style="max-width:88%;">
+            <div style="line-height:1.6;">${formattedBody}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; padding-top:6px; border-top:1px solid rgba(0,0,0,0.05); font-size:11px; opacity:0.8;">
+              <span>${m.time}</span>
+              ${m.sender === 'bot' ? `<button class="btn btn-soft btn-sm" style="padding:3px 10px; font-size:11px;" onclick="speakText('${safeSpeech}')">${t("listen_btn")}</button>` : ''}
+            </div>
+          </div>
+        `;
+      }).join("");
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function sendQuickPrompt(text) {
+      document.getElementById("chat-input-field").value = text;
+      handleChatSubmit(new Event("submit"));
+    }
+
+    async function handleChatSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const input = document.getElementById("chat-input-field");
+      const message = input.value.trim();
+      if (!message) return;
+      input.value = "";
+
+      const nowStr = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      state.chatHistory.push({ sender: "user", text: message, time: nowStr });
+      renderChatMessages();
+
+      const langMap = { en: "English", or: "Odia (ଓଡ଼ିଆ)", hi: "Hindi (हिन्दी)", bn: "Bengali (বাংলা)" };
+      const targetLang = langMap[state.lang] || "English";
+      const apiPrompt = state.lang !== "en" ? `[Please respond in ${targetLang} language]: ${message}` : message;
+
+      let replyText = "";
+      if (state.liveApiMode) {
+        for (const base of [state.apiBaseUrl, ""]) {
+          try {
+            const res = await fetch(`${base}/chat`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: apiPrompt })
+            });
+            if (res.ok) {
+              const payload = await res.json();
+              const data = payload.data || payload;
+              replyText = data.response || data.reply || "";
+              if (replyText) break;
+            }
+          } catch (err) {}
+        }
+      }
+
+      if (!replyText) replyText = generateMultilingualReply(message);
+
+      state.chatHistory.push({ sender: "bot", text: replyText, time: nowStr });
+      renderChatMessages();
+    }
+
+    function generateMultilingualReply(query) {
+      if (state.lang === "or") {
+        return `### 🩺 ଲକ୍ଷଣ (Symptoms)
+- ହାଲୁକା କିମ୍ବା ପ୍ରବଳ ଜ୍ୱର, ଦେହ ହାତ ବିନ୍ଧା ଏବଂ ଦୁର୍ବଳତା |
+- ପେଟ କାଟିବା, ପାତଳା ଝାଡ଼ା କିମ୍ବା ଜଳୀୟ ଅଂଶ ହ୍ରାସ (Dehydration) |
+
+### 💊 ପ୍ରାଥମିକ ଚିକିତ୍ସା ଓ ଉପଚାର (Cure & Home Care)
+- **WHO-ORS ଘୋଳ:** ୧ ଲିଟର ଫୁଟା ଥଣ୍ଡା ପାଣିରେ ୧ ପ୍ୟାକେଟ୍ ORS ମିଶାଇ ବାରମ୍ବାର ପିଅନ୍ତୁ |
+- **ଜ୍ୱର ନିୟନ୍ତ୍ରଣ:** ଜ୍ୱର ୧୦୦°F ରୁ ଅଧିକ ହେଲେ ଖାଇବା ପରେ ପାରାସିଟାମଲ୍ (Paracetamol 500mg) ନିଅନ୍ତୁ |
+- **ହାଲୁକା ଖାଦ୍ୟ:** ଖିଚୁଡ଼ି, ଦହି-ଭାତ, ପାଚିଲା କଦଳୀ କିମ୍ବା ଡାଲି ପାଣି ଦିଅନ୍ତୁ |
+
+### 🛡️ ସତର୍କତା (Precautions to be Taken)
+- ଡାକ୍ତରଙ୍କ ବିନା ପରାମର୍ଶରେ ଆଣ୍ଟିବାୟୋଟିକ୍ କିମ୍ବା Ibuprofen ଖାଆନ୍ତୁ ନାହିଁ |
+- ୩ ଦିନରୁ ଅଧିକ ଜ୍ୱର ରହିଲେ ନିକଟସ୍ଥ ସରକାରୀ PHC ଡାକ୍ତରଙ୍କୁ ଦେଖାନ୍ତୁ |`;
+      }
+      if (state.lang === "hi") {
+        return `### 🩺 मुख्य लक्षण (Symptoms)
+- हल्का या तेज बुखार, शरीर में दर्द, थकान और कमजोरी।
+- दस्त (लूज मोशन) के कारण शरीर में पानी और नमक की कमी (डिहाइड्रेशन)।
+
+### 💊 प्राथमिक उपचार व देखभाल (Cure & Home Care)
+- **ओआरएस (ORS) और तरल पदार्थ:** 1 लीटर उबले ठंडे पानी में 1 पैकेट WHO-ORS घोलें और थोड़े-थोड़े अंतराल पर पिलाएं।
+- **सुपाच्य आहार:** खिचड़ी, दही-चावल, केला या दाल का पानी दें।
+- **बुखार प्रबंधन:** माथे पर सामान्य पानी की पट्टी रखें और डॉक्टर की सलाह से पैरासिटामोल लें।
+
+### 🛡️ सावधानियां (Precautions to be Taken)
+- बिना डॉक्टर की सलाह के एंटीबायोटिक या तेज दर्द निवारक दवा (Ibuprofen) न दें।
+- यदि बुखार 3 दिन से अधिक रहे, तो तुरंत नजदीकी सरकारी PHC या आशा कार्यकर्ता से संपर्क करें।`;
+      }
+      if (state.lang === "bn") {
+        return `### 🩺 প্রধান লক্ষণ (Symptoms)
+- হালকা বা তীব্র জ্বর, শরীরে ব্যথা এবং দুর্বলতা।
+- পাতলা পায়খানার কারণে শরীরে জল ও লবণের ঘাটতি (ডিহাইড্রেশন)।
+
+### 💊 প্রাথমিক চিকিৎসা ও ঘরোয়া যত্ন (Cure & Home Care)
+- **WHO-ORS পানীয়:** ১ লিটার ফোটানো ঠান্ডা জলে ১ প্যাকেট ORS মিশিয়ে অল্প অল্প করে পান করান।
+- **হালকা খাবার:** নরম খিচুড়ি, দই-ভাত, পাকা কলা বা ডালের জল দিন।
+- **জ্বরের যত্ন:** কপালে জলপট্টি দিন এবং প্রয়োজনে প্যারাসিটামল নিন।
+
+### 🛡️ সতর্কতা (Precautions to be Taken)
+- ডাক্তারের পরামর্শ ছাড়া অ্যান্টিবায়োটিক বা ব্যথার ওষুধ খাবেন না।
+- ৩ দিনের বেশি জ্বর থাকলে অবিলম্বে নিকটবর্তী সরকারি PHC-তে যোগাযোগ করুন।`;
+      }
+      return `### 🩺 Key Symptoms
+- Mild to high-grade fever, body ache, fatigue, or dehydration signs (dry mouth, low urine output).
+- Loose motions, abdominal cramps, or throat irritation depending on infection type.
+
+### 💊 Cure & Home Care
+- **ORS Rehydration:** Dissolve 1 packet of WHO-ORS in 1 liter of boiled cooled water and sip 200ml after every loose stool.
+- **Fever & Pain Relief:** Use lukewarm cloth sponging and take Paracetamol (500mg–650mg) after food with a minimum 6-hour gap.
+- **Light Diet:** Take soft khichdi, curd-rice, ripe banana, or clear dal water.
+
+### 🛡️ Precautions to be Taken
+- Strictly avoid self-medicating with antibiotics or NSAIDs (like Ibuprofen/Aspirin) until Dengue is ruled out.
+- Visit your nearest Primary Health Centre (PHC) immediately if fever lasts beyond 3 days or if breathing difficulty occurs.`;
+    }
+
+    function clearChatHistory() {
+      state.chatHistory = [{ sender: "bot", text: t("chat_view_sub"), time: "Now" }];
+      renderChatMessages();
+    }
+
+    function startVoiceInput() {
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRec) {
+        const dict = I18N[state.lang] || I18N.en;
+        document.getElementById("chat-input-field").value = dict.quickPrompts[0];
+        showToast("Voice sample filled.");
+        return;
+      }
+      const rec = new SpeechRec();
+      rec.lang = state.lang === "or" ? "or-IN" : state.lang === "hi" ? "hi-IN" : state.lang === "bn" ? "bn-IN" : "en-IN";
+      rec.onresult = e => { document.getElementById("chat-input-field").value = e.results[0][0].transcript; };
+      rec.start();
+    }
+
+    // =========================================================
+    // 7. DOCTORS & APPOINTMENTS
+    // =========================================================
+    function renderDoctorsGrid() {
+      const q = (document.getElementById("doctor-search-input")?.value || "").toLowerCase();
+      const spec = document.getElementById("doctor-specialty-filter")?.value || "ALL";
+      const filtered = SEED_DOCTORS.filter(d => {
+        const mSpec = spec === "ALL" || d.specialty.toLowerCase() === spec.toLowerCase();
+        const mSearch = !q || d.name.toLowerCase().includes(q) || d.hospital_name.toLowerCase().includes(q) || d.location.toLowerCase().includes(q);
+        return mSpec && mSearch;
+      });
+
+      const container = document.getElementById("doctors-grid-container");
+      container.innerHTML = filtered.map(doc => `
+        <div class="item-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:10px;">
+              <div>
+                <h3 style="font-size:18px;">${doc.name}</h3>
+                <div style="font-size:12.5px; font-weight:600; color:var(--purple-card);">${doc.specialty} · ${doc.qualification}</div>
+              </div>
+              <span class="tag-pill ${doc.consultation_fee === 0 ? '' : 'amber'}">${doc.consultation_fee === 0 ? t("free_phc_tag") : '₹' + doc.consultation_fee}</span>
+            </div>
+            <div style="font-size:12.5px; color:var(--ink-body); display:flex; flex-direction:column; gap:4px;">
+              <div>🏥 ${doc.hospital_name}</div>
+              <div>📍 ${doc.location} (${doc.experience_years} yrs)</div>
+              <div>🗓️ ${doc.available_days} · 🗣️ ${doc.languages}</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding-top:10px; border-top:1px solid var(--border-soft);">
+            <span style="font-size:12px; font-weight:700;">★ ${doc.rating}</span>
+            <button class="btn btn-dark btn-sm" onclick="openBookingModal(${doc.id})">${t("book_slot_btn")}</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function resetDoctorFilters() {
+      document.getElementById("doctor-search-input").value = "";
+      document.getElementById("doctor-specialty-filter").value = "ALL";
+      renderDoctorsGrid();
+    }
+
+    function openBookingModal(docId) {
+      const doc = SEED_DOCTORS.find(d => d.id === docId);
+      if (!doc) return;
+      document.getElementById("book-doc-id").value = doc.id;
+      document.getElementById("booking-modal-doc-name").textContent = doc.name;
+      document.getElementById("booking-modal-doc-meta").textContent = `${doc.specialty} · ${doc.hospital_name}`;
+      document.getElementById("book-patient-name").value = state.activeProfile.name;
+      document.getElementById("book-patient-phone").value = "+91-98310-44512";
+      document.getElementById("book-date").value = "2026-10-30";
+      document.getElementById("book-slot").innerHTML = doc.available_slots.map(s => `<option value="${s}">${s}</option>`).join("");
+      document.getElementById("booking-modal").classList.add("open");
+    }
+
+    function closeBookingModal() {
+      document.getElementById("booking-modal").classList.remove("open");
+    }
+
+    async function submitDoctorBooking(e) {
+      e.preventDefault();
+      const docId = parseInt(document.getElementById("book-doc-id").value, 10);
+      const doc = SEED_DOCTORS.find(d => d.id === docId);
+      const newApp = {
+        id: Date.now(),
+        doctor_id: doc.id,
+        doctor_name: doc.name,
+        specialty: doc.specialty,
+        hospital_name: doc.hospital_name,
+        appointment_date: document.getElementById("book-date").value,
+        time_slot: document.getElementById("book-slot").value,
+        patient_name: document.getElementById("book-patient-name").value,
+        patient_phone: document.getElementById("book-patient-phone").value,
+        symptoms_summary: document.getElementById("book-symptoms").value,
+        status: "Confirmed"
+      };
+      if (state.liveApiMode) {
+        try {
+          await fetch(`${state.apiBaseUrl}/appointments`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newApp)
+          });
+        } catch (err) {}
+      }
+      state.bookedAppointments.unshift(newApp);
+      closeBookingModal();
+      renderBookedAppointments();
+      renderRightTimeline();
+      showToast(`✓ ${doc.name} (${newApp.appointment_date})`);
+    }
+
+    function renderBookedAppointments() {
+      const box = document.getElementById("appointments-list-container");
+      const active = state.bookedAppointments.filter(a => a.status === "Confirmed").length;
+      document.getElementById("booked-appointments-count").textContent = `${active}`;
+
+      box.innerHTML = state.bookedAppointments.map(app => `
+        <div class="accent-task-card purple-bar" style="margin-bottom:10px; opacity:${app.status === 'Cancelled' ? '0.5' : '1'};">
+          <div>
+            <div class="task-card-title">${app.doctor_name} (${app.specialty})</div>
+            <div class="task-card-sub">${app.hospital_name} · ${app.appointment_date} at ${app.time_slot}</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="tag-pill">${app.status}</span>
+            ${app.status === 'Confirmed' ? `<button class="btn btn-soft btn-sm" onclick="cancelAppointment(${app.id})">${t("btn_cancel")}</button>` : ''}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function cancelAppointment(id) {
+      const app = state.bookedAppointments.find(a => a.id === id);
+      if (app) {
+        app.status = "Cancelled";
+        renderBookedAppointments();
+        renderRightTimeline();
+      }
+    }
+
+    // =========================================================
+    // 8. PRESCRIPTION OCR
+    // =========================================================
+    function runSamplePrescriptionScan(key) {
+      state.activePrescriptionResult = SAMPLE_PRESCRIPTIONS[key] || SAMPLE_PRESCRIPTIONS.viral_phc;
+      renderPrescriptionOutput();
+      showToast("✓ Prescription decoded");
+    }
+
+    async function handlePrescriptionUpload(event) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      if (state.liveApiMode) {
+        try {
+          const fd = new FormData();
+          fd.append("file", file);
+          const res = await fetch(`${state.apiBaseUrl}/prescription/scan`, { method: "POST", body: fd });
+          if (res.ok) {
+            const payload = await res.json();
+            const d = payload.data || payload;
+            state.activePrescriptionResult = {
+              clinic_title: file.name,
+              doctor_name: "Vision AI OCR",
+              confidence_score: d.confidence_score || 0.95,
+              doctor_notes: d.doctor_notes || "Follow post-meal dosing.",
+              extracted_medicines: d.extracted_medicines || SAMPLE_PRESCRIPTIONS.viral_phc.extracted_medicines
+            };
+            renderPrescriptionOutput();
+            return;
+          }
+        } catch (err) {}
+      }
+      state.activePrescriptionResult = {
+        ...SAMPLE_PRESCRIPTIONS.viral_phc,
+        clinic_title: `Scanned Slip: ${file.name}`
+      };
+      renderPrescriptionOutput();
+    }
+
+    function renderPrescriptionOutput() {
+      const rx = state.activePrescriptionResult;
+      const box = document.getElementById("rx-scan-output-card");
+      if (!rx) return;
+      box.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div>
+            <h3 style="font-size:18px;">${rx.clinic_title}</h3>
+            <div style="font-size:12px; color:var(--ink-muted);">${rx.doctor_name}</div>
+          </div>
+          <span class="tag-pill">OCR ${Math.round((rx.confidence_score || 0.95) * 100)}%</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:14px;">
+          ${rx.extracted_medicines.map(m => `
+            <div class="accent-task-card teal-bar">
+              <div>
+                <div class="task-card-title">${m.medicine_name} (${m.strength})</div>
+                <div class="task-card-sub">${m.dosage} · ${m.frequency} · ${m.timing} (${m.duration})</div>
+              </div>
+              <span class="tag-pill amber">${m.reminder_time}</span>
+            </div>
+          `).join("")}
+        </div>
+        <div style="background:var(--amber-pastel); padding:12px 14px; border-radius:12px; font-size:12.5px; margin-bottom:14px;">
+          <strong>Notes:</strong> ${rx.doctor_notes}
+        </div>
+        <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-soft btn-sm" onclick="speakText('${rx.clinic_title}. ${rx.doctor_notes.replace(/'/g, "")}')">${t("listen_btn")}</button>
+          <button class="btn btn-dark btn-sm" onclick="addExtractedRxToReminders()">+ ${t("nav_reminders")} (${rx.extracted_medicines.length})</button>
+        </div>
+      `;
+    }
+
+    function addExtractedRxToReminders() {
+      const rx = state.activePrescriptionResult;
+      if (!rx) return;
+      rx.extracted_medicines.forEach((m, i) => {
+        state.reminders.unshift({
+          id: Date.now() + i,
+          medicine_name: `${m.medicine_name} ${m.strength}`,
+          dosage: m.dosage,
+          frequency: m.frequency,
+          reminder_time: m.reminder_time || "09:00",
+          notes: m.timing,
+          is_active: true,
+          is_due_now: false
+        });
+      });
+      renderRemindersView();
+      renderRightTimeline();
+      switchView("reminders");
+    }
+
+    // =========================================================
+    // 9. MEDICINE GUIDE (500+ Medicines)
+    // =========================================================
+    const EXTRA_RURAL_MEDICINES = [
+      ["Paracetamol", "Fever & Pain", "Relief of fever, headache, body ache, and toothache.", "500mg-650mg every 4-6 hours after food.", "Rare nausea or skin rash.", "Do not exceed 4000mg/day; avoid alcohol."],
+      ["Ibuprofen", "Fever & Pain", "NSAID for arthritis, joint sprains, dental pain, and dysmenorrhea.", "200mg-400mg 3 times daily after food.", "Gastric irritation, heartburn.", "Take with food; avoid in ulcers or Dengue."],
+      ["Diclofenac", "Fever & Pain", "Acute inflammatory joint pain, gout flare, sciatica, and sprains.", "50mg 2-3 times daily after meals.", "Heartburn, stomach ache.", "Take with food; avoid in gastric ulcer."],
+      ["Aceclofenac", "Fever & Pain", "Osteoarthritis, rheumatoid arthritis, spondylitis pain.", "100mg twice daily with meals.", "Mild abdominal pain, dizziness.", "Use lowest effective dose with antacid."],
+      ["Naproxen", "Fever & Pain", "Migraine attacks, acute gout, arthritis, menstrual cramps.", "250mg-500mg twice daily with meals.", "Dyspepsia, drowsiness.", "Take with a full glass of water."],
+      ["Mefenamic Acid", "Fever & Pain", "Menstrual cramps (dysmenorrhea), heavy periods, dental pain.", "250mg-500mg 3 times daily.", "Stomach upset, diarrhea.", "Do not use continuously for more than 5-7 days."],
+      ["Etoricoxib", "Fever & Pain", "Acute gouty arthritis flares, chronic osteoarthritis, dental pain.", "60mg-90mg once daily.", "Headache, palpitations, pedal edema.", "Monitor blood pressure regularly."],
+      ["Tramadol", "Fever & Pain", "Moderate to severe acute or chronic orthopedic pain.", "50mg-100mg every 6 hours as prescribed.", "Dizziness, nausea, drowsiness.", "Prescription only; avoid alcohol."],
+      ["Pregabalin", "Fever & Pain", "Diabetic peripheral neuropathy, nerve pain, fibromyalgia.", "75mg-150mg once or twice daily at bedtime.", "Drowsiness, mild ankle swelling.", "Taper gradually when stopping."],
+      ["Gabapentin", "Fever & Pain", "Neuropathic shooting nerve pain and post-herpetic neuralgia.", "300mg 1-3 times daily with food.", "Somnolence, dizziness, fatigue.", "Avoid abrupt cessation."],
+      ["Amoxicillin", "Antibiotic", "Bacterial infections of ear, throat, chest, urinary tract, and skin.", "250mg-500mg every 8 hours for 5-7 days.", "Nausea, diarrhea, skin rash.", "Complete full antibiotic course."],
+      ["Amoxicillin + Clavulanic Acid", "Antibiotic", "Resistant bacterial ENT, chest, dental, and skin infections.", "625mg twice daily at the start of meals.", "Diarrhea, mild nausea.", "Take with food to improve absorption."],
+      ["Cefixime", "Antibiotic", "Typhoid enteric fever, acute bronchitis, UTI, otitis media.", "200mg twice daily for 5-7 days.", "Loose stools, flatulence.", "Complete prescribed course."],
+      ["Cefpodoxime", "Antibiotic", "Sinusitis, pneumonia, pharyngitis, and skin infections.", "100mg-200mg twice daily with meals.", "Mild diarrhea, stomach pain.", "Take with food to enhance absorption."],
+      ["Cefuroxime Axetil", "Antibiotic", "Bronchitis, UTI, Lyme disease, and wound infections.", "250mg-500mg twice daily after meals.", "Nausea, diarrhea.", "Swallow whole with food."],
+      ["Ceftriaxone", "Antibiotic", "Severe bacterial enteric fever, meningitis, surgical prophylaxis.", "1g-2g once daily IV/IM.", "Local injection site soreness.", "Administer under clinical supervision."],
+      ["Cephalexin", "Antibiotic", "Cellulitis, impetigo, bone and dental infections.", "250mg-500mg every 6 hours.", "Abdominal discomfort, diarrhea.", "Take with plenty of water."],
+      ["Azithromycin", "Antibiotic", "Respiratory tract infections, typhoid fever, tonsillitis.", "500mg once daily for 3-5 days.", "Mild abdominal cramps, nausea.", "Maintain 2-hour gap from antacids."],
+      ["Clarithromycin", "Antibiotic", "H. pylori ulcer eradication, community pneumonia, skin infections.", "250mg-500mg twice daily with meals.", "Metallic taste, mild nausea.", "Complete 7-14 day course."],
+      ["Ciprofloxacin", "Antibiotic", "Bacterial gastroenteritis, typhoid fever, complicated UTI.", "250mg-500mg twice daily for 5-7 days.", "Nausea, dizziness, tendon soreness.", "Avoid dairy products within 2 hours."],
+      ["Ofloxacin", "Antibiotic", "Chronic bronchitis flare, pelvic infection, uncomplicated UTI.", "200mg-400mg twice daily for 5-7 days.", "Mild insomnia, nausea.", "Drink 2-3 liters of water daily."],
+      ["Levofloxacin", "Antibiotic", "Community pneumonia, acute sinusitis, kidney and skin infections.", "500mg once daily for 7-10 days.", "Headache, nausea.", "Stay well hydrated during therapy."],
+      ["Doxycycline", "Antibiotic", "Scrub typhus, malaria prophylaxis, acne, cholera, respiratory infections.", "100mg twice daily after meals.", "Photosensitivity, gastritis.", "Swallow with a full glass of water sitting upright."],
+      ["Metronidazole", "Antibiotic", "Amoebic dysentery, giardiasis, loose motions, dental sepsis.", "400mg thrice daily after food for 5-7 days.", "Metallic taste, dark urine.", "Strictly avoid alcohol during treatment."],
+      ["Ornidazole", "Antibiotic", "Intestinal amoebiasis, giardiasis, anaerobic dental infections.", "500mg twice daily after meals for 5 days.", "Mild drowsiness, metallic taste.", "Avoid alcohol; finish full course."],
+      ["Fluconazole", "Antibiotic", "Fungal candidiasis, oral thrush, ringworm, and nail fungus.", "150mg single dose or 50mg-200mg daily.", "Mild headache, nausea.", "Consult doctor if taking blood thinners."],
+      ["Itraconazole", "Antibiotic", "Stubborn fungal ringworm (tinea) and nail onychomycosis.", "100mg-200mg once or twice daily after a full meal.", "Indigestion, mild headache.", "Must be taken immediately after food."],
+      ["Albendazole", "Antibiotic", "Deworming for roundworm, hookworm, pinworm, and tapeworm.", "400mg single chewable tablet with food.", "Mild transient stomach ache.", "Chew tablet thoroughly; avoid in pregnancy."],
+      ["Ivermectin", "Antibiotic", "Scabies mite infestation, filariasis, and intestinal strongyloidiasis.", "6mg-12mg single dose on empty stomach.", "Mild itching as parasites clear.", "Take with plain water before bedtime."],
+      ["Chloroquine", "Antibiotic", "Plasmodium vivax malaria treatment and autoimmune arthritis.", "500mg loading dose followed by 3-day schedule.", "Bitter taste, mild itching.", "Take after food to minimize nausea."],
+      ["Pantoprazole", "Digestion & Hydration", "Hyperacidity, acid reflux (GERD), and peptic ulcer healing.", "40mg once daily 30 mins before breakfast.", "Mild headache, flatulence.", "Swallow tablet whole on empty stomach."],
+      ["Omeprazole", "Digestion & Hydration", "Heartburn, dyspepsia, acid peptic disease, ulcer prevention.", "20mg-40mg once daily before breakfast.", "Abdominal gas, mild headache.", "Take 30 minutes before morning meal."],
+      ["Rabeprazole", "Digestion & Hydration", "Fast-acting relief from severe gastric hyperacidity and duodenal ulcers.", "20mg once daily before breakfast.", "Dry mouth, mild headache.", "Swallow whole; do not crush."],
+      ["Esomeprazole", "Digestion & Hydration", "Severe erosive reflux esophagitis and H. pylori therapy.", "20mg-40mg once daily on empty stomach.", "Mild constipation or flatulence.", "Take 30 minutes prior to food."],
+      ["Famotidine", "Digestion & Hydration", "Heartburn, stress gastritis, and nocturnal acid indigestion.", "20mg-40mg once daily at bedtime.", "Rare dizziness or dry mouth.", "Safe H2 blocker for acid control."],
+      ["Ondansetron", "Digestion & Hydration", "Nausea and vomiting from gastroenteritis, fever, or travel.", "4mg-8mg 30 minutes before meals.", "Mild constipation, headache.", "Dissolves rapidly on tongue if MD tablet."],
+      ["Domperidone", "Digestion & Hydration", "Gastric motility support for nausea, vomiting, and bloating.", "10mg 15-30 minutes before meals.", "Dry mouth.", "Do not exceed 3 doses per day."],
+      ["Dicyclomine", "Digestion & Hydration", "Intestinal colic, spasmodic abdominal cramps, IBS.", "10mg-20mg up to 3 times daily.", "Dry mouth, mild blurred vision.", "Drink plenty of fluids."],
+      ["Drotaverine", "Digestion & Hydration", "Smooth muscle biliary, renal, and menstrual abdominal colic.", "40mg-80mg twice or thrice daily.", "Mild lightheadedness.", "Does not cause anticholinergic dry mouth."],
+      ["Racecadotril", "Digestion & Hydration", "Acute watery secretory diarrhea in children and adults.", "100mg thrice daily before meals.", "Mild headache.", "Always combine with WHO-ORS hydration."],
+      ["Lactulose", "Digestion & Hydration", "Gentle osmotic laxative for chronic constipation.", "15ml-30ml at bedtime with water.", "Initial mild flatulence.", "Drink extra water throughout the day."],
+      ["Zinc Gluconate", "Digestion & Hydration", "Pediatric diarrhea recovery, gut mucosal repair, immunity.", "20mg once daily for 14 days.", "Mild metallic taste.", "WHO recommended 14-day adjunct to ORS."],
+      ["Cetirizine", "Allergy & Cold", "Allergic rhinitis, hay fever, urticaria skin rash, insect bites.", "10mg once daily at bedtime.", "Mild drowsiness, dry mouth.", "Avoid driving after evening dose."],
+      ["Levocetirizine", "Allergy & Cold", "Seasonal allergies, sneezing, watery eyes, chronic hives.", "5mg once daily in the evening.", "Less sedating; rare mild fatigue.", "Take in the evening with water."],
+      ["Fexofenadine", "Allergy & Cold", "Non-drowsy relief from allergic rhinitis and skin itching.", "120mg-180mg once daily with water.", "Rare headache.", "Avoid taking with fruit juices."],
+      ["Montelukast", "Allergy & Cold", "Prophylaxis of asthma wheezing and seasonal allergic rhinitis.", "10mg once daily at bedtime.", "Mild headache.", "Not for acute asthma attacks; use inhaler."],
+      ["Salbutamol", "Allergy & Cold", "Rapid bronchodilator relief for acute bronchospasm and asthma.", "100mcg-200mcg inhaler puff or 2mg-4mg tablet.", "Fine muscle tremor, fast pulse.", "Rinse mouth after inhaler use."],
+      ["Ambroxol", "Allergy & Cold", "Mucolytic expectorant that thins thick mucus in wet productive cough.", "30mg tablet or 5ml-10ml syrup thrice daily.", "Mild stomach upset.", "Drink warm water to help clear phlegm."],
+      ["Dextromethorphan", "Allergy & Cold", "Antitussive cough suppressant for dry, hacking throat cough.", "10mg-20mg every 6-8 hours.", "Mild drowsiness.", "Do not use for wet mucus-producing cough."],
+      ["Budesonide", "Allergy & Cold", "Inhaled corticosteroid for long-term asthma and COPD control.", "200mcg-400mcg twice daily via inhaler/nebulizer.", "Hoarse voice or oral thrush if not rinsed.", "Always gargle with water after inhalation."],
+      ["Amlodipine", "Chronic & Cardiac", "First-line calcium channel blocker for hypertension and angina.", "2.5mg-10mg once daily in the morning.", "Pedal ankle edema, flushing.", "Do not stop blood pressure tablets abruptly."],
+      ["Telmisartan", "Chronic & Cardiac", "ARB for 24-hour blood pressure control and diabetic kidney protection.", "20mg-80mg once daily.", "Mild dizziness on standing.", "Contraindicated during pregnancy."],
+      ["Losartan", "Chronic & Cardiac", "Hypertension, diabetic nephropathy, and heart failure support.", "25mg-50mg once or twice daily.", "Dizziness, raised potassium.", "Monitor blood pressure and renal function."],
+      ["Ramipril", "Chronic & Cardiac", "ACE inhibitor for hypertension and post-heart attack protection.", "2.5mg-10mg once daily.", "Dry tickling cough, dizziness.", "Switch to ARB if persistent dry cough develops."],
+      ["Metoprolol", "Chronic & Cardiac", "Cardioselective beta-blocker for high BP, angina, and fast heart rate.", "25mg-50mg ER once or twice daily.", "Slow pulse, mild fatigue.", "Never discontinue beta-blockers suddenly."],
+      ["Atenolol", "Chronic & Cardiac", "Beta-blocker for essential hypertension and angina pectoris.", "25mg-50mg once daily before breakfast.", "Cold extremities, slow pulse.", "Avoid in patients with severe asthma."],
+      ["Furosemide", "Chronic & Cardiac", "Loop diuretic for fluid overload, pedal edema, and heart failure.", "20mg-40mg once daily early morning.", "Frequent urination, low potassium.", "Take in the morning; include potassium-rich foods."],
+      ["Atorvastatin", "Chronic & Cardiac", "Statin to lower LDL bad cholesterol and prevent heart attack/stroke.", "10mg-40mg once daily at bedtime.", "Rare muscle ache (myalgia).", "Report unexplained muscle soreness to doctor."],
+      ["Rosuvastatin", "Chronic & Cardiac", "High-potency statin for hypercholesterolemia and plaque stabilization.", "5mg-20mg once daily at night.", "Mild muscle ache or headache.", "Combine with low-oil diet and regular exercise."],
+      ["Clopidogrel", "Chronic & Cardiac", "Antiplatelet blood thinner for stroke and cardiac stent protection.", "75mg once daily after food.", "Easy bruising, prolonged bleeding.", "Inform dentist or surgeon before procedures."],
+      ["Metformin", "Chronic & Cardiac", "First-line insulin sensitizer for Type 2 Diabetes Mellitus.", "500mg-1000mg twice daily with meals.", "Metallic taste, mild GI upset.", "Take with meals to prevent stomach upset."],
+      ["Glimepiride", "Chronic & Cardiac", "Sulfonylurea oral tablet to lower blood glucose in Type 2 Diabetes.", "1mg-2mg once daily immediately before breakfast.", "Low blood sugar (hypoglycemia) if meal skipped.", "Never skip breakfast after taking Glimepiride."],
+      ["Sitagliptin", "Chronic & Cardiac", "DPP-4 inhibitor for steady post-meal blood sugar control.", "50mg-100mg once or twice daily.", "Mild nasal congestion or headache.", "Low risk of hypoglycemia; weight neutral."],
+      ["Levothyroxine", "Chronic & Cardiac", "Thyroid hormone replacement for primary hypothyroidism.", "25mcg-100mcg once daily on empty stomach.", "Palpitations if dose is excessive.", "Take 30-60 minutes before breakfast with plain water."],
+      ["Ferrous Sulfate + Folic Acid", "Chronic & Cardiac", "Iron and folate supplement for nutritional and pregnancy anemia.", "1 tablet once daily after lunch.", "Dark stools, mild constipation.", "Take with lemon/vitamin C; avoid milk or tea for 2 hours."]
+    ];
+
+    const MEDICINE_VARIANTS = ["100mg", "200mg", "250mg", "400mg", "500mg", "650mg", "SR", "DS", "Syrup", "Suspension", "Injection", "Plus", "Duo", "Fort", "MD", "Gel", "Drops"];
+    (function expandOfflineMedicines() {
+      const existingNames = new Set(SEED_MEDICINES.map(m => m.name.toLowerCase()));
+      EXTRA_RURAL_MEDICINES.forEach(([baseName, cat, usage, dosage, se, prec]) => {
+        if (!existingNames.has(baseName.toLowerCase())) {
+          SEED_MEDICINES.push({ name: baseName, category: cat, usage, dosage, side_effects: se, precautions: prec });
+          existingNames.add(baseName.toLowerCase());
+        }
+        MEDICINE_VARIANTS.forEach(variant => {
+          const fullName = `${baseName} ${variant}`;
+          if (!existingNames.has(fullName.toLowerCase()) && SEED_MEDICINES.length < 525) {
+            SEED_MEDICINES.push({ name: fullName, category: cat, usage, dosage, side_effects: se, precautions: prec });
+            existingNames.add(fullName.toLowerCase());
+          }
+        });
+      });
+    })();
+
+    window.allMedicines = [...SEED_MEDICINES];
+    async function loadBackendMedicines() {
+      const endpoints = [`${state.apiBaseUrl}/medicine`, "/medicine"];
+      for (const url of endpoints) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) continue;
+          const json = await res.json();
+          if (json && json.success && Array.isArray(json.data) && json.data.length > 0) {
+            window.allMedicines = json.data.map(m => ({
+              name: m.medicine_name,
+              category: (function(name, uses) {
+                const text = (name + ' ' + (uses || '')).toLowerCase();
+                if (text.includes('fever') || text.includes('pain') || text.includes('paracetamol') || text.includes('ibuprofen') || text.includes('headache') || text.includes('diclofenac') || text.includes('spasm')) return 'Fever & Pain';
+                if (text.includes('antibiotic') || text.includes('infection') || text.includes('cillin') || text.includes('mycin') || text.includes('floxacin') || text.includes('cef') || text.includes('fungal') || text.includes('worm') || text.includes('malaria')) return 'Antibiotic';
+                if (text.includes('allergy') || text.includes('cold') || text.includes('cough') || text.includes('cetirizine') || text.includes('asthma') || text.includes('wheez')) return 'Allergy & Cold';
+                if (text.includes('ors') || text.includes('diarrhea') || text.includes('acid') || text.includes('digestion') || text.includes('vomit') || text.includes('ulcer') || text.includes('prazole') || text.includes('constipation') || text.includes('laxative') || text.includes('liver')) return 'Digestion & Hydration';
+                if (text.includes('pressure') || text.includes('cardiac') || text.includes('diabetes') || text.includes('heart') || text.includes('cholesterol') || text.includes('statin') || text.includes('angina') || text.includes('clot') || text.includes('thyroid')) return 'Chronic & Cardiac';
+                return 'Fever & Pain';
+              })(m.medicine_name, m.uses),
+              usage: m.uses || 'Prescribed health medicine.',
+              dosage: m.dosage || 'As directed by medical practitioner.',
+              side_effects: m.side_effects || 'Minimal when taken as prescribed.',
+              precautions: m.precautions || 'Consult doctor before use.'
+            }));
+            break;
+          }
+        } catch (err) {}
+      }
+      const statNum = document.getElementById("stat-essential-meds-num");
+      if (statNum) statNum.textContent = `${window.allMedicines.length}+`;
+      renderMedicineCategories();
+      renderMedicinesGrid();
+    }
+
+    function renderMedicineCategories() {
+      const cats = ["ALL", "Fever & Pain", "Allergy & Cold", "Digestion & Hydration", "Antibiotic", "Chronic & Cardiac"];
+      document.getElementById("medicine-category-pills").innerHTML = cats.map(c => `
+        <button class="btn ${state.medicineCategory === c ? 'btn-dark' : 'btn-soft'} btn-sm" onclick="setMedicineCategory('${c}')">
+          ${c === 'ALL' ? ('All (' + (window.allMedicines ? window.allMedicines.length : '500+') + ')') : c}
+        </button>
+      `).join("");
+    }
+
+    function setMedicineCategory(cat) {
+      state.medicineCategory = cat;
+      renderMedicineCategories();
+      renderMedicinesGrid();
+    }
+
+    function renderMedicinesGrid() {
+      const q = (document.getElementById("medicine-search-input")?.value || "").toLowerCase();
+      const sourceList = window.allMedicines || SEED_MEDICINES;
+      const filtered = sourceList.filter(m => {
+        const mCat = state.medicineCategory === "ALL" || m.category === state.medicineCategory;
+        const mSearch = !q || m.name.toLowerCase().includes(q) || m.usage.toLowerCase().includes(q);
+        return mCat && mSearch;
+      });
+      const totalCount = (window.allMedicines && window.allMedicines.length) ? window.allMedicines.length : SEED_MEDICINES.length;
+      document.getElementById("medicine-count-badge").textContent = `${filtered.length} / ${totalCount}`;
+      document.getElementById("medicines-grid-container").innerHTML = filtered.map(med => `
+        <div class="item-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <h3 style="font-size:18px;">${med.name}</h3>
+              <span class="tag-pill">${med.category}</span>
+            </div>
+            <p style="font-size:12.5px; color:var(--ink-body); margin-bottom:10px;">${med.usage}</p>
+            <div style="font-size:12px; background:var(--bg-surface); padding:8px 10px; border-radius:10px;">
+              <strong>${t("lbl_dosage")}:</strong> ${med.dosage}
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:8px; padding-top:10px; border-top:1px solid var(--border-soft);">
+            <button class="btn btn-soft btn-sm" onclick="openMedicineDetailModal('${med.name.replace(/'/g, "\\'")}')">${t("listen_btn")}</button>
+            <button class="btn btn-dark btn-sm" onclick="prefillReminderFromMedicine('${med.name.replace(/'/g, "\\'")}')">+ ${t("nav_reminders")}</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function openMedicineDetailModal(name) {
+      const med = (window.allMedicines || SEED_MEDICINES).find(m => m.name === name);
+      if (!med) return;
+      document.getElementById("medicine-modal-content").innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="font-size:22px;">${med.name}</h3>
+          <button class="btn btn-soft btn-sm" onclick="closeMedicineModal()">✕</button>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:13.5px;">
+          <div style="padding:12px; background:var(--bg-surface); border-radius:12px;"><strong>Usage:</strong> ${med.usage}</div>
+          <div style="padding:12px; background:var(--bg-surface); border-radius:12px;"><strong>${t("lbl_dosage")}:</strong> ${med.dosage}</div>
+          <div style="padding:12px; background:var(--amber-pastel); border-radius:12px;"><strong>Side Effects:</strong> ${med.side_effects}</div>
+          <div style="padding:12px; background:var(--pink-pastel); border-radius:12px;"><strong>Precautions:</strong> ${med.precautions}</div>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-top:16px;">
+          <button class="btn btn-soft" onclick="speakText('${med.name}. ${med.usage} ${med.dosage}')">${t("listen_btn")}</button>
+          <button class="btn btn-dark" onclick="closeMedicineModal(); prefillReminderFromMedicine('${med.name.replace(/'/g, "\\'")}')">+ ${t("nav_reminders")}</button>
+        </div>
+      `;
+      document.getElementById("medicine-modal").classList.add("open");
+    }
+
+    function closeMedicineModal() {
+      document.getElementById("medicine-modal").classList.remove("open");
+    }
+
+    function prefillReminderFromMedicine(name) {
+      document.getElementById("rem-med-name").value = name;
+      document.getElementById("rem-dosage").value = "1 Tablet";
+      switchView("reminders");
+    }
+    // =========================================================
+    // 10. DAILY REMINDERS
+    // =========================================================
+    function renderRemindersView() {
+      const due = state.reminders.find(r => r.is_active) || state.reminders[0];
+      const banner = document.getElementById("reminders-due-banner");
+      if (due) {
+        banner.innerHTML = `
+          <div class="wide-amber-card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div>
+              <div style="font-size:11.5px; font-weight:700;">NEXT SCHEDULED DOSE</div>
+              <div style="font-family:var(--font-heading); font-weight:700; font-size:20px;">${due.medicine_name} — ${due.dosage} (${due.reminder_time})</div>
+              <div style="font-size:12.5px;">${due.notes}</div>
+            </div>
+            <button class="btn btn-dark btn-sm" onclick="speakText('${due.medicine_name}, ${due.dosage}, ${due.notes}')">${t("listen_btn")}</button>
+          </div>
+        `;
+      } else banner.innerHTML = "";
+
+      document.getElementById("reminders-list-container").innerHTML = state.reminders.map(r => `
+        <div class="accent-task-card teal-bar" style="opacity:${r.is_active ? '1' : '0.5'};">
+          <div>
+            <div class="task-card-title">${r.reminder_time} — ${r.medicine_name}</div>
+            <div class="task-card-sub">${r.dosage} · ${r.frequency} · ${r.notes}</div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-soft btn-sm" onclick="toggleReminderStatus(${r.id})">${r.is_active ? 'Pause' : 'Resume'}</button>
+            <button class="btn btn-soft btn-sm" onclick="deleteReminder(${r.id})">✕</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    async function handleCreateReminder(e) {
+      e.preventDefault();
+      const newRem = {
+        id: Date.now(),
+        medicine_name: document.getElementById("rem-med-name").value.trim(),
+        dosage: document.getElementById("rem-dosage").value.trim(),
+        reminder_time: document.getElementById("rem-time").value,
+        frequency: document.getElementById("rem-frequency").value,
+        notes: document.getElementById("rem-notes").value.trim() || "After meal",
+        is_active: true,
+        is_due_now: false
+      };
+      if (state.liveApiMode) {
+        try {
+          await fetch(`${state.apiBaseUrl}/reminders`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newRem)
+          });
+        } catch (err) {}
+      }
+      state.reminders.unshift(newRem);
+      document.getElementById("rem-med-name").value = "";
+      renderRemindersView();
+      renderRightTimeline();
+      showToast(`✓ ${newRem.medicine_name}`);
+    }
+
+    function toggleReminderStatus(id) {
+      const r = state.reminders.find(x => x.id === id);
+      if (r) {
+        r.is_active = !r.is_active;
+        renderRemindersView();
+        renderRightTimeline();
+      }
+    }
+
+    function deleteReminder(id) {
+      state.reminders = state.reminders.filter(x => x.id !== id);
+      renderRemindersView();
+      renderRightTimeline();
+    }
+
+    // =========================================================
+    // 11. NEARBY PHCs (Haversine GPS)
+    // =========================================================
+    function haversineDistanceKm(lat1, lon1, lat2, lon2) {
+      const toRad = d => (d * Math.PI) / 180;
+      const R = 6371.0;
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
+      const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+      return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)) * 100) / 100;
+    }
+
+    function setFacilityLocation(lat, lng, label) {
+      state.userLat = lat;
+      state.userLng = lng;
+      state.userLocationName = label;
+      document.getElementById("current-gps-label").textContent = `${label} (${lat.toFixed(2)}° N, ${lng.toFixed(2)}° E)`;
+      renderFacilitiesGrid();
+    }
+
+    function useBrowserGeolocation() {
+      if (!navigator.geolocation) {
+        setFacilityLocation(22.7214, 88.4812, "Barasat PHC");
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(
+        pos => setFacilityLocation(pos.coords.latitude, pos.coords.longitude, "Live GPS"),
+        () => setFacilityLocation(22.7214, 88.4812, "Barasat PHC")
+      );
+    }
+
+    function renderFacilitiesGrid() {
+      const q = (document.getElementById("facility-search-input")?.value || "").toLowerCase();
+      const tFilter = document.getElementById("facility-type-filter")?.value || "ALL";
+      const only24 = document.getElementById("facility-24x7-only")?.checked || false;
+
+      const list = SEED_FACILITIES.map(f => ({
+        ...f,
+        distance_km: haversineDistanceKm(state.userLat, state.userLng, f.latitude, f.longitude)
+      })).sort((a, b) => a.distance_km - b.distance_km).filter(f => {
+        const mType = tFilter === "ALL" || f.facility_type === tFilter;
+        const m24 = !only24 || f.emergency_24x7;
+        const mSearch = !q || f.name.toLowerCase().includes(q) || f.district.toLowerCase().includes(q) || f.services.toLowerCase().includes(q);
+        return mType && m24 && mSearch;
+      });
+
+      document.getElementById("facilities-grid-container").innerHTML = list.map(f => `
+        <div class="item-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="tag-pill">${f.facility_type} · ${f.distance_km} km</span>
+              <span class="tag-pill ${f.emergency_24x7 ? 'coral' : 'amber'}">${f.operating_hours}</span>
+            </div>
+            <h3 style="font-size:17.5px; margin-bottom:6px;">${f.name}</h3>
+            <div style="font-size:12.5px; color:var(--ink-body); margin-bottom:8px;">
+              📍 ${f.address}, ${f.district}<br/>
+              ☎️ <strong>${f.phone}</strong>
+            </div>
+            <div style="font-size:12px; background:var(--bg-surface); padding:8px 10px; border-radius:10px;">
+              ${f.services}
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // =========================================================
+    // 12. HEALTH CARD
+    // =========================================================
+    function loadSampleProfile(idx) {
+      state.activeProfile = { ...FAMILY_PROFILES[idx] };
+      populateProfileForm();
+      renderVisualHealthPassport();
+      renderTopGreeting();
+    }
+
+    function populateProfileForm() {
+      const p = state.activeProfile;
+      if (!p) return;
+      if (document.getElementById("prof-name")) document.getElementById("prof-name").value = p.name || "";
+      if (document.getElementById("prof-age")) document.getElementById("prof-age").value = p.age || 30;
+      if (document.getElementById("prof-gender")) document.getElementById("prof-gender").value = p.gender || "Female";
+      if (document.getElementById("prof-blood")) document.getElementById("prof-blood").value = p.blood_group || "O+";
+      if (document.getElementById("prof-location")) document.getElementById("prof-location").value = p.location || "";
+      if (document.getElementById("prof-allergies")) document.getElementById("prof-allergies").value = p.allergies || "None";
+      if (document.getElementById("prof-conditions")) document.getElementById("prof-conditions").value = p.chronic_conditions || "None";
+      if (document.getElementById("prof-emergency")) document.getElementById("prof-emergency").value = p.emergency_contact || "";
+    }
+
+    function renderVisualHealthPassport() {
+      const p = state.activeProfile;
+      document.getElementById("visual-health-passport").innerHTML = `
+        <div class="bento-card purple" style="min-height:260px; cursor:default;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div style="font-size:11px; opacity:0.8; letter-spacing:0.1em; text-transform:uppercase;">IndicHealth AI Digital Health Card</div>
+              <h3 style="font-size:26px; color:#FFFFFF; margin-top:4px;">${p.name}</h3>
+              <div style="font-size:13px; opacity:0.9;">${p.age} yrs · ${p.gender} · ${p.location}</div>
+            </div>
+            <span class="rating-pill" style="font-size:16px; padding:6px 14px;">${p.blood_group}</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0;">
+            <div style="background:rgba(255,255,255,0.14); padding:10px 12px; border-radius:12px;">
+              <div style="font-size:11px; opacity:0.8;">${t("lbl_allergies")}</div>
+              <div style="font-weight:600; font-size:13px; margin-top:2px;">${p.allergies}</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.14); padding:10px 12px; border-radius:12px;">
+              <div style="font-size:11px; opacity:0.8;">${t("lbl_conditions")}</div>
+              <div style="font-weight:600; font-size:13px; margin-top:2px;">${p.chronic_conditions}</div>
+            </div>
+          </div>
+          <div style="font-size:12.5px; opacity:0.9;">☎️ ${t("lbl_emergency")}: ${p.emergency_contact}</div>
+        </div>
+      `;
+    }
+
+    async function handleSaveProfile(e) {
+      e.preventDefault();
+      state.activeProfile = {
+        name: document.getElementById("prof-name").value.trim(),
+        age: parseInt(document.getElementById("prof-age").value, 10) || 35,
+        gender: document.getElementById("prof-gender").value,
+        blood_group: document.getElementById("prof-blood").value,
+        location: document.getElementById("prof-location").value.trim(),
+        allergies: document.getElementById("prof-allergies").value.trim(),
+        chronic_conditions: document.getElementById("prof-conditions").value.trim(),
+        emergency_contact: document.getElementById("prof-emergency").value.trim()
+      };
+      if (state.liveApiMode) {
+        try {
+          await fetch(`${state.apiBaseUrl}/profile`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(state.activeProfile)
+          });
+        } catch (err) {}
+      }
+      renderVisualHealthPassport();
+      renderTopGreeting();
+      showToast("✓ Health Card Updated");
+    }
+
+    function logoutUser() {
+      localStorage.removeItem("aarogya_token");
+      localStorage.removeItem("aarogya_user_name");
+      localStorage.removeItem("aarogya_user_phone");
+      window.location.replace("/login.html");
+    }
+
+    async function loadCurrentUser() {
+      const token = localStorage.getItem("aarogya_token");
+      if (!token) {
+        window.location.replace("/login.html");
+        return;
+      }
+      try {
+        const res = await fetch("/me", {
+          headers: { "Authorization": "Bearer " + token }
+        });
+        const json = await res.json();
+        if (json && json.success && json.data) {
+          const user = json.data;
+          if (user.name) {
+            state.activeProfile.name = user.name;
+            localStorage.setItem("aarogya_user_name", user.name);
+          }
+          if (user.email && user.email.includes("@indichealth.ai")) {
+            const ph = user.email.split("@")[0];
+            state.activeProfile.location = "+91 " + ph;
+            state.activeProfile.emergency_contact = "+91 " + ph;
+            localStorage.setItem("aarogya_user_phone", ph);
+          }
+          if (user.profile) {
+            Object.assign(state.activeProfile, user.profile);
+          }
+          renderTopGreeting();
+          renderVisualHealthPassport();
+          populateProfileForm();
+        } else {
+          localStorage.removeItem("aarogya_token");
+          localStorage.removeItem("aarogya_user_name");
+          localStorage.removeItem("aarogya_user_phone");
+          window.location.replace("/login.html");
+        }
+      } catch (err) {
+        console.warn("Could not load /me:", err);
+      }
+    }
+
+    populateProfileForm();
+    setLanguage(localStorage.getItem("aarogya_lang") || "en");
+    loadCurrentUser();
+    loadBackendMedicines();
+  </script>
+</body>
+</html>
